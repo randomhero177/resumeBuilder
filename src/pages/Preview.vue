@@ -9,7 +9,7 @@
 <script>
   import Bio from '@/components/Bio.vue'
   export default {
-    name: "home",
+    name: "Preview",
     data() {
       return {
           data: () => ({

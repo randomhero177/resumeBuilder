@@ -11,11 +11,15 @@ const router = new Router({
     },
     routes: [
         {
-            path: '/home',
+            path: '/',
             name: 'home',
             component: () => import('@/pages/Home.vue'),
         },
-
+        {
+            path: '/preview',
+            name: 'home',
+            component: () => import('@/pages/Preview.vue'),
+        },
         {
             path: '*',
             name: 'error-404',
