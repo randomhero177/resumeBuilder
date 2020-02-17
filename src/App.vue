@@ -1,6 +1,8 @@
 <template>
   <section class="page">
-    <router-view />
+    <div class="container">
+      <router-view />
+    </div>
   </section>
 </template>
 
@@ -19,3 +21,8 @@ export default {
   }),
 };
 </script>
+
+<style lang="styl">
+  img
+    max-width 100%
+</style>

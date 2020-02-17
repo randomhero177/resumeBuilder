@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div>
-      <div @click="openFileDialog">
+  <div class="avatar">
+    <div v-if="!imgUrlList.length">
+      <span class="avatar__btn" @click="openFileDialog">
         Выберите файл
-      </div>
+      </span>
       <input
           type="file"
           @change="encodeImageFileAsURL($event)"
@@ -49,3 +49,10 @@
     },
   }
 </script>
+<style lang="stylus" scoped>
+  .avatar
+    &__btn
+      padding 1.5rem 8rem
+      border 1px solid #000
+      border-radius 3px
+</style>
