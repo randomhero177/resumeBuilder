@@ -4,6 +4,7 @@ const state = {
   name: '',
   lastName: '',
   avatar: {},
+  pickerDate: new Date().toISOString().substr(0, 10),
 };
 
 const actions = {
@@ -16,6 +17,9 @@ const actions = {
   setAvatar({ commit }, avatar) {
     commit('setAvatar', avatar);
   },
+  setPickerDate({ commit }, pickerDate) {
+    commit('setAvatar', pickerDate);
+  },
 };
 
 const mutations = {
@@ -27,6 +31,9 @@ const mutations = {
   },
   setAvatar(state, avatar) {
     state.avatar = avatar;
+  },
+  setPickerDate(state, pickerDate) {
+    state.pickerDate = pickerDate;
   },
 };
 
