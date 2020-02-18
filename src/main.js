@@ -4,6 +4,7 @@ import router from '@/router/index';
 import App from './App.vue';
 import vuetify from './plugins/vuetify';
 import '@mdi/font/css/materialdesignicons.css'
+import '@/assets/vuetify.css'
 import '@/assets/common.styl';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons';

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>Profile</h2>
+    <header class="heading">
+      <h2 class="heading__title">Profile</h2>
+    </header>
     <v-container fluid>
       <v-textarea
           clearable
@@ -14,7 +16,7 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Profile',
 
     data: () => ({
 
