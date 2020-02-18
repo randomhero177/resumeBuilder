@@ -13,8 +13,8 @@
           style="display: none"
       >
     </div>
-    <div v-else>
-      <img :src="imgUrl.src" alt="">
+    <div v-else style="text-align: center">
+      <img :src="imgUrl.src" alt="" class="avatar__img">
     </div>
   </div>
 </template>
@@ -59,4 +59,6 @@
       border-radius 3px
       display block
       text-align center
+    &__img
+      width 200px
 </style>
