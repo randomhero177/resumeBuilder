@@ -3,82 +3,114 @@
     <header class="heading">
       <h2 class="heading__title">Expirience</h2>
     </header>
-     <v-container fluid>
-    <v-combobox
-      v-model="model"
-      :filter="filter"
-      :hide-no-data="!search"
-      :items="items"
-      :search-input.sync="search"
-      hide-selected
-      label="Search for an option"
-      multiple
-      small-chips
-      solo
-    >
-      <template v-slot:no-data>
-        <v-list-item>
-          <span class="subheading">Create</span>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form__label">Company</div>
+        <input type="text" class="input">
+      </div>
+      <div class="col-md-6">
+        <div class="form__label">Position</div>
+        <input type="text" class="input">
+      </div>
+      <div class="col-md-6">
+        <div class="form__label">Start date</div>
+        <v-date-picker
+          v-model="dayStart"
+          type="month"
+          width="290"
+          class="mt-4"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="form__label">End date</div>
+        <v-date-picker
+          v-model="endDate"
+          type="month"
+          width="290"
+          class="mt-4"
+        />
+        <div>
+          <input type="checkbox" v-model="checkbox">
+          <label>Все еще работаю здесь</label>
+          {{ checkbox }}
+        </div>
+      </div>
+    </div>
+    <v-container fluid>
+      <v-combobox
+        v-model="model"
+        :filter="filter"
+        :hide-no-data="!search"
+        :items="items"
+        :search-input.sync="search"
+        hide-selected
+        label="Search for an option"
+        multiple
+        small-chips
+        solo
+      >
+        <template v-slot:no-data>
+          <v-list-item>
+            <span class="subheading">Create</span>
+            <v-chip
+              :color="`${colors[nonce - 1]} lighten-3`"
+              label
+              small
+            >
+              {{ search }}
+            </v-chip>
+          </v-list-item>
+        </template>
+        <template v-slot:selection="{ attrs, item, parent, selected }">
           <v-chip
-            :color="`${colors[nonce - 1]} lighten-3`"
+            v-if="item === Object(item)"
+            v-bind="attrs"
+            :color="`${item.color} lighten-3`"
+            :input-value="selected"
             label
             small
           >
-            {{ search }}
+            <span class="pr-2">
+              {{ item.text }}
+            </span>
+            <unicon name="times-circle" fill="#1867c0" width="15px" @click="parent.selectItem(item)"/>
           </v-chip>
-        </v-list-item>
-      </template>
-      <template v-slot:selection="{ attrs, item, parent, selected }">
-        <v-chip
-          v-if="item === Object(item)"
-          v-bind="attrs"
-          :color="`${item.color} lighten-3`"
-          :input-value="selected"
-          label
-          small
-        >
-          <span class="pr-2">
-            {{ item.text }}
-          </span>
-          <unicon name="times-circle" fill="#1867c0" width="15px" @click="parent.selectItem(item)"/>
-        </v-chip>
-      </template>
-      <template v-slot:item="{ index, item }">
-        <v-text-field
-          v-if="editing === item"
-          v-model="editing.text"
-          autofocus
-          flat
-          background-color="transparent"
-          hide-details
-          solo
-          @keyup.enter="edit(index, item)"
-        ></v-text-field>
-        <v-chip
-          v-else
-          :color="`${item.color} lighten-3`"
-          dark
-          label
-          small
-        >
-          {{ item.text }}
-        </v-chip>
-        <v-spacer></v-spacer>
-        <v-list-item-action @click.stop>
-          <v-btn
-            icon
-            @click.stop.prevent="edit(index, item)"
+        </template>
+        <template v-slot:item="{ index, item }">
+          <v-text-field
+            v-if="editing === item"
+            v-model="editing.text"
+            autofocus
+            flat
+            background-color="transparent"
+            hide-details
+            solo
+            @keyup.enter="edit(index, item)"
+          ></v-text-field>
+          <v-chip
+            v-else
+            :color="`${item.color} lighten-3`"
+            dark
+            label
+            small
           >
-            <v-icon>{{ editing !== item ? 'mdi-pencil' : 'mdi-check' }}</v-icon>
-          </v-btn>
-        </v-list-item-action>
-      </template>
-    </v-combobox>
+            {{ item.text }}
+          </v-chip>
+          <v-spacer></v-spacer>
+          <v-list-item-action @click.stop>
+            <v-btn
+              icon
+              @click.stop.prevent="edit(index, item)"
+            >
+              <v-icon>{{ editing !== item ? 'mdi-pencil' : 'mdi-check' }}</v-icon>
+            </v-btn>
+          </v-list-item-action>
+        </template>
+      </v-combobox>
     </v-container>
     <div v-if="workList.length">
-Key skills: native JS, Jquery, TypeScript, Git, Gulp, Less, MVS, .NET (as a stack
-with backend)
-
+      Key skills: native JS, Jquery, TypeScript, Git, Gulp, Less, MVS, .NET (as a stack
+      with backend)
     </div>
     <button type="button" v-on:click="addNewPosition">Add new position</button>
   </div>
@@ -89,10 +121,13 @@ with backend)
     name: 'Expirience',
 
     data: () => ({
+      dayStart: new Date().toISOString().substr(0, 10),
+      endDate: new Date().toISOString().substr(0, 10),
       workList: [],
       activator: null,
       attach: null,
       colors: ['green', 'purple', 'indigo', 'cyan', 'teal', 'orange'],
+      checkbox: true,
       editing: null,
       index: -1,
       items: [
