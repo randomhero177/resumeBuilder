@@ -1,36 +1,25 @@
 <template>
   <div>
+    <Avatar />
     <Birthday />
+    <Languages />
+    <Skills />
   </div>
 </template>
 
 <script>
 import Birthday from '@/components/form/Birthday.vue';
+import Languages from '@/components/Languages.vue';
+import Skills from '@/components/Skills.vue';
+import Avatar from '@/components/form/Avatar.vue'
+
   export default {
     name: 'Details',
-    data: () => ({
-
-    }),
-    computed: {
-      name: {
-        get() {
-          return this.$store.state.form.name;
-        },
-        set(value) {
-          this.$store.commit('form/setUserName', value)
-        },
-      },
-      lastName: {
-        get() {
-          return this.$store.state.form.lastName;
-        },
-        set(value) {
-          this.$store.commit('form/setUserLastName', value)
-        },
-      }
-    },
     components: {
       Birthday,
+      Languages,
+      Skills,
+      Avatar,
     },
   }
 </script>

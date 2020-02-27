@@ -15,9 +15,12 @@
       <div class="col-md-6">
         <div class="form__label">Start date</div>
         <div class="form__picker">
-          <input type="text" class="input" v-model="dayStart">
+          <input type="text" class="input" v-model="dayStart" v-on:click="showDayStart = true">
+
           <v-date-picker
+            v-if="showDayStart"
             v-model="dayStart"
+            @click:month="showDayStart = false"
             type="month"
             width="290"
             class="form__picker-elem"
@@ -27,9 +30,10 @@
       <div class="col-md-6">
         <div class="form__label">End date</div>
         <div class="form__picker" v-if="!isCurrentPosition">
-          <input type="text" class="input" v-model="endDate">
+          <input type="text" class="input" v-model="dayEnd" v-on:click="showDayEnd = true">
           <v-date-picker
-            v-model="endDate"
+            v-if="showDayEnd"
+            v-model="dayEnd"
             type="month"
             width="290"
             class="form__picker-elem"
@@ -45,7 +49,7 @@
         <wysiwyg v-model="myHTML" />
       </div>
       <div class="col-md-12">
-        <div class="form__label">Key skills:</div>
+        <div class="form__label">Key skills for this position:</div>
           <v-combobox
             v-model="model"
             :filter="filter"
@@ -122,7 +126,7 @@
       Key skills: native JS, Jquery, TypeScript, Git, Gulp, Less, MVS, .NET (as a stack
       with backend)
     </div>
-    <button type="button" v-on:click="addNewPosition">Add new position</button>
+    <span v-on:click="addNewPosition" class="add-btn">Add new position</span>
   </div>
 </template>
 
@@ -133,7 +137,9 @@
     data: () => ({
       myHTML: '',
       dayStart: new Date().toISOString().substr(0, 10),
-      endDate: new Date().toISOString().substr(0, 10),
+      showDayStart: false,
+      showDayEnd: false,
+      dayEnd: new Date().toISOString().substr(0, 10),
       workList: [],
       colors: ['green', 'purple', 'indigo', 'cyan', 'teal', 'orange'],
       isCurrentPosition: false,
@@ -169,7 +175,7 @@
           company: '',
           position: '',
           dayStart: new Date().toISOString().substr(0, 10),
-          endDate: new Date().toISOString().substr(0, 10),
+          dayEnd: new Date().toISOString().substr(0, 10),
           isCurrentPosition: false,
           editing: null,
         };

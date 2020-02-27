@@ -14,6 +14,9 @@ import wysiwyg from "vue-wysiwyg";
 import "vue-wysiwyg/dist/vueWysiwyg.css";
 import Unicon from 'vue-unicons';
 import { uniUserPlus, uniTimesCircle, uniCommentAltShield, uniCommentAltPlus, uniCommentPlus, uniCommentRedo, uniCommentUpload, uniCommentAltSearch, uniCommentAltUpload, uniCommentAltMedical, uniCommentMedical, uniCommentAltShare, uniCommentShare, uniCommentShield, uniCommentSearch, uniCommentQuestion } from 'vue-unicons/src/icons';
+import "vue-custom-range-slider/dist/vue-custom-range-slider.css";
+import Multiselect from 'vue-multiselect'
+import 'vue-multiselect/dist/vue-multiselect.min.css';
 
 Unicon.add([uniUserPlus, uniTimesCircle, uniCommentAltShield, uniCommentAltPlus, uniCommentPlus, uniCommentRedo, uniCommentUpload, uniCommentAltSearch, uniCommentAltUpload, uniCommentAltMedical, uniCommentMedical, uniCommentAltShare, uniCommentShare, uniCommentShield, uniCommentSearch, uniCommentQuestion]);
 Vue.use(Unicon);
@@ -22,6 +25,7 @@ library.add(faUserSecret);
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+Vue.component('multiselect', Multiselect);
 Vue.config.productionTip = false;
 
 new Vue({

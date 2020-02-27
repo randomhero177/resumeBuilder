@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <div class="col-md-4">
-      <Bio />
+      <header class="heading">
+        <h2 class="heading__title">Details</h2>
+      </header>
       <Main />
       <Details />
     </div>
@@ -14,7 +16,6 @@
 </template>
 
 <script>
-  import Bio from '@/components/Bio.vue'
   import Expirience from '@/components/Expirience.vue'
   import Profile from '@/components/Profile.vue'
   import Main from '@/components/Main.vue'
@@ -29,7 +30,7 @@
       };
     },
     components: {
-      Bio, Expirience, Profile, Main, Details
-    }
+      Expirience, Profile, Main, Details
+    },
   }
 </script>

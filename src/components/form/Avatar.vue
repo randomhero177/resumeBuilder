@@ -1,8 +1,9 @@
 <template>
   <div class="avatar">
+    <div class="form__label">Your ava</div>
     <div v-if="isEmpty">
       <span class="avatar__btn" @click="openFileDialog">
-        Выберите файл
+        Upload picture
       </span>
       <input
           type="file"
@@ -59,6 +60,7 @@
       border-radius 3px
       display block
       text-align center
+      font-size .75rem
     &__img
       width 200px
 </style>

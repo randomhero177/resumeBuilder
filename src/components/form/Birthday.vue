@@ -2,7 +2,8 @@
   <div class="birthday">
     <div class="row">
       <div class="col-md-12">
-        <div style="position:relative;">
+        <div class="form__label">Birthday</div>
+        <div class="form__picker">
           <input type="text"
              @focus="showPicker = true"
              v-model="pickerDate" class="input">
