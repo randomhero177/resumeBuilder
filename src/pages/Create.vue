@@ -9,6 +9,7 @@
     </div>
     <div class="col-md-8">
       <Profile />
+      <Education />
       <Expirience />
     </div>
 
@@ -20,6 +21,7 @@
   import Profile from '@/components/Profile.vue'
   import Main from '@/components/Main.vue'
   import Details from '@/components/Details.vue'
+  import Education from '@/components/Education.vue'
   export default {
     name: "home",
     data() {
@@ -30,7 +32,7 @@
       };
     },
     components: {
-      Expirience, Profile, Main, Details
+      Expirience, Profile, Main, Details, Education,
     },
   }
 </script>

@@ -7,7 +7,6 @@
 </template>
 
 <script>
-  import Bio from '@/components/Bio.vue'
   import Main from '@/components/Main.vue'
   export default {
     name: "Preview",
@@ -19,7 +18,7 @@
       };
     },
     components: {
-      Bio, Main,
+      Main,
     }
   }
 </script>
