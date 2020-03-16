@@ -1,7 +1,6 @@
 <template>
   <div class="languages">
     <div class="form__label">Languages:</div>
-    {{ languages }}
     <div class="row" v-for="(language, index) in languages" :key="language+index">
       <div class="col-md-5">
         <input type="text" class="input" :value="language.name" @input="updateMessage($event, index)">

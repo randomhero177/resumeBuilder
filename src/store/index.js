@@ -4,6 +4,7 @@ Vue.use(Vuex);
 import themes from '@/store/modules/themes';
 import form from '@/store/modules/form';
 import languages from '@/store/modules/languages';
+import skills from '@/store/modules/skills';
 
 const { hostname, port } = window.location;
 
@@ -28,6 +29,7 @@ const store = new Vuex.Store({
         themes,
         form,
         languages,
+        skills,
     },
 });
 
