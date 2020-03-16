@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 import themes from '@/store/modules/themes';
 import form from '@/store/modules/form';
+import languages from '@/store/modules/languages';
 
 const { hostname, port } = window.location;
 
@@ -26,6 +27,7 @@ const store = new Vuex.Store({
     modules: {
         themes,
         form,
+        languages,
     },
 });
 

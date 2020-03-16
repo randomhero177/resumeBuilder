@@ -1,9 +1,10 @@
 <template>
   <div class="languages">
     <div class="form__label">Languages:</div>
-    <div class="row" v-for="(language, index) in languagesList" :key="language+index">
+    {{ languages }}
+    <div class="row" v-for="(language, index) in languages" :key="language+index">
       <div class="col-md-5">
-        <input type="text" class="input" v-model="languagesList[index].name">
+        <input type="text" class="input" :value="language.name" @input="updateMessage($event, index)">
       </div>
       <div class="col-md-6">
         <div class="row">
@@ -11,7 +12,7 @@
             Level
           </div>
           <div class="col">
-            <custom-slider min="10" max="100" step="2" v-model="languagesList[index].level" />
+            <custom-slider min="10" max="100" step="2" :value="language.level" @change="updateLevel($event, index)"/>
           </div>
         </div>
       </div>
@@ -28,21 +29,41 @@
 </template>
 
 <script>
+  import { mapState, mapActions} from 'vuex';
   import CustomSlider from "vue-custom-range-slider";
 
   export default {
     name: "Languages",
-    data: () => ({
-      min: 0,
-      languagesList: [],
-    }),
+    computed: {
+      ...mapState({
+        languages: state => state.languages.languages,
+      }),
+    },
     methods: {
+      ...mapActions({
+        setLanguagesList: 'languages/setLanguagesList',
+        addLanguageToList: 'languages/addLanguageToList',
+        fetchLanguage: 'languages/fetchLanguage',
+        fetchLanguageLevel: 'languages/fetchLanguageLevel',
+      }),
       addNewLanguage() {
         const config = {
           name: 'English',
           level: '50',
         };
-        this.languagesList.push(config);
+        this.addLanguageToList(config);
+      },
+      updateMessage(e, index) {
+        this.fetchLanguage({
+          id: index,
+          name: e.target.value,
+        });
+      },
+      updateLevel(level, index) {
+        this.fetchLanguageLevel({
+          id: index,
+          level: level,
+        });
       },
       removeLanguage(index) {
         this.languagesList.splice(index, 1);
@@ -50,7 +71,7 @@
     },
     components: {
       CustomSlider,
-    }
+    },
   }
 </script>
 
