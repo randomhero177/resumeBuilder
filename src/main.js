@@ -17,6 +17,7 @@ import { uniUserPlus, uniTimesCircle, uniCommentAltShield, uniCommentAltPlus, un
 import "vue-custom-range-slider/dist/vue-custom-range-slider.css";
 import Multiselect from 'vue-multiselect'
 import 'vue-multiselect/dist/vue-multiselect.min.css';
+import Datepicker from 'vuejs-datepicker';
 
 Unicon.add([uniUserPlus, uniTimesCircle, uniCommentAltShield, uniCommentAltPlus, uniCommentPlus, uniCommentRedo, uniCommentUpload, uniCommentAltSearch, uniCommentAltUpload, uniCommentAltMedical, uniCommentMedical, uniCommentAltShare, uniCommentShare, uniCommentShield, uniCommentSearch, uniCommentQuestion]);
 Vue.use(Unicon);
@@ -26,6 +27,7 @@ library.add(faUserSecret);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('multiselect', Multiselect);
+Vue.component('datepicker', Datepicker);
 Vue.config.productionTip = false;
 
 new Vue({
