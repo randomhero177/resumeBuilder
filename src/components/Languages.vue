@@ -1,7 +1,8 @@
 <template>
   <div class="languages">
+    {{ languages }}
     <div class="form__label">Languages:</div>
-    <div class="row" v-for="(language, index) in languages" :key="language+index">
+    <div class="row" v-for="(language, index) in languages" :key="index">
       <div class="col-md-5">
         <input type="text" class="input" :value="language.name" @input="updateMessage($event, index)">
       </div>
@@ -44,6 +45,7 @@
         addLanguageToList: 'languages/addLanguageToList',
         fetchLanguage: 'languages/fetchLanguage',
         fetchLanguageLevel: 'languages/fetchLanguageLevel',
+        removeLanguageFromList: 'languages/removeLanguageFromList',
       }),
       addNewLanguage() {
         const config = {
@@ -65,7 +67,8 @@
         });
       },
       removeLanguage(index) {
-        this.languagesList.splice(index, 1);
+        console.log(index);
+        this.removeLanguageFromList(index);
       },
     },
     components: {

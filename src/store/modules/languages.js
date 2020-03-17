@@ -6,6 +6,9 @@ const actions = {
   addLanguageToList({ commit }, language) {
     commit('addLanguage', language)
   },
+  removeLanguageFromList({ commit }, index) {
+    commit('removeLanguage', index);
+  },
   setLanguagesList({ commit }, list) {
     commit('setLanguages', list);
   },
@@ -24,8 +27,8 @@ const mutations = {
   addLanguage(state, language) {
     state.languages.push(language);
   },
-  removeLanguage(state, language) {
-    state.languages.push(language);
+  removeLanguage(state, index) {
+    state.languages.splice(index, 1);
   },
   updateLanguage(state, language) {
     state.languages[language.id].name = language.name;
