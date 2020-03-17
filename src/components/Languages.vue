@@ -67,7 +67,6 @@
         });
       },
       removeLanguage(index) {
-        console.log(index);
         this.removeLanguageFromList(index);
       },
     },
