@@ -20,6 +20,32 @@
         <input type="text" class="input" v-model="item.degree">
       </div>
       <div class="col-md-6">
+        <div class="row no-gutters justify-content-between">
+          <div class="col-md-5">
+            <div class="form__label">Start date</div>
+            <datepicker placeholder="Select Date"
+              v-model="item.dayStart"
+              :monday-first="true"
+              :format="format"
+              :minimumView="'month'"
+              :maximumView="'year'"
+              :initialView="'year'"
+            />
+          </div>
+          <div class="col-md-5">
+            <div class="form__label">End date</div>
+            <datepicker placeholder="Select Date"
+              v-model="item.dayEnd"
+              :monday-first="true"
+              :format="format"
+              :minimumView="'month'"
+              :maximumView="'year'"
+              :initialView="'year'"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
         <span class="education__icon" v-on:click="removeEducation(index)">
           <unicon name="times-circle" fill="#1867c0" />
         </span>
@@ -37,12 +63,11 @@
     data: () => ({
       educationList: [],
       dayStart: new Date().toISOString().substr(0, 10),
-      showDayStart: false,
-      showDayEnd: false,
       dayEnd: new Date().toISOString().substr(0, 10),
       university: '',
       degree: '',
       fieldOfStudy: '',
+      format: 'yyyy-MM',
     }),
     methods: {
       addEducation() {
