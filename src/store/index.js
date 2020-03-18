@@ -7,6 +7,7 @@ import languages from '@/store/modules/languages';
 import skills from '@/store/modules/skills';
 import education from '@/store/modules/education';
 import experience from '@/store/modules/experience';
+import profile from '@/store/modules/profile';
 
 const { hostname, port } = window.location;
 
@@ -34,6 +35,7 @@ const store = new Vuex.Store({
         skills,
         education,
         experience,
+        profile,
     },
 });
 
