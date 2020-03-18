@@ -10,14 +10,13 @@
     <div class="col-md-8">
       <Profile />
       <Education />
-      <Expirience />
+      <Experience />
     </div>
-
   </div>
 </template>
 
 <script>
-  import Expirience from '@/components/Expirience.vue'
+  import Experience from '@/components/Experience.vue'
   import Profile from '@/components/Profile.vue'
   import Main from '@/components/Main.vue'
   import Details from '@/components/Details.vue'
@@ -32,7 +31,7 @@
       };
     },
     components: {
-      Expirience, Profile, Main, Details, Education,
+      Experience, Profile, Main, Details, Education,
     },
   }
 </script>

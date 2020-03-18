@@ -1,7 +1,8 @@
 <template>
   <div class="expirience">
     <header class="heading">
-      <h2 class="heading__title">Expirience</h2>
+      <h2 class="heading__title">Experience</h2>
+      {{ workList }}
     </header>
     <div class="row">
       <div class="col-md-6">
@@ -44,59 +45,54 @@
         <div class="form__label">Key responsibilities and description:</div>
         <wysiwyg v-model="myHTML" />
       </div>
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="form__label">Key skills for this position:</div>
-
+        <multiselect
+            v-model="skillsList"
+            tag-placeholder="Add this as new skill"
+            placeholder="Search or add a skill"
+            label="name"
+            track-by="code"
+            :options="options"
+            :multiple="true"
+            :taggable="true"
+            @tag="addTag"
+        />
       </div>
-    </div>
-    <div v-if="workList.length">
-      Key skills: native JS, Jquery, TypeScript, Git, Gulp, Less, MVS, .NET (as a stack
-      with backend)
     </div>
     <span v-on:click="addNewPosition" class="add-btn">Add new position</span>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Expirience',
+  import { mapState, mapActions } from 'vuex';
 
+  export default {
+    name: 'Experience',
     data: () => ({
       myHTML: '',
       format: 'yyyy-MM',
+      skillsList: [],
       dayStart: new Date().toISOString().substr(0, 10),
       showDayStart: false,
       showDayEnd: false,
       dayEnd: new Date().toISOString().substr(0, 10),
-      workList: [],
-      colors: ['green', 'purple', 'indigo', 'cyan', 'teal', 'orange'],
+      options: [
+        { name: 'Vue.js', code: 'vu' },
+        { name: 'Javascript', code: 'js' },
+        { name: 'Open Source', code: 'os' }
+      ],
       isCurrentPosition: false,
-      editing: null,
-      index: -1,
-      items: [
-        { header: 'Select an option or create one' },
-        {
-          text: 'Foo',
-          color: 'blue',
-        },
-        {
-          text: 'Bar',
-          color: 'red',
-        },
-      ],
-      nonce: 1,
-      menu: true,
-      model: [
-        {
-          text: 'Foo',
-          color: 'blue',
-        },
-      ],
-      x: 0,
-      search: null,
-      y: 0,
     }),
+    computed: {
+      ...mapState({
+        workList: state => state.experience.experienceList,
+      }),
+    },
     methods: {
+      ...mapActions({
+
+      }),
       addNewPosition() {
         const config = {
           myHTML: '',
@@ -109,46 +105,13 @@
         };
         this.workList.push(config);
       },
-      edit(index, item) {
-        if (!this.editing) {
-          this.editing = item
-          this.index = index
-        } else {
-          this.editing = null
-          this.index = -1
-        }
-      },
-      filter(item, queryText, itemText) {
-        if (item.header) return false
-
-        const hasValue = val => val != null ? val : ''
-
-        const text = hasValue(itemText)
-        const query = hasValue(queryText)
-
-        return text.toString()
-          .toLowerCase()
-          .indexOf(query.toString().toLowerCase()) > -1
-      },
-    },
-    watch: {
-      model (val, prev) {
-        if (val.length === prev.length) return
-
-        this.model = val.map(v => {
-          if (typeof v === 'string') {
-            v = {
-              text: v,
-              color: this.colors[this.nonce - 1],
-            }
-
-            this.items.push(v)
-
-            this.nonce++
-          }
-
-          return v
-        })
+      addTag (newTag) {
+        const tag = {
+          name: newTag,
+          code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+        };
+        this.options.push(tag);
+        this.value.push(tag);
       },
     },
   }

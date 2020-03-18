@@ -1,6 +1,5 @@
 <template>
   <div class="languages">
-    {{ languages }}
     <div class="form__label">Languages:</div>
     <div class="row" v-for="(language, index) in languages" :key="index">
       <div class="col-md-5">

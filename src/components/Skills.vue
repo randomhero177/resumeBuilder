@@ -21,7 +21,6 @@
 
   export default {
     name: 'Skills',
-
     data () {
       return {
         value: [],
