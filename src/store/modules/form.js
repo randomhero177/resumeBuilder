@@ -1,5 +1,3 @@
-
-
 const state = {
   name: '',
   lastName: '',
@@ -16,9 +14,6 @@ const actions = {
   },
   setAvatar({ commit }, avatar) {
     commit('setAvatar', avatar);
-  },
-  setPickerDate({ commit }, pickerDate) {
-    commit('setAvatar', pickerDate);
   },
 };
 

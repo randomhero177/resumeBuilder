@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="form__label">Skills:</div>
       <multiselect
-        v-model="value"
+        v-model="skillsList"
         tag-placeholder="Add this as new skill"
         placeholder="Search or add a skill"
         label="name"
@@ -18,8 +18,9 @@
 </template>
 
 <script>
+
   export default {
-    name: 'Expirience',
+    name: 'Skills',
 
     data () {
       return {
@@ -31,15 +32,25 @@
         ]
       };
     },
+    computed: {
+      skillsList: {
+        get() {
+          return this.$store.state.skills.skills;
+        },
+        set(value) {
+          this.$store.commit('skills/setSkills', value)
+        },
+      },
+    },
     methods: {
       addTag (newTag) {
         const tag = {
           name: newTag,
           code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-        }
-        this.options.push(tag)
-        this.value.push(tag)
-      }
+        };
+        this.options.push(tag);
+        this.value.push(tag);
+      },
     },
   }
 </script>

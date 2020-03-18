@@ -61,6 +61,7 @@
       display block
       text-align center
       font-size .75rem
+      cursor pointer
     &__img
       width 200px
 </style>

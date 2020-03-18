@@ -1,7 +1,6 @@
 <template>
   <div>
     <unicon name="user-plus" fill="royalblue" />
-    <Bio />
     <Main />
   </div>
 </template>

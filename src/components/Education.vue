@@ -9,22 +9,22 @@
     <div class="row" v-for="(item, index) in educationList" :key="index">
       <div class="col-md-6">
         <div class="form__label">University</div>
-        <input type="text" class="input" v-model="item.university">
+        <input type="text" class="input" :value="item.university" @input="updateUniversity($event, index)">
       </div>
       <div class="col-md-6">
         <div class="form__label">Field of study</div>
-        <input type="text" class="input" v-model="item.fieldOfStudy">
+        <input type="text" class="input" :value="item.fieldOfStudy" @input="updateFieldOfStudy($event, index)">
       </div>
       <div class="col-md-6">
         <div class="form__label">Degree</div>
-        <input type="text" class="input" v-model="item.degree">
+        <input type="text" class="input" :value="item.degree" @input="updateDegree($event, index)">
       </div>
       <div class="col-md-6">
         <div class="row no-gutters justify-content-between">
           <div class="col-md-5">
             <div class="form__label">Start date</div>
             <datepicker placeholder="Select Date"
-              v-model="item.dayStart"
+              v-on:selected="updateDayStart($event, index)"
               :monday-first="true"
               :format="format"
               :minimumView="'month'"
@@ -35,7 +35,7 @@
           <div class="col-md-5">
             <div class="form__label">End date</div>
             <datepicker placeholder="Select Date"
-              v-model="item.dayEnd"
+              v-on:selected="updateDayEnd($event, index)"
               :monday-first="true"
               :format="format"
               :minimumView="'month'"
@@ -58,10 +58,11 @@
 </template>
 
 <script>
+  import { mapState, mapActions } from 'vuex';
+
   export default {
     name: 'Education',
     data: () => ({
-      educationList: [],
       dayStart: new Date().toISOString().substr(0, 10),
       dayEnd: new Date().toISOString().substr(0, 10),
       university: '',
@@ -69,21 +70,64 @@
       fieldOfStudy: '',
       format: 'yyyy-MM',
     }),
+    computed: {
+      ...mapState({
+        educationList: state => state.education.educationList
+      }),
+    },
     methods: {
+      ...mapActions({
+        addEducationToList: 'education/addEducationToList',
+        removeEducationFromList: 'education/removeEducationFromList',
+        fetchUniversity: 'education/fetchUniversity',
+        fetchFieldOfStudy: 'education/fetchFieldOfStudy',
+        fetchDegree: 'education/fetchDegree',
+        fetchDayStart: 'education/fetchDayStart',
+        fetchDayEnd: 'education/fetchDayEnd',
+      }),
       addEducation() {
         const config = {
-          showDayStart: false,
-          showDayEnd: false,
           dayStart: new Date().toISOString().substr(0, 10),
           dayEnd: new Date().toISOString().substr(0, 10),
           university: '',
           degree: '',
           fieldOfStudy: '',
         };
-        this.educationList.push(config);
+        this.addEducationToList(config);
       },
       removeEducation(index) {
-        this.educationList.splice(index, 1);
+        this.removeEducationFromList(index);
+      },
+      updateUniversity(e, index) {
+        console.log(index)
+        this.fetchUniversity({
+          id: index,
+          university: e.target.value,
+        });
+      },
+      updateFieldOfStudy(e, index) {
+        this.fetchFieldOfStudy({
+          id: index,
+          fieldOfStudy: e.target.value,
+        });
+      },
+      updateDegree(e, index) {
+        this.fetchDegree({
+          id: index,
+          degree: e.target.value,
+        });
+      },
+      updateDayStart(value, index) {
+        this.fetchDayStart({
+          id: index,
+          dayStart: value,
+        });
+      },
+      updateDayEnd(value, index) {
+        this.fetchDayEnd({
+          id: index,
+          dayEnd: value,
+        });
       },
     },
   }
