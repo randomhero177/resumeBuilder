@@ -5,6 +5,7 @@ import themes from '@/store/modules/themes';
 import form from '@/store/modules/form';
 import languages from '@/store/modules/languages';
 import skills from '@/store/modules/skills';
+import education from '@/store/modules/education';
 
 const { hostname, port } = window.location;
 
@@ -30,6 +31,7 @@ const store = new Vuex.Store({
         form,
         languages,
         skills,
+        education,
     },
 });
 

@@ -41,7 +41,6 @@
     },
     methods: {
       ...mapActions({
-        setLanguagesList: 'languages/setLanguagesList',
         addLanguageToList: 'languages/addLanguageToList',
         fetchLanguage: 'languages/fetchLanguage',
         fetchLanguageLevel: 'languages/fetchLanguageLevel',
