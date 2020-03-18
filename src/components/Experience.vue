@@ -2,22 +2,21 @@
   <div class="expirience">
     <header class="heading">
       <h2 class="heading__title">Experience</h2>
-      {{ workList }}
     </header>
-    <div class="row">
+    <div class="row" v-for="(work, index) in workList" :key="index">
       <div class="col-md-6">
         <div class="form__label">Company</div>
-        <input type="text" class="input">
+        <input type="text" class="input" :value="work.company" @input="updateCompany($event, index)">
       </div>
       <div class="col-md-6">
         <div class="form__label">Position</div>
-        <input type="text" class="input">
+        <input type="text" class="input" :value="work.position" @input="updatePosition($event, index)">
       </div>
       <div class="col-md-6">
         <div class="form__label">Start date</div>
         <div class="form__picker">
           <datepicker placeholder="Select Date"
-            v-model="dayStart"
+            v-on:selected="updateDayStart($event, index)"
             :format="format"
             :minimumView="'month'"
             :maximumView="'year'"
@@ -27,9 +26,9 @@
       </div>
       <div class="col-md-6">
         <div class="form__label">End date</div>
-        <div class="form__picker" v-if="!isCurrentPosition">
+        <div class="form__picker" v-if="!work.isCurrentPosition">
           <datepicker placeholder="Select Date"
-            v-model="dayEnd"
+            v-on:selected="updateDayEnd($event, index)"
             :format="format"
             :minimumView="'month'"
             :maximumView="'year'"
@@ -37,30 +36,32 @@
           />
         </div>
         <div>
-          <input type="checkbox" v-model="isCurrentPosition">
+          <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
           <label>Все еще работаю здесь</label>
         </div>
       </div>
       <div class="col-md-12">
         <div class="form__label">Key responsibilities and description:</div>
-        <wysiwyg v-model="myHTML" />
+        <wysiwyg @change="updateDescription($event, index)" />
       </div>
       <div class="col-md-6">
         <div class="form__label">Key skills for this position:</div>
         <multiselect
-            v-model="skillsList"
-            tag-placeholder="Add this as new skill"
-            placeholder="Search or add a skill"
-            label="name"
-            track-by="code"
-            :options="options"
-            :multiple="true"
-            :taggable="true"
-            @tag="addTag"
+          :value="work.skills"
+          tag-placeholder="Add this as new skill"
+          placeholder="Search or add a skill"
+          label="name"
+          track-by="code"
+          :options="work.skillOptions"
+          :multiple="true"
+          :taggable="true"
+          @input="updateSkills($event, index)"
+          @tag="addTag($event, index)"
         />
       </div>
+      <div class="col"><span v-on:click="removeWork(index)" class="add-btn">remove this position</span></div>
     </div>
-    <span v-on:click="addNewPosition" class="add-btn">Add new position</span>
+    <span v-on:click="addNewWork" class="add-btn">Add new position</span>
   </div>
 </template>
 
@@ -72,16 +73,10 @@
     data: () => ({
       myHTML: '',
       format: 'yyyy-MM',
-      skillsList: [],
       dayStart: new Date().toISOString().substr(0, 10),
       showDayStart: false,
       showDayEnd: false,
       dayEnd: new Date().toISOString().substr(0, 10),
-      options: [
-        { name: 'Vue.js', code: 'vu' },
-        { name: 'Javascript', code: 'js' },
-        { name: 'Open Source', code: 'os' }
-      ],
       isCurrentPosition: false,
     }),
     computed: {
@@ -91,27 +86,87 @@
     },
     methods: {
       ...mapActions({
-
+        addWorkToList: 'experience/addWorkToList',
+        removeWorkFromList: 'experience/removeWorkFromList',
+        fetchCompany: 'experience/fetchCompany',
+        fetchPosition: 'experience/fetchPosition',
+        fetchDayStart: 'experience/fetchDayStart',
+        fetchDayEnd: 'experience/fetchDayEnd',
+        fetchIsCurrentPosition: 'experience/fetchIsCurrentPosition',
+        fetchDescription: 'experience/fetchDescription',
+        fetchSkills: 'experience/fetchSkills',
+        fetchNewTagToSkills: 'experience/fetchNewTagToSkills',
       }),
-      addNewPosition() {
+      addNewWork() {
         const config = {
-          myHTML: '',
+          description: '',
           company: '',
           position: '',
           dayStart: new Date().toISOString().substr(0, 10),
           dayEnd: new Date().toISOString().substr(0, 10),
           isCurrentPosition: false,
-          editing: null,
+          skills: [],
+          skillOptions: [
+            { name: 'Vue.js', code: 'vu' },
+            { name: 'Javascript', code: 'js' },
+            { name: 'Open Source', code: 'os' }
+          ],
         };
-        this.workList.push(config);
+        this.addWorkToList(config);
       },
-      addTag (newTag) {
+      removeWork(index) {
+        this.removeWorkFromList(index);
+      },
+      updateCompany(e, index) {
+        this.fetchCompany({
+          id: index,
+          company: e.target.value,
+        });
+      },
+      updatePosition(e, index) {
+        this.fetchPosition({
+          id: index,
+          position: e.target.value,
+        });
+      },
+      updateDayStart(value, index) {
+        this.fetchDayStart({
+          id: index,
+          dayStart: value,
+        });
+      },
+      updateDayEnd(value, index) {
+        this.fetchDayEnd({
+          id: index,
+          dayStart: value,
+        });
+      },
+      toggleIsCurrentPosition(e, index) {
+        this.fetchIsCurrentPosition({
+          id: index,
+          isCurrentPosition: e.target.checked,
+        })
+      },
+      addTag(newTag, index) {
         const tag = {
           name: newTag,
-          code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+          code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000)),
+          id: index,
         };
-        this.options.push(tag);
-        this.value.push(tag);
+        this.fetchNewTagToSkills(tag);
+      },
+      updateSkills(newTag, index) {
+        const tag = {
+          list: newTag,
+          id: index,
+        };
+        this.fetchSkills(tag);
+      },
+      updateDescription(value, index) {
+        this.fetchDescription({
+          id: index,
+          description: value,
+        });
       },
     },
   }

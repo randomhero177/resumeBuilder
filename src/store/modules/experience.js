@@ -3,20 +3,20 @@ const state = {
 };
 
 const actions = {
-  addEducationToList({ commit }, obj) {
-    commit('addEducation', obj);
+  addWorkToList({ commit }, obj) {
+    commit('addExperience', obj);
   },
-  removeEducationFromList({ commit }, index) {
-    commit('removeEducation', index);
+  removeWorkFromList({ commit }, index) {
+    commit('removeExperience', index);
   },
-  fetchUniversity({ commit }, experience) {
-    commit('updateUniversity', experience);
+  fetchCompany({ commit }, experience) {
+    commit('updateCompany', experience);
   },
-  fetchFieldOfStudy({ commit }, experience) {
-    commit('updateFieldOfStudy', experience);
+  fetchPosition({ commit }, experience) {
+    commit('updatePosition', experience);
   },
-  fetchDegree({ commit }, experience) {
-    commit('updateDegree', experience);
+  fetchIsCurrentPosition({ commit }, experience) {
+    commit('updateIsCurrentPosition', experience);
   },
   fetchDayStart({ commit }, experience) {
     commit('updateDayStart', experience);
@@ -24,23 +24,35 @@ const actions = {
   fetchDayEnd({ commit }, experience) {
     commit('updateDayEnd', experience);
   },
+  fetchDescription({ commit }, experience) {
+    commit('updateDescription', experience);
+  },
+  fetchSkills({ commit }, experience) {
+    commit('updateSkills', experience);
+  },
+  fetchNewTagToSkills({ commit }, experience) {
+    commit('addNewTag', experience);
+  },
 };
 
 const mutations = {
-  addEducation(state, obj) {
+  addExperience(state, obj) {
     state.experienceList.push(obj);
   },
-  removeEducation(state, index) {
+  removeExperience(state, index) {
     state.experienceList.splice(index, 1);
   },
-  updateUniversity(state, experience) {
-    state.experienceList[experience.id].university = experience.university;
+  updateCompany(state, experience) {
+    state.experienceList[experience.id].company = experience.company;
   },
-  updateFieldOfStudy(state, experience) {
-    state.experienceList[experience.id].fieldOfStudy = experience.fieldOfStudy;
+  updatePosition(state, experience) {
+    state.experienceList[experience.id].position = experience.position;
   },
-  updateDegree(state, experience) {
-    state.experienceList[experience.id].degree = experience.degree;
+  updateDescription(state, experience) {
+    state.experienceList[experience.id].description = experience.description;
+  },
+  updateIsCurrentPosition(state, experience) {
+    state.experienceList[experience.id].isCurrentPosition = experience.isCurrentPosition;
   },
   updateDayStart(state, experience) {
     state.experienceList[experience.id].dayStart= experience.dayStart;
@@ -48,6 +60,13 @@ const mutations = {
   updateDayEnd(state, experience) {
     state.experienceList[experience.id].dayEnd= experience.dayEnd;
   },
+  updateSkills(state, experience) {
+    state.experienceList[experience.id].skills = experience.list;
+  },
+  addNewTag(state, experience) {
+    state.experienceList[experience.id].skills.push(experience);
+    state.experienceList[experience.id].skillOptions.push(experience);
+  }
 };
 
 const experience = {
