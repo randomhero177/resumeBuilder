@@ -21,7 +21,7 @@
         </span>
       </div>
     </div>
-    <div v-on:click="addNewLanguage" class="add-btn">
+    <div v-on:click="addNewLanguage" class="btn btn-add">
       Add language
     </div>
   </div>
