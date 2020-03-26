@@ -2,29 +2,24 @@
   <div>
     <header class="heading">
       <h2 class="heading__title">Profile</h2>
+      {{ $store.state.profile.profile }}
     </header>
-    <v-container fluid>
-      <v-textarea
-          clearable
-          label="Text"
-          value="This is clearable text."
-          @keydown="hui"
-      ></v-textarea>
-    </v-container>
+    <wysiwyg v-model="profileInfo" />
   </div>
 </template>
 
 <script>
   export default {
     name: 'Profile',
-
-    data: () => ({
-
-    }),
-    methods: {
-      hui() {
-        console.log('sdfsdf');
-      }
-    }
+    computed: {
+      profileInfo: {
+        get() {
+          return this.$store.state.profile.profile;
+        },
+        set(value) {
+          this.$store.commit('profile/setProfileDesc', value);
+        },
+      },
+    },
   }
 </script>

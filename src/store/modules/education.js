@@ -34,10 +34,7 @@ const mutations = {
     state.educationList.splice(index, 1);
   },
   updateUniversity(state, education) {
-    console.log(state.educationList[education.id]);
-    console.log(education.id);
     state.educationList[education.id].university = education.university;
-    console.log(state.educationList);
   },
   updateFieldOfStudy(state, education) {
     state.educationList[education.id].fieldOfStudy = education.fieldOfStudy;
@@ -46,7 +43,6 @@ const mutations = {
     state.educationList[education.id].degree = education.degree;
   },
   updateDayStart(state, education) {
-    console.log(education);
     state.educationList[education.id].dayStart= education.dayStart;
   },
   updateDayEnd(state, education) {

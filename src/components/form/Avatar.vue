@@ -6,12 +6,12 @@
         Upload picture
       </span>
       <input
-          type="file"
-          @change="encodeImageFileAsURL($event)"
-          id="inputFile"
-          ref="inputFile"
-          accept="image/*"
-          style="display: none"
+        type="file"
+        @change="encodeImageFileAsURL($event)"
+        id="inputFile"
+        ref="inputFile"
+        accept="image/*"
+        style="display: none"
       >
     </div>
     <div v-else style="text-align: center">
@@ -41,13 +41,13 @@
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
-            this.$store.commit('form/setAvatar', { src: reader.result, mime: file.type });
-            this.inputFileList.push(Math.random().toString());
+          this.$store.commit('form/setAvatar', { src: reader.result, mime: file.type });
+          this.inputFileList.push(Math.random().toString());
         };
         reader.readAsDataURL(file);
       },
       openFileDialog() {
-          this.$refs[`inputFile`].click();
+        this.$refs[`inputFile`].click();
       },
     },
   }
