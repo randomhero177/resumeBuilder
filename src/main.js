@@ -6,8 +6,9 @@ import '@/assets/grid.min.css';
 import '@mdi/font/css/materialdesignicons.css';
 import '@/assets/common.styl';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faAllergies, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faFontAwesome, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome } from '@fortawesome/free-brands-svg-icons'
 import wysiwyg from "vue-wysiwyg";
 import "vue-wysiwyg/dist/vueWysiwyg.css";
 import Unicon from 'vue-unicons';
@@ -20,7 +21,7 @@ import Datepicker from 'vuejs-datepicker';
 Unicon.add([uniUserPlus, uniTimesCircle, uniCommentAltShield, uniCommentAltPlus, uniCommentPlus, uniCommentRedo, uniCommentUpload, uniCommentAltSearch, uniCommentAltUpload, uniCommentAltMedical, uniCommentMedical, uniCommentAltShare, uniCommentShare, uniCommentShield, uniCommentSearch, uniCommentQuestion]);
 Vue.use(Unicon);
 Vue.use(wysiwyg, {});
-library.add(faUserSecret);
+library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt);
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
@@ -31,5 +32,5 @@ Vue.config.productionTip = false;
 new Vue({
   store,
   router,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app')

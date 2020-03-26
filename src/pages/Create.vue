@@ -6,6 +6,7 @@
       </header>
       <Main />
       <Details />
+      <Links />
     </div>
     <div class="col-md-8">
       <Profile />
@@ -21,6 +22,8 @@
   import Main from '@/components/Main.vue'
   import Details from '@/components/Details.vue'
   import Education from '@/components/Education.vue'
+  import Links from '@/components/Links.vue'
+
   export default {
     name: "home",
     data() {
@@ -31,7 +34,7 @@
       };
     },
     components: {
-      Experience, Profile, Main, Details, Education,
+      Experience, Profile, Main, Details, Education, Links,
     },
   }
 </script>
