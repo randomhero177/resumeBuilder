@@ -52,7 +52,7 @@
       </div>
     </div>
     <div>
-      <span class="add-btn" v-on:click="addEducation">Add education</span>
+      <span class="btn btn-add" v-on:click="addEducation">Add education</span>
     </div>
   </div>
 </template>

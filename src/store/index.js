@@ -8,6 +8,7 @@ import skills from '@/store/modules/skills';
 import education from '@/store/modules/education';
 import experience from '@/store/modules/experience';
 import profile from '@/store/modules/profile';
+import links from '@/store/modules/links';
 
 const { hostname, port } = window.location;
 
@@ -36,6 +37,7 @@ const store = new Vuex.Store({
         education,
         experience,
         profile,
+        links,
     },
 });
 

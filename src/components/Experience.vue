@@ -59,9 +59,9 @@
           @tag="addTag($event, index)"
         />
       </div>
-      <div class="col"><span v-on:click="removeWork(index)" class="add-btn">remove this position</span></div>
+      <div class="col"><span v-on:click="removeWork(index)" class="btn btn-add">remove this position</span></div>
     </div>
-    <span v-on:click="addNewWork" class="add-btn">Add new position</span>
+    <span v-on:click="addNewWork" class="btn btn-add">Add new position</span>
   </div>
 </template>
 
