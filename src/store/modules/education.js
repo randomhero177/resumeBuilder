@@ -24,6 +24,9 @@ const actions = {
   fetchDayEnd({ commit }, education) {
     commit('updateDayEnd', education);
   },
+  removeSection({ commit }) {
+    commit('removeSection');
+  }
 };
 
 const mutations = {
@@ -48,6 +51,9 @@ const mutations = {
   updateDayEnd(state, education) {
     state.educationList[education.id].dayEnd= education.dayEnd;
   },
+  removeSection(state) {
+    state.educationList = [];
+  }
 };
 
 const education = {

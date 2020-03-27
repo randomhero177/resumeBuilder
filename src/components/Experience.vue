@@ -59,9 +59,27 @@
           @tag="addTag($event, index)"
         />
       </div>
-      <div class="col"><span v-on:click="removeWork(index)" class="btn btn-add">remove this position</span></div>
+      <div class="col expirience__remove-col" v-if="workList.length > 1">
+        <span v-on:click="removeWork(index)" class="btn btn-remove">
+          <font-awesome-icon icon="trash-alt" /> Remove this position
+        </span>
+      </div>
     </div>
-    <span v-on:click="addNewWork" class="btn btn-add">Add new position</span>
+    <div class="row justify-content-between">
+      <div class="col">
+        <span v-on:click="addNewWork" class="btn btn-add">
+          <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
+          Add new position
+        </span>
+      </div>
+      <div class="col text-right" v-if="workList.length">
+        <span class="btn btn-remove" v-on:click="removeSection">
+          <font-awesome-icon icon="trash-alt" /> Remove Expirience section
+        </span>
+      </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -96,6 +114,7 @@
         fetchDescription: 'experience/fetchDescription',
         fetchSkills: 'experience/fetchSkills',
         fetchNewTagToSkills: 'experience/fetchNewTagToSkills',
+        removeSection: 'experience/removeSection',
       }),
       addNewWork() {
         const config = {
@@ -171,3 +190,9 @@
     },
   }
 </script>
+<style lang="stylus" scoped>
+  .expirience__remove-col
+    display flex
+    align-items center
+    justify-content flex-end
+</style>

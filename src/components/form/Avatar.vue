@@ -16,6 +16,12 @@
     </div>
     <div v-else style="text-align: center">
       <img :src="imgUrl.src" alt="" class="avatar__img">
+      <div class="text-right">
+        <span class="btn btn-remove" v-on:click="removeImage">
+          <font-awesome-icon icon="trash-alt" />
+          Remove this image
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +30,6 @@
   export default {
     name: 'Avatar',
     data: () => ({
-      inputFileList: [0],
       showModal: false,
       modalImg: '',
     }),
@@ -42,12 +47,14 @@
         const reader = new FileReader();
         reader.onloadend = () => {
           this.$store.commit('form/setAvatar', { src: reader.result, mime: file.type });
-          this.inputFileList.push(Math.random().toString());
         };
         reader.readAsDataURL(file);
       },
       openFileDialog() {
         this.$refs[`inputFile`].click();
+      },
+      removeImage() {
+        this.$store.commit('form/setAvatar', {});
       },
     },
   }

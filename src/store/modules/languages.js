@@ -15,6 +15,9 @@ const actions = {
   fetchLanguageLevel({ commit }, level) {
     commit('updateLanguageLevel', level);
   },
+  removeSection({ commit }) {
+    commit('removeSection');
+  },
 };
 
 const mutations = {
@@ -30,6 +33,9 @@ const mutations = {
   updateLanguageLevel(state, level) {
     state.languages[level.id].level = level.level;
   },
+  removeSection(state) {
+    state.languages = [];
+  }
 };
 
 const languages = {

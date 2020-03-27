@@ -17,15 +17,27 @@
       </div>
     </div>
     <div class="row justify-content-between">
-      <span class="btn btn-add" v-on:click="addSection" v-if="!linksListLength">Add links section</span>
-      <div
+      <div class="col" v-if="!linksListLength">
+        <span class="btn btn-add" v-on:click="addSection">
+          <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
+          Add links section
+        </span>
+      </div>
+      <div class="col" v-if="linksListLength">
+        <div
           class="btn btn-add"
-          v-if="linksListLength"
           v-on:click="addRandomLink"
-      >Add random link</div>
-      <span class="btn btn-remove" v-on:click="removeSection" v-if="linksListLength"><font-awesome-icon icon="trash-alt" /> Remove Links section</span>
+        >
+          <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
+          Add random link
+        </div>
+      </div>
+      <div class="col text-right" v-if="linksListLength">
+        <span class="btn btn-remove" v-on:click="removeSection">
+          <font-awesome-icon icon="trash-alt" /> Remove Links section
+        </span>
+      </div>
     </div>
-
   </div>
 </template>
 
