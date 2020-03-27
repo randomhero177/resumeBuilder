@@ -33,6 +33,9 @@ const actions = {
   fetchNewTagToSkills({ commit }, experience) {
     commit('addNewTag', experience);
   },
+  removeSection({ commit }) {
+    commit('removeSection');
+  },
 };
 
 const mutations = {
@@ -66,7 +69,10 @@ const mutations = {
   addNewTag(state, experience) {
     state.experienceList[experience.id].skills.push(experience);
     state.experienceList[experience.id].skillOptions.push(experience);
-  }
+  },
+  removeSection(state) {
+    state.experienceList = [];
+  },
 };
 
 const experience = {
