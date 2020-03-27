@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>
-      <Navigation />
-    </div>
+    <Navigation />
     <h1>Preview</h1>
   </div>
 </template>
