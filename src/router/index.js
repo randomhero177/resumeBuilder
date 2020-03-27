@@ -17,8 +17,18 @@ const router = new Router({
         },
         {
             path: '/preview',
-            name: 'home',
+            name: 'Preview',
             component: () => import('@/pages/Preview.vue'),
+        },
+        {
+            path: '/template',
+            name: 'Template',
+            component: () => import('@/pages/Template.vue'),
+        },
+        {
+            path: '/download',
+            name: 'Download',
+            component: () => import('@/pages/Download.vue'),
         },
         {
             path: '*',

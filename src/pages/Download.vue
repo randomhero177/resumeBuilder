@@ -3,14 +3,14 @@
     <div>
       <Navigation />
     </div>
-    <h1>Preview</h1>
+    <h1>Download your resume</h1>
   </div>
 </template>
 
 <script>
   import Navigation from '@/components/Navigation.vue'
   export default {
-    name: "Preview",
+    name: "Download",
     data() {
       return {
           data: () => ({
@@ -20,6 +20,6 @@
     },
     components: {
       Navigation,
-    },
+    }
   }
 </script>
