@@ -1,5 +1,6 @@
 const state = {
   profile: '',
+  position: '',
 };
 
 const actions = {
@@ -11,6 +12,9 @@ const actions = {
 const mutations = {
   setProfileDesc(state, data) {
     state.profile = data;
+  },
+  setPosition(state, data) {
+    state.position = data;
   },
 };
 
