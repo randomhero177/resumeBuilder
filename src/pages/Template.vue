@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div>
-      <Navigation />
-    </div>
+    <Navigation />
     <h1>Choose your template</h1>
+    <div>
+
+    </div>
   </div>
 </template>
 
