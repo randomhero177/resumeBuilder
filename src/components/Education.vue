@@ -6,7 +6,7 @@
     <div class="alert alert_warning" v-if="!educationList.length">
       No information yet
     </div>
-    <div class="row" v-for="(item, index) in educationList" :key="index">
+    <div class="row justify-content-end" v-for="(item, index) in educationList" :key="index">
       <div class="col-md-6">
         <div class="form__label">University</div>
         <input type="text" class="input" :value="item.university" @input="updateUniversity($event, index)">
@@ -45,14 +45,24 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <span class="education__icon" v-on:click="removeEducation(index)">
-          <unicon name="times-circle" fill="#1867c0" />
+      <div class="col-md-6 text-right" v-if="educationList.length > 1">
+        <span class="btn btn-remove education__icon" v-on:click="removeEducation(index)">
+          <font-awesome-icon icon="trash-alt" /> Remove this education
         </span>
       </div>
     </div>
-    <div>
-      <span class="btn btn-add" v-on:click="addEducation">Add education</span>
+    <div class="row justify-content-between">
+      <div class="col">
+        <span class="btn btn-add" v-on:click="addEducation">
+          <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
+          Add education
+        </span>
+      </div>
+      <div class="col text-right" v-if="educationList.length">
+        <span class="btn btn-remove" v-on:click="removeSection">
+          <font-awesome-icon icon="trash-alt" /> Remove Education section
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -84,6 +94,7 @@
         fetchDegree: 'education/fetchDegree',
         fetchDayStart: 'education/fetchDayStart',
         fetchDayEnd: 'education/fetchDayEnd',
+        removeSection: 'education/removeSection',
       }),
       addEducation() {
         const config = {
@@ -132,10 +143,3 @@
     },
   }
 </script>
-
-<style scoped lang="stylus">
-.education__icon
-  display inline-block
-  padding-top 27.5px
-  cursor pointer
-</style>
