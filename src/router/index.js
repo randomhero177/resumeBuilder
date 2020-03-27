@@ -21,7 +21,7 @@ const router = new Router({
             component: () => import('@/pages/Preview.vue'),
         },
         {
-            path: '/template',
+            path: '/choose-template',
             name: 'Template',
             component: () => import('@/pages/Template.vue'),
         },

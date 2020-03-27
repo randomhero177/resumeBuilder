@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
-import themes from '@/store/modules/themes';
+import template from '@/store/modules/template';
 import form from '@/store/modules/form';
 import languages from '@/store/modules/languages';
 import skills from '@/store/modules/skills';
@@ -30,7 +30,7 @@ const store = new Vuex.Store({
     mutations,
     getters,
     modules: {
-        themes,
+        template,
         form,
         languages,
         skills,

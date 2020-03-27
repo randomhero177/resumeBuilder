@@ -1,14 +1,14 @@
 <template>
   <div class="navigation">
-      <router-link to="/template" class="navigation__item">Choose template</router-link> >
+      <router-link to="/choose-template" class="navigation__item">Choose template</router-link> >
       <router-link to="/" class="navigation__item">Fill in the resume</router-link> >
-      <router-link to="/preview" class="navigation__item">Preview</router-link> >
+      <router-link :to="'/preview-' + templateName" class="navigation__item">Preview</router-link> >
       <router-link to="/download" class="navigation__item">Download</router-link>
   </div>
 </template>
 
 <script>
-
+  import { mapState } from 'vuex';
   export default {
     name: 'Navigation',
 
@@ -16,6 +16,9 @@
 
     }),
     computed: {
+      ...mapState({
+        templateName: state => state.template.templateName,
+      }),
       lastName: {
         get() {
           return this.$store.state.form.lastName;
@@ -23,7 +26,7 @@
         set(value) {
           this.$store.commit('form/setUserLastName', value)
         },
-      }
+      },
     },
     components: {
 
