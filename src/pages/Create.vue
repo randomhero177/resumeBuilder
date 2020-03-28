@@ -4,7 +4,7 @@
     <div class="row justify-content-between">
       <div class="col">
         <header class="heading">
-          <div class="heading__title">Tell about yourself! </div>
+          <h1 class="page__title">Tell employer something about yourself! </h1>
         </header>
       </div>
       <div class="col-auto">

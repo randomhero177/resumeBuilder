@@ -1,7 +1,7 @@
 <template>
   <div class="links form__item">
     <div class="form__label">Links:</div>
-    <div v-for="(icon, key, index) in linksList" :key="index" class="links__item">
+    <div v-for="(icon, key, index) in linksList" :key="index" class="form__elem">
       <div class="row">
         <div class="col-2">
           <span class="links__icon" :title="iconsConfig[key].title" v-if="iconsConfig[key]">

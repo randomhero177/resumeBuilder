@@ -1,7 +1,7 @@
 <template>
   <div class="languages  form__item">
     <div class="form__label">Languages:</div>
-    <div class="row align-items-center justify-content-between" v-for="(language, index) in languages" :key="index">
+    <div class="row align-items-center justify-content-between form__elem" v-for="(language, index) in languages" :key="index">
       <div class="col-md-5">
         <input type="text" class="input" :value="language.name" @input="updateMessage($event, index)">
       </div>
