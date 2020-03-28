@@ -1,6 +1,6 @@
 <template>
   <div class="preview__links" v-if="skills.length">
-    <h5 class="preview__subtitle">
+    <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  Skills
     </h5>
     <div v-for="(item, i) in skills" :key="i">

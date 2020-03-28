@@ -33,6 +33,9 @@ const actions = {
   fetchNewTagToSkills({ commit }, experience) {
     commit('addNewTag', experience);
   },
+  fetchCity({ commit }, experience) {
+    commit('updateCity', experience);
+  },
   removeSection({ commit }) {
     commit('removeSection');
   },
@@ -65,6 +68,9 @@ const mutations = {
   },
   updateSkills(state, experience) {
     state.experienceList[experience.id].skills = experience.list;
+  },
+  updateCity(state, experience) {
+    state.experienceList[experience.id].city = experience.city;
   },
   addNewTag(state, experience) {
     state.experienceList[experience.id].skills.push(experience);

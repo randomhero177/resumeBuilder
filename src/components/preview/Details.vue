@@ -1,6 +1,6 @@
 <template>
   <div class="preview__profile" v-if="email.length || typeof birthday !== 'string'">
-    <h5 class="preview__subtitle">
+    <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="info-circle" /></span>  Details
     </h5>
     <div v-if="email.length">
