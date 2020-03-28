@@ -3,6 +3,9 @@
     <header class="heading">
       <h2 class="heading__title">Experience</h2>
     </header>
+    <div class="alert alert_warning" v-if="!workList.length">
+      No information yet
+    </div>
     <div class="row" v-for="(work, index) in workList" :key="index">
       <div class="col-md-6">
         <div class="form__label">Company</div>
