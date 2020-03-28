@@ -1,10 +1,10 @@
 <template>
   <div class="preview__links" v-if="Object.keys(linksList).length">
-    <h5 class="preview__subtitle">
+    <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="link" /></span>  Links
     </h5>
     <div class="links" v-for="(link, key, i) in linksList" :key="i">
-      <router-link :to="link" class="preview__link">{{ linksListConfig.hasOwnProperty(key) ? key: link }}</router-link>
+      <a :href="link" target="_blank" class="preview__link" v-if="link.length">{{ linksListConfig.hasOwnProperty(key) ? key: link }}</a>
     </div>
   </div>
 </template>
