@@ -19,6 +19,7 @@
             <div class="form__picker">
               <datepicker placeholder="Select Date"
                 v-on:selected="updateDayStart($event, index)"
+                :value="work.dayStart"
                 :format="format"
                 :minimumView="'month'"
                 :maximumView="'year'"
@@ -31,6 +32,7 @@
             <div class="form__picker" v-if="!work.isCurrentPosition">
               <datepicker placeholder="Select Date"
                 v-on:selected="updateDayEnd($event, index)"
+                :value="work.dayEnd"
                 :format="format"
                 :minimumView="'month'"
                 :maximumView="'year'"
@@ -50,7 +52,7 @@
       </div>
       <div class="col-md-12">
         <div class="form__label">Key responsibilities and description:</div>
-        <wysiwyg @change="updateDescription($event, index)" />
+        <wysiwyg @change="updateDescription($event, index)" v-model="work.description"/>
       </div>
       <div class="col-md-6">
         <div class="form__label">Key skills for this position:</div>
@@ -159,7 +161,7 @@
       updateDayEnd(value, index) {
         this.fetchDayEnd({
           id: index,
-          dayStart: value,
+          dayEnd: value,
         });
       },
       updateCity(e, index) {

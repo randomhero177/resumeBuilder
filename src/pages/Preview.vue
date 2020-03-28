@@ -6,11 +6,11 @@
     <div class="preview__section">
       <Header />
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
           <Profile />
           <Experience />
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <Details />
           <Links />
           <Skills />

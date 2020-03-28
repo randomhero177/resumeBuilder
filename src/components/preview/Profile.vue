@@ -1,5 +1,5 @@
 <template>
-  <div class="preview__profile" v-if="profile.length">
+  <div class="preview__item preview-profile" v-if="profile.length">
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="id-badge" /></span>  Profile</h5>
     <div v-html="profile"></div>
