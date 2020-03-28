@@ -1,8 +1,11 @@
 <template>
-  <div class="expirience">
+  <div class="expirience form__item">
     <header class="heading">
       <h2 class="heading__title">Experience</h2>
     </header>
+    <div class="alert alert_warning" v-if="!workList.length">
+      No information yet
+    </div>
     <div class="row" v-for="(work, index) in workList" :key="index">
       <div class="col-md-6">
         <div class="form__label">Company</div>
@@ -13,36 +16,46 @@
         <input type="text" class="input" :value="work.position" @input="updatePosition($event, index)">
       </div>
       <div class="col-md-6">
-        <div class="form__label">Start date</div>
-        <div class="form__picker">
-          <datepicker placeholder="Select Date"
-            v-on:selected="updateDayStart($event, index)"
-            :format="format"
-            :minimumView="'month'"
-            :maximumView="'year'"
-            :initialView="'year'"
-          />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form__label">Start date</div>
+            <div class="form__picker">
+              <datepicker placeholder="Select Date"
+                v-on:selected="updateDayStart($event, index)"
+                :value="work.dayStart"
+                :format="format"
+                :minimumView="'month'"
+                :maximumView="'year'"
+                :initialView="'year'"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form__label">End date</div>
+            <div class="form__picker" v-if="!work.isCurrentPosition">
+              <datepicker placeholder="Select Date"
+                v-on:selected="updateDayEnd($event, index)"
+                :value="work.dayEnd"
+                :format="format"
+                :minimumView="'month'"
+                :maximumView="'year'"
+                :initialView="'year'"
+              />
+            </div>
+            <div>
+              <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
+              <label>Все еще работаю здесь</label>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form__label">End date</div>
-        <div class="form__picker" v-if="!work.isCurrentPosition">
-          <datepicker placeholder="Select Date"
-            v-on:selected="updateDayEnd($event, index)"
-            :format="format"
-            :minimumView="'month'"
-            :maximumView="'year'"
-            :initialView="'year'"
-          />
-        </div>
-        <div>
-          <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
-          <label>Все еще работаю здесь</label>
-        </div>
+        <div class="form__label">City</div>
+        <input type="text" class="input" @input="updateCity($event, index)" :value="work.city">
       </div>
       <div class="col-md-12">
         <div class="form__label">Key responsibilities and description:</div>
-        <wysiwyg @change="updateDescription($event, index)" />
+        <wysiwyg @change="updateDescription($event, index)" value="work.description"/>
       </div>
       <div class="col-md-6">
         <div class="form__label">Key skills for this position:</div>
@@ -87,13 +100,7 @@
   export default {
     name: 'Experience',
     data: () => ({
-      myHTML: '',
       format: 'yyyy-MM',
-      dayStart: new Date().toISOString().substr(0, 10),
-      showDayStart: false,
-      showDayEnd: false,
-      dayEnd: new Date().toISOString().substr(0, 10),
-      isCurrentPosition: false,
     }),
     computed: {
       ...mapState({
@@ -112,6 +119,7 @@
         fetchDescription: 'experience/fetchDescription',
         fetchSkills: 'experience/fetchSkills',
         fetchNewTagToSkills: 'experience/fetchNewTagToSkills',
+        fetchCity: 'experience/fetchCity',
         removeSection: 'experience/removeSection',
       }),
       addNewWork() {
@@ -123,6 +131,7 @@
           dayEnd: new Date().toISOString().substr(0, 10),
           isCurrentPosition: false,
           skills: [],
+          city: '',
           skillOptions: [
             { name: 'Vue.js', code: 'vu' },
             { name: 'Javascript', code: 'js' },
@@ -155,7 +164,13 @@
       updateDayEnd(value, index) {
         this.fetchDayEnd({
           id: index,
-          dayStart: value,
+          dayEnd: value,
+        });
+      },
+      updateCity(e, index) {
+        this.fetchCity({
+          id: index,
+          city: e.target.value,
         });
       },
       toggleIsCurrentPosition(e, index) {

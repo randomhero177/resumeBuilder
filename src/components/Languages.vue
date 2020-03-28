@@ -1,5 +1,5 @@
 <template>
-  <div class="languages">
+  <div class="languages  form__item">
     <div class="form__label">Languages:</div>
     <div class="row align-items-center justify-content-between" v-for="(language, index) in languages" :key="index">
       <div class="col-md-5">
@@ -41,7 +41,6 @@
 
 <script>
   import { mapState, mapActions} from 'vuex';
-  import CustomSlider from "vue-custom-range-slider";
 
   export default {
     name: "Languages",
@@ -82,7 +81,7 @@
       },
     },
     components: {
-      CustomSlider,
+
     },
   }
 </script>

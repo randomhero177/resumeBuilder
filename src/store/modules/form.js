@@ -2,7 +2,7 @@ const state = {
   name: '',
   lastName: '',
   avatar: {},
-  pickerDate: new Date().toISOString().substr(0, 10),
+  birthday: '',
 };
 
 const actions = {
@@ -27,8 +27,8 @@ const mutations = {
   setAvatar(state, avatar) {
     state.avatar = avatar;
   },
-  setPickerDate(state, pickerDate) {
-    state.pickerDate = pickerDate;
+  setBirthday(state, birthday) {
+    state.birthday = birthday;
   },
 };
 
