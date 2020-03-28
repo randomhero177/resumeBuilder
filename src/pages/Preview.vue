@@ -2,7 +2,7 @@
   <div class="preview">
     <Navigation />
     <h1>Preview</h1>
-    <div class="preview__descr">Section bellow this page will be printed. Go to <router-link to="/download">Download page</router-link></div>
+    <div class="preview__descr">Section bellow this page will be printed. Everything seems right? Go to <router-link to="/download">Download page</router-link></div>
     <div class="preview__section">
       <Header />
       <div class="row">
@@ -23,7 +23,6 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
   import Navigation from '@/components/Navigation.vue';
   import Header from '@/components/preview/Header.vue';
   import Profile from '@/components/preview/Profile.vue';
@@ -41,11 +40,6 @@
 
           }),
       };
-    },
-    computed: {
-      ...mapState({
-
-      }),
     },
     components: {
       Navigation, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
