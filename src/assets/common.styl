@@ -17,6 +17,38 @@ body
   display block
   width 100%
 
+.input
+  &-checkbox
+    position relative
+    &__checked
+      display none
+      position absolute
+      left 2px
+      z-index 1
+      bottom 3px
+      font-size 14px
+    & input[type="checkbox"]
+      opacity 0
+      width 15px
+      height 15px
+      position relative
+      z-index 3
+      cursor pointer
+      margin-right 5px
+      &:checked ~ .input-checkbox__checked
+        display block
+    &:before
+      content ""
+      background #fff
+      position absolute
+      display block
+      width 15px
+      height 15px
+      border 1px solid #999
+      border-radius 3px
+      z-index 0
+      bottom 6px
+
 .heading__title
   margin-bottom 1.25rem
   font-size 1.25rem
