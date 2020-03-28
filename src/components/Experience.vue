@@ -7,15 +7,15 @@
       No information yet
     </div>
     <div class="row" v-for="(work, index) in workList" :key="index">
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="form__label">Company</div>
         <input type="text" class="input" :value="work.company" @input="updateCompany($event, index)">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="form__label">Position</div>
         <input type="text" class="input" :value="work.position" @input="updatePosition($event, index)">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="row">
           <div class="col-md-6">
             <div class="form__label">Start date</div>
@@ -58,11 +58,11 @@
         <div class="form__label">City</div>
         <input type="text" class="input" @input="updateCity($event, index)" :value="work.city">
       </div>
-      <div class="col-md-12">
-        <div class="form__label">Key responsibilities and description:</div>
+      <div class="col-md-12 form__elem">
+        <div class="form__label">Job description:</div>
         <wysiwyg @change="updateDescription($event, index)" value="work.description"/>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="form__label">Key skills for this position:</div>
         <multiselect
           :value="work.skills"

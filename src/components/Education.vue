@@ -7,19 +7,19 @@
       No information yet
     </div>
     <div class="row justify-content-end" v-for="(item, index) in educationList" :key="index">
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="form__label">University</div>
         <input type="text" class="input" :value="item.university" @input="updateUniversity($event, index)">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="form__label">Field of study</div>
         <input type="text" class="input" :value="item.fieldOfStudy" @input="updateFieldOfStudy($event, index)">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="form__label">Degree</div>
         <input type="text" class="input" :value="item.degree" @input="updateDegree($event, index)">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 form__elem">
         <div class="row no-gutters justify-content-between">
           <div class="col-md-5">
             <div class="form__label">Start date</div>

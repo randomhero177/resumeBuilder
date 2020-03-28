@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-expirience" v-if="experienceList.length">
+  <div class="preview-expirience form__item" v-if="experienceList.length">
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="briefcase" /></span> Experience
     </h5>

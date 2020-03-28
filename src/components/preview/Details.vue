@@ -1,5 +1,5 @@
 <template>
-  <div class="preview__profile" v-if="email.length || typeof birthday !== 'string'">
+  <div class="preview__profile form__item" v-if="email.length || typeof birthday !== 'string'">
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="info-circle" /></span>  Details
     </h5>

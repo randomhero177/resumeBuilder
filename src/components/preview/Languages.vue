@@ -3,7 +3,7 @@
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  Languages
     </h5>
-    <div class="row" v-for="(item, i) in languages" :key="i">
+    <div class="row form__elem" v-for="(item, i) in languages" :key="i">
       <div class="col">
         {{ item.name }}
       </div>

@@ -1,8 +1,11 @@
 <template>
   <div class="avatar form__item">
-    <div class="form__label">Your ava</div>
+    <div class="form__label">Your picture</div>
     <div v-if="isEmpty">
-      <span class="avatar__btn" @click="openFileDialog">
+      <span class="btn btn-add" @click="openFileDialog">
+        <span class="btn-add__icon">
+          <font-awesome-icon icon="plus-circle" />
+        </span>
         Upload picture
       </span>
       <input
@@ -15,7 +18,7 @@
       >
     </div>
     <div v-else style="text-align: center">
-      <img :src="imgUrl.src" alt="" class="avatar__img">
+      <img :src="imgUrl.src" alt="" class="avatar__img form__elem">
       <div class="text-right">
         <span class="btn btn-remove" v-on:click="removeImage">
           <font-awesome-icon icon="trash-alt" />
