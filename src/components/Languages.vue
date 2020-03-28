@@ -41,7 +41,6 @@
 
 <script>
   import { mapState, mapActions} from 'vuex';
-  import CustomSlider from "vue-custom-range-slider";
 
   export default {
     name: "Languages",
@@ -82,7 +81,7 @@
       },
     },
     components: {
-      CustomSlider,
+
     },
   }
 </script>

@@ -5,7 +5,7 @@
         <div class="form__label">Birthday</div>
         <div class="form__picker">
           <datepicker placeholder="Select Date"
-            v-model="pickerDate"
+            v-model="birthday"
             :monday-first="true"
             :format="format"
           />
@@ -24,12 +24,12 @@
       format: 'yyyy-MM-dd',
     }),
     computed: {
-      pickerDate: {
+      birthday: {
         get() {
-          return this.$store.state.form.pickerDate;
+          return this.$store.state.form.birthday;
         },
         set(value) {
-          this.$store.commit('form/setPickerDate', value)
+          this.$store.commit('form/setBirthday', value)
         },
       },
     },

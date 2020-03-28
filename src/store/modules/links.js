@@ -54,7 +54,7 @@ const mutations = {
   },
   setNewLink(state) {
     const key = Object.keys(state.linksList).length;
-    Vue.set(state.linksList, `newProp${key}`, 'my link');
+    Vue.set(state.linksList, `mySite${key}`, 'my link');
   },
   setLinksList(state) {
     state.linksList = {...state.linksList, ...state.linksListConfig};
