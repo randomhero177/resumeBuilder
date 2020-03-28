@@ -43,8 +43,13 @@
               />
             </div>
             <div>
-              <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
-              <label>Все еще работаю здесь</label>
+              <div class="input-checkbox">
+                <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
+                <label>Current position</label>
+                <span class="input-checkbox__checked">
+                  <font-awesome-icon icon="check" />
+                </span>
+              </div>
             </div>
           </div>
         </div>
