@@ -6,7 +6,7 @@ import '@/assets/grid.min.css';
 import '@/assets/common.styl';
 import '@/plugins/moment/plugin';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserSecret, faAllergies, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faAllergies, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faFontAwesome, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome } from '@fortawesome/free-brands-svg-icons'
 import wysiwyg from 'vue-wysiwyg';
@@ -19,7 +19,7 @@ import Datepicker from 'vuejs-datepicker';
 
 Vue.use(wysiwyg, {});
 
-library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase);
+library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap);
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

@@ -25,6 +25,7 @@
             <div class="form__label">Start date</div>
             <datepicker placeholder="Select Date"
               v-on:selected="updateDayStart($event, index)"
+              :value="item.dayStart"
               :monday-first="true"
               :format="format"
               :minimumView="'month'"
@@ -36,6 +37,7 @@
             <div class="form__label">End date</div>
             <datepicker placeholder="Select Date"
               v-on:selected="updateDayEnd($event, index)"
+              :value="item.dayEnd"
               :monday-first="true"
               :format="format"
               :minimumView="'month'"

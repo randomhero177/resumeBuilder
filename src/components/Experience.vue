@@ -52,7 +52,7 @@
       </div>
       <div class="col-md-12">
         <div class="form__label">Key responsibilities and description:</div>
-        <wysiwyg @change="updateDescription($event, index)" v-model="work.description"/>
+        <wysiwyg @change="updateDescription($event, index)" value="work.description"/>
       </div>
       <div class="col-md-6">
         <div class="form__label">Key skills for this position:</div>

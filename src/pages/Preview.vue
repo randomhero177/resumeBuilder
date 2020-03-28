@@ -9,6 +9,7 @@
         <div class="col-md-8">
           <Profile />
           <Experience />
+          <Education />
         </div>
         <div class="col-md-4">
           <Details />
@@ -31,6 +32,7 @@
   import Skills from '@/components/preview/Skills.vue';
   import Languages from '@/components/preview/Languages.vue';
   import Experience from '@/components/preview/Experience.vue';
+  import Education from '@/components/preview/Education.vue';
   export default {
     name: "Preview",
     data() {
@@ -46,7 +48,7 @@
       }),
     },
     components: {
-      Navigation, Header, Profile, Details, Links, Skills, Languages, Experience,
+      Navigation, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
     },
   }
 </script>
