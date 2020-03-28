@@ -1,5 +1,5 @@
 <template>
-  <div class="avatar">
+  <div class="avatar form__item">
     <div class="form__label">Your ava</div>
     <div v-if="isEmpty">
       <span class="avatar__btn" @click="openFileDialog">

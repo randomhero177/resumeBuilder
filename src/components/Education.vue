@@ -1,5 +1,5 @@
 <template>
-  <div class="education">
+  <div class="education form__item">
     <header class="heading">
       <h2 class="heading__title">Education</h2>
     </header>

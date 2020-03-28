@@ -1,5 +1,5 @@
 <template>
-  <div class="links">
+  <div class="links form__item">
     <div class="form__label">Links:</div>
     <div v-for="(icon, key, index) in linksList" :key="index" class="links__item">
       <div class="row">

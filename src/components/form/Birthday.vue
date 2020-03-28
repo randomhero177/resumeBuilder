@@ -1,5 +1,5 @@
 <template>
-  <div class="birthday">
+  <div class="birthday form__item">
     <div class="row">
       <div class="col-md-12">
         <div class="form__label">Birthday</div>
@@ -16,8 +16,6 @@
 </template>
 
 <script>
-
-
   export default {
     name: 'Birthday',
     data: () => ({

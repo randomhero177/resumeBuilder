@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form__item">
     <header class="heading">
       <h2 class="heading__title">Profile</h2>
     </header>
@@ -9,6 +9,7 @@
         <input type="text" class="input" v-model="position">
       </div>
     </div>
+    <div class="form__label">Info</div>
     <wysiwyg v-model="profileInfo" />
   </div>
 </template>

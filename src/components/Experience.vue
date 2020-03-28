@@ -1,5 +1,5 @@
 <template>
-  <div class="expirience">
+  <div class="expirience form__item">
     <header class="heading">
       <h2 class="heading__title">Experience</h2>
     </header>

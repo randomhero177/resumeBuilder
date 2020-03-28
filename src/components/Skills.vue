@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row form__item">
     <div class="col-md-12">
       <div class="form__label">Skills:</div>
       <multiselect
