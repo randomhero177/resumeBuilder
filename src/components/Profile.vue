@@ -9,7 +9,7 @@
         <input type="text" class="input" v-model="position">
       </div>
     </div>
-    <div class="form__label">Info</div>
+    <div class="form__label">Summary</div>
     <wysiwyg v-model="profileInfo" />
   </div>
 </template>
