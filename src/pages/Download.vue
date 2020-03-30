@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div ref="hideWhenPrint">
+      <Navigation />
+      <div class="heading">
+        <h1 class="heading__title">Download your resume</h1>
+      </div>
+      <button class="btn btn-download" v-on:click="print">Download PDF</button>
+    </div>
     <Header />
     <div class="row">
       <div class="col-md-8">
@@ -18,6 +25,7 @@
 </template>
 
 <script>
+  import Navigation from '@/components/Navigation.vue';
   import Header from '@/components/preview/Header.vue';
   import Profile from '@/components/preview/Profile.vue';
   import Details from '@/components/preview/Details.vue';
@@ -38,14 +46,17 @@
     methods: {
       print () {
         // Pass the element id here
-        this.$htmlToPaper('printMe');
+        //this.$htmlToPaper('printMe');
+
+        this.$refs['hideWhenPrint'].style.display = 'none';
+        window.print();
       }
     },
     mounted() {
-      window.print();
+
     },
     components: {
-      Header, Profile, Details, Links, Skills, Languages, Experience, Education,
+      Navigation, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
     }
   }
 </script>
