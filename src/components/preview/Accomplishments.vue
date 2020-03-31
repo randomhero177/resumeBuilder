@@ -4,7 +4,7 @@
       <span class="preview__icon"><font-awesome-icon icon="info-circle" /></span>  Accomplishments
     </h5>
     <div>
-      <span class="preview__value">{{ accomplishments }}</span>
+      <div class="preview__value" v-html="accomplishments"></div>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="preview">
     <div ref="hideWhenPrint" class="form__item">
       <Navigation />
-      <h1 class="page__title">Functional Template Preview</h1>
+      <h1 class="page__title">Template Preview</h1>
       <div class="form__item">
         <ChangePreview />
       </div>

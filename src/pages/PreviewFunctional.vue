@@ -2,7 +2,7 @@
   <div class="preview preview-functional">
     <div ref="hideWhenPrint" class="form__item">
       <Navigation />
-      <h1 class="page__title">Preview Functional</h1>
+      <h1 class="page__title">Functional template preview</h1>
       <div class="form__item">
         <ChangePreview />
       </div>
@@ -21,12 +21,9 @@
             </div>
             <div class="preview-functional__separate form__item"></div>
             <div class="text-right">
-              <Education />
-              <Experience />
               <Links />
             </div>
             <Languages />
-            <div class="preview-functional__separate form__item"></div>
             <div class="text-right">
               <Accomplishments />
             </div>
@@ -41,6 +38,8 @@
           </div>
 
           <Skills title="RELEVANT SKILLS"/>
+          <Education />
+          <Experience />
         </div>
       </div>
     </div>
