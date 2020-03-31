@@ -1,10 +1,13 @@
 <template>
   <div class="preview preview-functional">
-    <div ref="hideWhenPrint">
+    <div ref="hideWhenPrint" class="form__item">
       <Navigation />
-      <h1>Preview Functional</h1>
-      <ChangePreview />
-      <div class="preview__descr">Section bellow this page will be printed. Everything seems right? <br><button class="btn button-preview" v-on:click="print">Download PDF</button></div>
+      <h1 class="page__title">Preview Functional</h1>
+      <div class="form__item">
+        <ChangePreview />
+      </div>
+      <div class="preview__descr form__elem">Section bellow this page will be printed. Everything seems right? </div>
+      <div><button class="btn button-preview" v-on:click="print">Download PDF</button></div>
     </div>
     <div class="preview__section">
       <div class="row">
