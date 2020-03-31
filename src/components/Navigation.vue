@@ -40,12 +40,14 @@
     margin-bottom 30px
     color #fff
     &__item
-      margin 0 15px
+      margin 0 10px
       color #fff
       padding-bottom 2.5px
       &_active
         font-weight bold
         border-bottom 1px solid #fff
+        background rgba(149, 191, 230, 0.25)
+        padding 5px 15px 2.5px 15px
       &:hover, &:active, &:focus
         text-decoration none
         border none
