@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-3" v-for="templ in templateList" :key="templ">
         <div class="template__item">
-          <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999;">
+          <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px;">
           <div class="template__choose">
             <router-link to="/" class="template__link" v-on:click.native="setTemplateName(templ)">Use this template</router-link>
           </div>

@@ -3,7 +3,7 @@
     <header class="heading">
       <h2 class="heading__title">Profile</h2>
     </header>
-    <div class="row">
+    <div class="row form__item">
       <div class="col-6">
         <div class="form__label">Position</div>
         <input type="text" class="input" v-model="position">

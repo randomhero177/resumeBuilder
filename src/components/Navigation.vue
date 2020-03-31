@@ -36,7 +36,7 @@
 
 <style scoped lang="stylus">
   .navigation
-    background #00bcd4
+    background #2e74b5
     padding 15px
     margin-bottom 30px
     color #fff
