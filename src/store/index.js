@@ -10,6 +10,7 @@ import experience from '@/store/modules/experience';
 import profile from '@/store/modules/profile';
 import links from '@/store/modules/links';
 import email from '@/store/modules/email';
+import phone from '@/store/modules/phone';
 
 const { hostname, port } = window.location;
 
@@ -40,6 +41,7 @@ const store = new Vuex.Store({
         profile,
         links,
         email,
+        phone,
     },
 });
 
