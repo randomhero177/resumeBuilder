@@ -31,11 +31,6 @@ const router = new Router({
             component: () => import('@/pages/Template.vue'),
         },
         {
-            path: '/download',
-            name: 'Download',
-            component: () => import('@/pages/Download.vue'),
-        },
-        {
             path: '*',
             name: 'error-404',
             meta: {

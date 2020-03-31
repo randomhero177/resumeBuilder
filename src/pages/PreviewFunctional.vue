@@ -1,9 +1,11 @@
 <template>
   <div class="preview preview-functional">
-    <Navigation />
-    <h1>Preview Functional</h1>
-    <ChangePreview />
-    <div class="preview__descr">Section bellow this page will be printed. Everything seems right? Go to <router-link to="/download">Download page</router-link></div>
+    <div ref="hideWhenPrint">
+      <Navigation />
+      <h1>Preview Functional</h1>
+      <ChangePreview />
+      <div class="preview__descr">Section bellow this page will be printed. Everything seems right? <br><button class="btn button-preview" v-on:click="print">Download PDF</button></div>
+    </div>
     <div class="preview__section">
       <div class="row">
         <div class="col-md-4">
@@ -69,6 +71,15 @@
         name: state => state.form.name,
         lastName: state => state.form.lastName,
       }),
+    },
+    methods: {
+      print() {
+        this.$refs['hideWhenPrint'].style.display = 'none';
+        window.onafterprint = () => {
+          this.$refs['hideWhenPrint'].style.display = 'block';
+        }
+        window.print();
+      },
     },
     components: {
       Navigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, ChangePreview,
