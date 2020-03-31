@@ -6,11 +6,11 @@
       We're working in progress. So far there is an only one template available
     </div>
     <div class="row">
-      <div class="col-3">
+      <div class="col-3" v-for="templ in templateList" :key="templ">
         <div class="template__item">
-          <img src="@/assets/img/template1.png" alt="template" style="border-top: 2px solid #999;">
+          <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px;">
           <div class="template__choose">
-            <router-link to="/" class="template__link" v-on:click.native="setTemplateName('template')">Use this template</router-link>
+            <router-link to="/" class="template__link" v-on:click.native="setTemplateName(templ)">Use this template</router-link>
           </div>
         </div>
       </div>
@@ -33,12 +33,14 @@
     computed: {
       ...mapState({
         templateName: state => state.template.templateName,
+        templateList: state => state.template.templateList,
       }),
+
     },
     methods: {
       ...mapActions({
         setTemplateName: 'template/setTemplateName',
-      })
+      }),
     },
     components: {
       Navigation,

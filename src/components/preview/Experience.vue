@@ -1,7 +1,7 @@
 <template>
   <div class="preview-expirience form__item" v-if="experienceList.length">
     <h5 class="preview__title">
-      <span class="preview__icon"><font-awesome-icon icon="briefcase" /></span> Experience
+      <span class="preview__icon"><font-awesome-icon icon="briefcase" /></span> Work history
     </h5>
     <div class="preview-expirience__item" v-for="(item, i) in experienceList" :key="i">
       <div class="preview__subtitle">

@@ -24,6 +24,7 @@
         <Profile />
         <Education />
         <Experience />
+        <Accomplishments />
       </div>
     </div>
   </div>
@@ -38,6 +39,7 @@
   import Education from '@/components/Education.vue';
   import Links from '@/components/Links.vue';
   import Navigation from '@/components/Navigation.vue';
+  import Accomplishments from '@/components/create/Accomplishments.vue';
 
   export default {
     name: "home",
@@ -54,7 +56,7 @@
       }),
     },
     components: {
-      Experience, Profile, Main, Details, Education, Links, Navigation,
+      Experience, Profile, Main, Details, Education, Links, Navigation, Accomplishments,
     },
   }
 </script>

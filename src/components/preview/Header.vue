@@ -3,7 +3,7 @@
     <div class="row align-items-center">
       <div class="col-md-auto">
         <div class="preview-header__ava-wrap">
-          <img :src="avatar.src" alt="" class="preview-header__ava">
+          <Avatar />
         </div>
       </div>
       <div class="col-8">
@@ -18,7 +18,7 @@
 
 <script>
 import { mapState } from 'vuex';
-
+import Avatar from '@/components/preview/Avatar.vue';
   export default {
     name: 'Header',
     computed: {
@@ -31,7 +31,7 @@ import { mapState } from 'vuex';
       }),
     },
     components: {
-
+      Avatar,
     },
   }
 </script>

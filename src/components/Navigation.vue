@@ -2,8 +2,7 @@
   <div class="navigation">
       <router-link to="/choose-template" class="navigation__item" exact-active-class="navigation__item_active">Choose template</router-link> >
       <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active">Fill in the resume</router-link> >
-      <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">Preview</router-link> >
-      <router-link to="/download" class="navigation__item" exact-active-class="navigation__item_active">Download</router-link>
+      <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">Preview</router-link>
   </div>
 </template>
 
@@ -36,7 +35,7 @@
 
 <style scoped lang="stylus">
   .navigation
-    background #00bcd4
+    background #2e74b5
     padding 15px
     margin-bottom 30px
     color #fff

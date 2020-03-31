@@ -2,6 +2,7 @@
   <div>
     <Avatar />
     <Email />
+    <Phone />
     <Birthday />
     <Languages />
     <Skills />
@@ -14,6 +15,7 @@ import Languages from '@/components/Languages.vue';
 import Skills from '@/components/Skills.vue';
 import Avatar from '@/components/form/Avatar.vue'
 import Email from '@/components/create/Email.vue'
+import Phone from '@/components/create/Phone.vue'
 
   export default {
     name: 'Details',
@@ -23,6 +25,7 @@ import Email from '@/components/create/Email.vue'
       Skills,
       Avatar,
       Email,
+      Phone,
     },
   }
 </script>

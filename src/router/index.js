@@ -21,14 +21,14 @@ const router = new Router({
             component: () => import('@/pages/Preview.vue'),
         },
         {
+            path: '/preview-template-functional',
+            name: 'PreviewFunctional',
+            component: () => import('@/pages/PreviewFunctional.vue'),
+        },
+        {
             path: '/choose-template',
             name: 'Template',
             component: () => import('@/pages/Template.vue'),
-        },
-        {
-            path: '/download',
-            name: 'Download',
-            component: () => import('@/pages/Download.vue'),
         },
         {
             path: '*',

@@ -1,11 +1,15 @@
 <template>
-  <div class="preview__profile form__item" v-if="email.length || typeof birthday !== 'string'">
+  <div class="preview__profile form__item" v-if="email.length || phone.length || typeof birthday !== 'string'">
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="info-circle" /></span>  Details
     </h5>
     <div v-if="email.length">
-      <span class="preview__key">email:</span>
+      <span class="preview__key">Email:</span>
       <span class="preview__value">{{ email }}</span>
+    </div>
+    <div v-if="phone.length">
+      <span class="preview__key">Phone:</span>
+      <span class="preview__value">{{ phone }}</span>
     </div>
     <div v-if="typeof birthday !== 'string'">
       <span class="preview__key">Date of birth:</span>
@@ -23,6 +27,7 @@ import { mapState } from 'vuex';
     computed: {
       ...mapState({
         email: state => state.email.email,
+        phone: state => state.phone.phone,
         birthday: state => state.form.birthday,
       }),
     },
