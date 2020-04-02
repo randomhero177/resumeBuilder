@@ -5,7 +5,7 @@
     </header>
     <div class="row form__item">
       <div class="col-6">
-        <div class="form__label">Position</div>
+        <div class="form__label">Position you're applying for</div>
         <input type="text" class="input" v-model="position">
       </div>
     </div>

@@ -16,6 +16,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "core-js": "^3.6.4",
     "moment": "^2.24.0",
+    "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
     "vue-custom-range-slider": "^0.2.1",
     "vue-multiselect": "^2.1.6",

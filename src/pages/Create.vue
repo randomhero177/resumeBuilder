@@ -8,7 +8,7 @@
         </header>
       </div>
       <div class="col-auto">
-        <router-link :to="'/preview-' + templateName" class="button-preview">Preview</router-link>
+        <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="'Go to preview page, where you can download your resume'">Preview</router-link>
       </div>
     </div>
     <div class="row">

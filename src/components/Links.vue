@@ -4,7 +4,7 @@
     <div v-for="(icon, key, index) in linksList" :key="index" class="form__elem">
       <div class="row">
         <div class="col-2">
-          <span class="links__icon" :title="iconsConfig[key].title" v-if="iconsConfig[key]">
+          <span class="links__icon" v-tooltip="iconsConfig[key].title" v-if="iconsConfig[key]">
             <font-awesome-icon :icon="['fab', iconsConfig[key].icon]" />
           </span>
         </div>

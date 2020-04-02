@@ -16,7 +16,8 @@ import CustomSlider from 'vue-custom-range-slider';
 import Multiselect from 'vue-multiselect'
 import 'vue-multiselect/dist/vue-multiselect.min.css';
 import Datepicker from 'vuejs-datepicker';
-
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
 Vue.use(wysiwyg, {});
 
 library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck);
