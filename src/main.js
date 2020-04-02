@@ -5,6 +5,7 @@ import App from './App.vue';
 import '@/assets/grid.min.css';
 import '@/assets/common.styl';
 import '@/plugins/moment/plugin';
+import i18n from '@/plugins/i18n';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserSecret, faAllergies, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -32,5 +33,12 @@ Vue.config.productionTip = false;
 new Vue({
   store,
   router,
+  i18n,
   render: h => h(App),
+  created() {
+    const userLang = (this.user && this.user.locale) ? this.user.locale : false;
+    const lang = userLang || 'en';
+    this.$i18n.locale = lang;
+    document.querySelector('html').setAttribute('lang', lang);
+  },
 }).$mount('#app')

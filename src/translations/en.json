@@ -1,0 +1,180 @@
+{
+  "sape-ltd": "'Sape' LTD",
+  "project-label": "PR",
+  "logout": "Logout",
+  "passport": "Passport",
+  "documents": "Documents",
+  "partnership": "Partnership",
+  "site-builder": "Site builder",
+  "complex-promotion": "Complex promotion",
+  "articles": "Articles",
+  "links": "Links",
+  "wizard": "Wizard",
+  "audits": "Audits",
+  "all": "All",
+  "blog": "Blog",
+  "forum": "Forum",
+  "faq": "FAQ",
+  "balance": "Balance",
+  "balanceWidget": {
+    "available": "Available",
+    "bonus": "Bonus funds",
+    "blocked": "Blocked",
+    "common": "Balance and blockings"
+  },
+  "refill": "Refill",
+  "withdrawal-of-funds": "Withdrawal of funds",
+  "statistics-of-mutual-settlements": "Statistics of mutual settlements",
+  "setting-up-currency-display": "Setting up currency display",
+  "export-data-to-excel": "Export data to excel",
+  "create-project": "Create project",
+  "create-first-project": "Create project",
+  "create-project-tooltip": "The project is a container for creating different orders and transactions.<br> Start working in the service with this button.",
+  "do-the-work-for-me": "Do the work for me",
+  "do-the-work-for-me-tooltip": "Leave a brief information about you and our specialist will set up work in the service.",
+  "history-messages-tooltip" : "Chat history",
+  "top-up-balance-tooltip" : "Top up the balance",
+  "order-callback-tooltip": "Order callback",
+  "sections-settings-tooltip": "Managing partitions",
+  "loading": "Loading",
+  "project": "Project",
+  "created-date": "Created on",
+  "deals": "Deals",
+  "tasks": "Tasks",
+  "orders": "Orders",
+  "urls-and-anchors": "URLs and anchors",
+  "statistics": "Statistics",
+  "blacklist": "Blacklist",
+  "buy-article": "Buy article",
+  "package-theme": "Package \"Theme\"",
+  "package-news-strike": "Package \"News strike\"",
+  "package-social": "Package \"Social\"",
+  "activity": "Activity",
+  "settings": "Settings",
+  "auto-modes": "Auto modes",
+  "cases": "Cases",
+  "to-archive": "Archive",
+  "my-projects": "My projects",
+  "my-sites": "My sites",
+  "auto-mode": "Auto mode",
+  "units": "units",
+  "select-blogers": "Select blogers",
+  "create-automode": "Create auto mode",
+  "create-order": "Create order",
+  "create-deal": "To create a deal",
+  "link-in-news": "Link in news",
+  "review": "Review",
+  "article": "Article",
+  "link-in-archive": "Link into archive",
+  "twitter": "Twitter",
+  "social-links": "Social web",
+  "crowd": "Crowd",
+  "add-site":"Add site",
+  "add-instagram":"Add Instagram",
+  "add-youtube":"Add Youtube",
+  "speed-indexing-check": "Speed indexing check",
+  "speed-indexing-check-tooltip": "Connection of high-speed indexation check will allow to update information about indexation of applications Pr.sape.ru for a few hours. Such a check will be much faster and without errors.",
+  "sites": "sites",
+  "privilege-management": "Privilege management",
+  "finance-statistics": "Finance statistics",
+  "all-news": "All news",
+  "price": "Price",
+  "p-blojects": {
+    "title": "My projects"
+  },
+  "p-blojects-add": {
+    "title": "Create project",
+    "subtitle": "Если сайта или профиля в соц. сети нет, то укажите название проекта в свободной форме"
+  },
+  "p-blojects-edit": {
+    "title": "Project settings"
+  },
+  "p-youtube-accounts": {
+    "title": "My YouTube channels"
+  },
+  "p-blojects-youtube-search": {
+    "title": "Create a deal",
+    "subtitle": "Search channels"
+  },
+  "p-youtube-accounts-add": {
+    "title": "Add YouTube channel"
+  },
+  "p-youtube-accounts-edit": {
+    "title": "Edit YouTube channel"
+  },
+  "p-blojects-instagram-search": {
+    "title": "Create a deal",
+    "subtitle": "Search accounts"
+  },
+  "p-blojects-instagram-deals-add": {
+    "title": "Create Instagram deal"
+  },
+  "p-blojects-instagram-deals-edit": {
+    "title": "Edit Instagram deals"
+  },
+  "p-instagram-accounts": {
+    "title": "My Instagram accounts"
+  },
+  "p-instagram-account-add": {
+    "title": "Add Instagram account"
+  },
+  "p-instagram-accounts-edit": {
+    "title": "Edit Instagram account"
+  },
+  "p-instagram-accounts-deals": {
+    "title": "Instagram account deals"
+  },
+  "p-blojects-youtube-deals": {
+    "title": "YouTube offers"
+  },
+  "p-youtube-accounts-deals": {
+    "title": "YouTube deals"
+  },
+  "p-blojects-instagram-deals": {
+    "title": "Instagram offers"
+  },
+  "p-blojects-youtube-deals-add": {
+    "title": "Create new Youtube deal"
+  },
+  "p-blojects-youtube-deals-edit": {
+    "title": "Edit Youtube deal"
+  },
+  "p-comments": {
+    "title": "Comments"
+  },
+  "p-login": {
+    "title": "Login"
+  },
+  "p-error": {
+    "title": "Error"
+  },
+  "search": {
+    "filter": {
+      "fields": {
+        "filterChannelName": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      }
+    },
+    "blogger": {
+      "price": {
+        "p1": "Конечная стоимость будет выставлена блогером. В зависимости от сложности задания конечная стоимость может отличаться от указанной.",
+        "p2": "Блогер принимает следующие виды заданий:"
+      }
+    }
+  },
+  "form": {
+    "button": {
+      "submit": "Submit",
+      "reset": "Reset"
+    },
+    "from": "from",
+    "to": "to"
+  },
+  "footmenu": {
+    "my-projects": "Мои проекты",
+    "instagram-accounts": "Instagram площадки",
+    "youtube-accounts": "YouTube площадки"
+  }
+}
