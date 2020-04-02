@@ -1,13 +1,23 @@
 <template>
-  <div class="navigation">
+  <div class="row navigation align-items-center">
+    <div class="col-auto">
       <router-link to="/choose-template" class="navigation__item" exact-active-class="navigation__item_active">Choose template</router-link> >
+    </div>
+    <div class="col-auto">
       <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active">Fill in the resume</router-link> >
+    </div>
+    <div class="col-auto">
       <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">Preview</router-link>
+    </div>
+    <div class="col-auto ml-auto">
+      <Language />
+    </div>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex';
+  import Language from '@/components/Language.vue';
   export default {
     name: 'Navigation',
 
@@ -28,7 +38,7 @@
       },
     },
     components: {
-
+      Language,
     },
   }
 </script>
