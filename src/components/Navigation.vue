@@ -39,10 +39,25 @@
     padding 15px
     margin-bottom 30px
     color #fff
+    position relative
+    &:before
+      content ''
+      display block
+      position absolute
+      width 10000px
+      height 100%
+      top 0
+      right 0
+      z-index -1
+      background #2e74b5
     &__item
       margin 0 10px
       color #fff
       padding-bottom 2.5px
+      position relative
+      z-index 1
+      &:first-child
+        margin-left -15px
       &_active
         font-weight bold
         border-bottom 1px solid #fff
