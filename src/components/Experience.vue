@@ -4,7 +4,7 @@
       <h2 class="heading__title">Work history</h2>
     </header>
     <div class="alert alert_warning" v-if="!workList.length">
-      No information yet
+      {{ $t('noInfo') }}
     </div>
     <div class="row" v-for="(work, index) in workList" :key="index">
       <div class="col-md-6 form__elem">

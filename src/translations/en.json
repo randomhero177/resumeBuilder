@@ -6,6 +6,7 @@
   "chooseTemplate": "Choose template",
   "fillIn": "Fill in the resume",
   "download": "Download",
+  "noInfo": "No information yet",
   "create": {
     "title": "Tell employer something about yourself!",
     "details": "Details",
@@ -14,5 +15,16 @@
     "profile": "Profile",
     "position": "Position you're applying for",
     "summary": "Summary"
+  },
+  "education": {
+    "title": "Education",
+    "university": "University",
+    "fieldOfStudy": "Field of study",
+    "degree": "Degree",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "remove": "Remove this education",
+    "removeSection": "Remove Education section",
+    "add": "Add education"
   }
 }
