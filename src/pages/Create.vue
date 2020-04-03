@@ -4,17 +4,17 @@
     <div class="row justify-content-between">
       <div class="col">
         <header class="heading">
-          <h1 class="page__title">Tell employer something about yourself! </h1>
+          <h1 class="page__title">{{ $t('create.title') }}</h1>
         </header>
       </div>
       <div class="col-auto">
-        <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="'Go to preview page, where you can download your resume'">Preview</router-link>
+        <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4">
         <header class="heading">
-          <h2 class="heading__title">Details</h2>
+          <h2 class="heading__title">{{ $t('create.details') }}</h2>
         </header>
         <Main />
         <Details />

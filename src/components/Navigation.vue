@@ -1,13 +1,13 @@
 <template>
   <div class="row navigation align-items-center">
     <div class="col-auto">
-      <router-link to="/choose-template" class="navigation__item" exact-active-class="navigation__item_active">Choose template</router-link> >
+      <router-link to="/choose-template" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('chooseTemplate') }}</router-link> >
     </div>
     <div class="col-auto">
-      <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active">Fill in the resume</router-link> >
+      <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('fillIn') }}</router-link> >
     </div>
     <div class="col-auto">
-      <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">Preview</router-link>
+      <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('download') }}</router-link>
     </div>
     <div class="col-auto ml-auto">
       <Language />

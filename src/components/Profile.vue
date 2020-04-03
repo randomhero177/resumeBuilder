@@ -1,15 +1,15 @@
 <template>
   <div class="form__item">
     <header class="heading">
-      <h2 class="heading__title">Profile</h2>
+      <h2 class="heading__title">{{ $t('create.profile') }}</h2>
     </header>
     <div class="row form__item">
       <div class="col-6">
-        <div class="form__label">Position you're applying for</div>
+        <div class="form__label">{{ $t('create.position') }}</div>
         <input type="text" class="input" v-model="position">
       </div>
     </div>
-    <div class="form__label">Summary</div>
+    <div class="form__label">{{ $t('create.summary') }}</div>
     <wysiwyg v-model="profileInfo" />
   </div>
 </template>
