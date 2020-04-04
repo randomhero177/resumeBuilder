@@ -1,24 +1,24 @@
 <template>
   <div class="expirience form__item">
     <header class="heading">
-      <h2 class="heading__title">Work history</h2>
+      <h2 class="heading__title">{{ $t('workHistory.title') }}</h2>
     </header>
     <div class="alert alert_warning" v-if="!workList.length">
       {{ $t('noInfo') }}
     </div>
     <div class="row" v-for="(work, index) in workList" :key="index">
       <div class="col-md-6 form__elem">
-        <div class="form__label">Company</div>
+        <div class="form__label">{{ $t('workHistory.company') }}</div>
         <input type="text" class="input" :value="work.company" @input="updateCompany($event, index)">
       </div>
       <div class="col-md-6 form__elem">
-        <div class="form__label">Position</div>
+        <div class="form__label">{{ $t('workHistory.position') }}</div>
         <input type="text" class="input" :value="work.position" @input="updatePosition($event, index)">
       </div>
       <div class="col-md-6 form__elem">
         <div class="row">
           <div class="col-md-6">
-            <div class="form__label">Start date</div>
+            <div class="form__label">{{ $t('workHistory.startDate') }}</div>
             <div class="form__picker">
               <datepicker placeholder="Select Date"
                 v-on:selected="updateDayStart($event, index)"
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="form__label">End date</div>
+            <div class="form__label">{{ $t('workHistory.endDate') }}</div>
             <div class="form__picker" v-if="!work.isCurrentPosition">
               <datepicker placeholder="Select Date"
                 v-on:selected="updateDayEnd($event, index)"
@@ -45,7 +45,7 @@
             <div>
               <div class="input-checkbox">
                 <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
-                <label>Current position</label>
+                <label>{{ $t('workHistory.currentPosition') }}</label>
                 <span class="input-checkbox__checked">
                   <font-awesome-icon icon="check" />
                 </span>
@@ -55,19 +55,22 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form__label">City</div>
+        <div class="form__label">{{ $t('workHistory.city') }}</div>
         <input type="text" class="input" @input="updateCity($event, index)" :value="work.city">
       </div>
       <div class="col-md-12 form__elem">
-        <div class="form__label">Job description:</div>
+        <div class="form__label">{{ $t('workHistory.description') }}</div>
         <wysiwyg @change="updateDescription($event, index)" value="work.description"/>
       </div>
       <div class="col-md-6 form__elem">
-        <div class="form__label">Key skills for this position:</div>
+        <div class="form__label">{{ $t('workHistory.skills') }}</div>
         <multiselect
           :value="work.skills"
-          tag-placeholder="Add this as new skill"
-          placeholder="Search or add a skill"
+          :tag-placeholder="$t('workHistory.skillPlaceholder')"
+          :placeholder="$t('workHistory.searchSkill')"
+          :selectLabel="$t('selectLabel')"
+          :deselectLabel="$t('removeLabel')"
+          :selectedLabel="$t('selectedLabel')"
           label="name"
           track-by="code"
           :options="work.skillOptions"
@@ -79,7 +82,7 @@
       </div>
       <div class="col expirience__remove-col" v-if="workList.length > 1">
         <span v-on:click="removeWork(index)" class="btn btn-remove">
-          <font-awesome-icon icon="trash-alt" /> Remove this position
+          <font-awesome-icon icon="trash-alt" /> {{ $t('workHistory.removePosition') }}
         </span>
       </div>
     </div>
@@ -87,12 +90,12 @@
       <div class="col">
         <span v-on:click="addNewWork" class="btn btn-add">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
-          Add new position
+          {{ $t('workHistory.add') }}
         </span>
       </div>
       <div class="col text-right" v-if="workList.length">
         <span class="btn btn-remove" v-on:click="removeSection">
-          <font-awesome-icon icon="trash-alt" /> Remove Expirience section
+          <font-awesome-icon icon="trash-alt" /> {{ $t('workHistory.removeSection') }}
         </span>
       </div>
     </div>

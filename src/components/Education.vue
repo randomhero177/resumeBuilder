@@ -47,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 text-right" v-if="educationList.length > 1">
+      <div class="col-md-6 text-right form__elem" v-if="educationList.length > 1">
         <span class="btn btn-remove education__icon" v-on:click="removeEducation(index)">
           <font-awesome-icon icon="trash-alt" /> {{ $t('education.remove') }}
         </span>

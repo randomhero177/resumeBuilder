@@ -27,5 +27,25 @@
     "remove": "Удалить это учебное заведение",
     "removeSection": "Удалить раздел Образование",
     "add": "Добавить информацию об образовании"
-  }
+  },
+  "workHistory": {
+    "title": "Опыт работы",
+    "add": "Добавить место работы",
+    "removeSection": "Удалить раздел",
+    "removePosition": "Удалить эту позицию",
+    "company": "Компания",
+    "position": "Должность",
+    "startDate": "Начало работы",
+    "endDate": "Окончание",
+    "city": "Регион",
+    "currentPosition": "Еще работаю",
+    "description": "Основные обязанности:",
+    "skills": "Главные навыки",
+    "searchSkill": "Найдите или добавьте навык",
+    "skillPlaceholder": "Добавить как новый навык"
+  },
+  "selectLabel": "Enter для выбора",
+  "removeLabel": "Enter для удаления",
+  "selectedLabel": "Выбран",
+  "accomplishments": "Достижения"
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="accomplishments form__item">
     <header class="heading">
-      <h2 class="heading__title">Accomplishments</h2>
+      <h2 class="heading__title">{{ $t('accomplishments') }}</h2>
     </header>
     <div>
       <wysiwyg v-model="accomplishments"/>

@@ -26,5 +26,25 @@
     "remove": "Remove this education",
     "removeSection": "Remove Education section",
     "add": "Add education"
-  }
+  },
+  "workHistory": {
+    "title": "Work history",
+    "add": "Add new position",
+    "removeSection": "Remove Experience section",
+    "removePosition": "Remove this position",
+    "company": "Company",
+    "position": "Position",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "city": "City",
+    "currentPosition": "Current position",
+    "description": "Job description:",
+    "skills": "Key skills for this position:",
+    "searchSkill": "Search or add a skill",
+    "skillPlaceholder": "Add this as new skill"
+  },
+  "selectLabel": "Press enter to select",
+  "removeLabel": "Press enter to remove",
+  "selectedLabel": "Selected",
+  "accomplishments": "Accomplishments"
 }
