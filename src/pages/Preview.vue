@@ -68,6 +68,7 @@
       margin-bottom 15px
     &__section
       border 1px solid #dedede
+      border-bottom 0
       padding 15px
       -webkit-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
       -moz-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
