@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-Vue.use(Vuex);
+import createPersistedState from 'vuex-persistedstate';
 import template from '@/store/modules/template';
 import form from '@/store/modules/form';
 import languages from '@/store/modules/languages';
@@ -13,6 +13,8 @@ import email from '@/store/modules/email';
 import phone from '@/store/modules/phone';
 import accomplishments from '@/store/modules/accomplishments';
 import language from '@/store/modules/language';
+
+Vue.use(Vuex);
 
 const { hostname, port } = window.location;
 
@@ -47,6 +49,7 @@ const store = new Vuex.Store({
         accomplishments,
         language,
     },
+    plugins: [createPersistedState()],
 });
 
 export default store;
