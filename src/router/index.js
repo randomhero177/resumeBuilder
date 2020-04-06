@@ -26,6 +26,11 @@ const router = new Router({
             component: () => import('@/pages/PreviewFunctional.vue'),
         },
         {
+            path: '/preview-template-melinda',
+            name: 'PreviewThird',
+            component: () => import('@/pages/PreviewThird.vue'),
+        },
+        {
             path: '/choose-template',
             name: 'Template',
             component: () => import('@/pages/Template.vue'),

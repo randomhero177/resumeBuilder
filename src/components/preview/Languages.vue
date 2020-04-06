@@ -1,6 +1,6 @@
 <template>
-  <div class="preview__links" v-if="languages.length">
-    <h5 class="preview__title">
+  <div class="preview__languages" v-if="languages.length">
+    <h5 class="preview__title preview__languages-title">
       <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  Languages
     </h5>
     <div class="row form__elem" v-for="(item, i) in languages" :key="i">
