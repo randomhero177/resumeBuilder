@@ -8,7 +8,11 @@
         </header>
       </div>
       <div class="col-auto">
-        <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+        <div>
+          <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+        </div>
+        <br>
+        <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> clear all</span></div>
       </div>
     </div>
     <div class="row">
@@ -27,11 +31,16 @@
         <Accomplishments />
       </div>
     </div>
+    <Modal
+      v-if="showModal"
+      @onCancel="showModal = false"
+      @onApprove="approveModal"
+    />
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
   import Experience from '@/components/Experience.vue';
   import Profile from '@/components/Profile.vue';
   import Main from '@/components/Main.vue';
@@ -40,14 +49,13 @@
   import Links from '@/components/Links.vue';
   import Navigation from '@/components/Navigation.vue';
   import Accomplishments from '@/components/create/Accomplishments.vue';
+  import Modal from '@/components/Modal.vue';
 
   export default {
     name: "home",
     data() {
       return {
-          data: () => ({
-
-          }),
+        showModal: false,
       };
     },
     computed: {
@@ -56,7 +64,24 @@
       }),
     },
     components: {
-      Experience, Profile, Main, Details, Education, Links, Navigation, Accomplishments,
+      Experience, Profile, Main, Details, Education, Links, Navigation, Accomplishments, Modal,
+    },
+    methods: {
+      ...mapActions({
+        setAccomplishments: 'accomplishments/setAccomplishments'
+      }),
+      approveModal() {
+        this.showModal = false;
+        this.clearStorage();
+      },
+      clearStorage(){
+        console.log('---')
+        //window.localStorage.clear();
+        this.$store.commit('profile/clearAll', );
+        this.$store.commit('form/clearAll', );
+        this.$store.commit('education/removeSection', );
+        this.$store.commit('experience/removeSection', );
+      },
     },
   }
 </script>
