@@ -6,7 +6,7 @@
     <div class="row form__item">
       <div class="col-6">
         <div class="form__label">{{ $t('create.position') }}</div>
-        <input type="text" class="input" v-model="position">
+        <input type="text" class="input" v-model="position" :placeholder="$t('position')">
       </div>
     </div>
     <div class="form__label">{{ $t('create.summary') }}</div>

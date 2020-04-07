@@ -1,11 +1,14 @@
 <template>
   <div class="row form__item">
     <div class="col-md-12">
-      <div class="form__label">Skills:</div>
+      <div class="form__label">{{ $t('skills') }}:</div>
       <multiselect
         v-model="skillsList"
-        tag-placeholder="Add this as new skill"
-        placeholder="Search or add a skill"
+        :tag-placeholder="$t('workHistory.skillPlaceholder')"
+        :placeholder="$t('workHistory.searchSkill')"
+        :selectLabel="$t('selectLabel')"
+        :deselectLabel="$t('removeLabel')"
+        :selectedLabel="$t('selectedLabel')"
         label="name"
         track-by="code"
         :options="options"

@@ -4,8 +4,9 @@
     <Email />
     <Phone />
     <Birthday />
-    <Languages />
     <Skills />
+    <Links />
+    <Languages />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Skills from '@/components/Skills.vue';
 import Avatar from '@/components/form/Avatar.vue'
 import Email from '@/components/create/Email.vue'
 import Phone from '@/components/create/Phone.vue'
+import Links from '@/components/Links.vue';
 
   export default {
     name: 'Details',
@@ -26,6 +28,7 @@ import Phone from '@/components/create/Phone.vue'
       Avatar,
       Email,
       Phone,
+      Links,
     },
   }
 </script>

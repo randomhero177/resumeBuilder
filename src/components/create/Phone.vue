@@ -1,6 +1,6 @@
 <template>
   <div class="email form__item">
-    <div class="form__label">Phone</div>
+    <div class="form__label">{{$t('phone') }}</div>
     <input type="text" class="input" v-model="phone">
   </div>
 </template>

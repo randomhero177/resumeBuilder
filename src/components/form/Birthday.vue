@@ -2,9 +2,10 @@
   <div class="birthday form__item">
     <div class="row">
       <div class="col-md-12">
-        <div class="form__label">Birthday</div>
+        <div class="form__label">{{ $t('birthday') }}</div>
         <div class="form__picker">
-          <datepicker placeholder="Select Date"
+          <datepicker
+            :placeholder="$t('selectDate')"
             v-model="birthday"
             :monday-first="true"
             :format="format"

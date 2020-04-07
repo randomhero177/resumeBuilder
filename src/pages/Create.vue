@@ -12,7 +12,7 @@
           <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
         </div>
         <br>
-        <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> clear all</span></div>
+        <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> {{ $t('clearAll') }}</span></div>
       </div>
     </div>
     <div class="row">
@@ -22,7 +22,6 @@
         </header>
         <Main />
         <Details />
-        <Links />
       </div>
       <div class="col-md-8">
         <Profile />
@@ -36,7 +35,7 @@
     </div>
     <Modal
       v-if="showModal"
-      title="Please confirm clearing all form data"
+      :title="$t('clearModalConfirm')"
       @onCancel="showModal = false"
       @onApprove="approveModal"
     />
@@ -50,7 +49,6 @@
   import Main from '@/components/Main.vue';
   import Details from '@/components/Details.vue';
   import Education from '@/components/Education.vue';
-  import Links from '@/components/Links.vue';
   import Navigation from '@/components/Navigation.vue';
   import Accomplishments from '@/components/create/Accomplishments.vue';
   import Modal from '@/components/Modal.vue';
@@ -68,7 +66,7 @@
       }),
     },
     components: {
-      Experience, Profile, Main, Details, Education, Links, Navigation, Accomplishments, Modal,
+      Experience, Profile, Main, Details, Education, Navigation, Accomplishments, Modal,
     },
     methods: {
       ...mapActions({

@@ -4,8 +4,8 @@
       <div class="modal__inner">
         <div class="heading__title">{{ title }}</div>
         <div class="modal__buttons">
-          <button class="modal__btn modal__btn-remove" v-on:click="cancel">Cancel</button>
-          <button class="modal__btn modal__btn-add" v-on:click="approve">Clear form</button>
+          <button class="modal__btn modal__btn-remove" v-on:click="cancel">{{ $t('cancel') }}</button>
+          <button class="modal__btn modal__btn-add" v-on:click="approve">{{ $t('clearForm') }}</button>
         </div>
       </div>
     </div>

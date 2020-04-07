@@ -1,6 +1,6 @@
 <template>
   <div class="links form__item">
-    <div class="form__label">Links:</div>
+    <div class="form__label">{{ $t('links') }}:</div>
     <div v-for="(icon, key, index) in linksList" :key="index" class="form__elem">
       <div class="row">
         <div class="col-2">
@@ -20,7 +20,7 @@
       <div class="col" v-if="!linksListLength">
         <span class="btn btn-add" v-on:click="addSection">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
-          Add links section
+          {{ $t('addLinkSection') }}
         </span>
       </div>
       <div class="col" v-if="linksListLength">
@@ -29,12 +29,12 @@
           v-on:click="addRandomLink"
         >
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
-          Add random link
+          {{ $t('addRandomLink') }}
         </div>
       </div>
       <div class="col text-right" v-if="linksListLength">
         <span class="btn btn-remove" v-on:click="removeSection">
-          <font-awesome-icon icon="trash-alt" /> Remove Links section
+          <font-awesome-icon icon="trash-alt" /> {{ $t('removeLinkSection') }}
         </span>
       </div>
     </div>

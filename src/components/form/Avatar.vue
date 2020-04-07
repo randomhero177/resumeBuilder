@@ -1,12 +1,12 @@
 <template>
   <div class="avatar form__item">
-    <div class="form__label">Your picture</div>
+    <div class="form__label">{{ $t('yourPicture') }}</div>
     <div v-if="isEmpty">
       <span class="btn btn-add" @click="openFileDialog">
         <span class="btn-add__icon">
           <font-awesome-icon icon="plus-circle" />
         </span>
-        Upload picture
+        {{ $t('uploadPicture') }}
       </span>
       <input
         type="file"
