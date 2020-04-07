@@ -62,8 +62,8 @@
         border 1px solid #927c7c
         color #927c7c
       &-add
-        border 1px solid green
-        background green
+        border 1px solid #366d5b
+        background #366d5b
     &__btn + &__btn
       margin-left 30px
     &__buttons
