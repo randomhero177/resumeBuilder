@@ -4,8 +4,8 @@
       <div class="modal__inner">
         <div class="heading__title">{{ title }}</div>
         <div class="modal__buttons">
-          <div class="btn btn-remove" v-on:click="cancel">I don't</div>
-          <div class="btn btn-add" v-on:click="approve">I do</div>
+          <button class="modal__btn modal__btn-remove" v-on:click="cancel">Cancel</button>
+          <button class="modal__btn modal__btn-add" v-on:click="approve">Clear form</button>
         </div>
       </div>
     </div>
@@ -43,14 +43,29 @@
     position fixed
     width 100%
     height 100%
-    background rgba(0, 0, 0, .25)
+    background rgba(0, 0, 0, .5)
     display flex
     justify-content center
     align-items center
     &__container
-      width 50%
+      max-width 50%
       text-align center
       background #fff
-      padding 30px
+      padding 45px
       border-radius 5px
+    &__btn
+      border 0
+      padding 15px 30px
+      color #fff
+      cursor pointer
+      &-remove
+        border 1px solid #927c7c
+        color #927c7c
+      &-add
+        border 1px solid green
+        background green
+    &__btn + &__btn
+      margin-left 30px
+    &__buttons
+      margin-top 45px
 </style>

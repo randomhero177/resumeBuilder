@@ -25,9 +25,13 @@
       return {
         value: [],
         options: [
-          { name: 'Vue.js', code: 'vu' },
-          { name: 'Javascript', code: 'js' },
-          { name: 'Open Source', code: 'os' }
+          { "name": "Vue.js", "code": "vu" },
+          { "name": "Javascript", "code": "js" },
+          { "name": "Gulp", "code": "Gu9116667" },
+          { "name": "Webpack", "code": "We8718389" },
+          { "name": "TypeScript", "code": "Ty9971407" },
+          { "name": "OpenApi", "code": "Op2971758" },
+          { "name": "Jquery", "code": "Jq9294925" }
         ]
       };
     },

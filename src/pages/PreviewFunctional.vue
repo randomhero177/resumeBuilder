@@ -98,6 +98,7 @@
         background #404040
         padding 30px 15px
         color #fff
+        height 100%
       &__name
         margin-bottom 30px
       &__separate

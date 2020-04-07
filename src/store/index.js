@@ -50,7 +50,7 @@ const store = new Vuex.Store({
         language,
     },
     plugins: [createPersistedState({
-        paths: ['form', 'education', 'experience', 'language', 'languages', 'profile', 'accomplishments']
+        paths: ['accomplishments', 'education', 'email', 'experience', 'form', 'language', 'languages', 'links', 'profile', 'phone', 'skills']
     })],
 });
 

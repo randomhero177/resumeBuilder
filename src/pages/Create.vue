@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="create">
     <Navigation />
     <div class="row justify-content-between">
       <div class="col">
@@ -31,8 +31,12 @@
         <Accomplishments />
       </div>
     </div>
+    <div class="row justify-content-end">
+      <div class="col-auto"><router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link></div>
+    </div>
     <Modal
       v-if="showModal"
+      title="Please confirm clearing all form data"
       @onCancel="showModal = false"
       @onApprove="approveModal"
     />
@@ -75,13 +79,22 @@
         this.clearStorage();
       },
       clearStorage(){
-        console.log('---')
-        //window.localStorage.clear();
-        this.$store.commit('profile/clearAll', );
-        this.$store.commit('form/clearAll', );
+        this.$store.commit('accomplishments/setAccomplishments', '');
         this.$store.commit('education/removeSection', );
+        this.$store.commit('email/setEmail', '');
         this.$store.commit('experience/removeSection', );
+        this.$store.commit('form/clearAll', );
+        this.$store.commit('languages/removeSection', );
+        this.$store.commit('links/removeSection', );
+        this.$store.commit('phone/setPhone', '');
+        this.$store.commit('profile/clearAll', );
+        this.$store.commit('skills/setSkills', []);
       },
     },
   }
 </script>
+
+<style lang="stylus" scoped>
+  .create
+    padding-bottom 45px
+</style>
