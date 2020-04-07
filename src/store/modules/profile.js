@@ -16,6 +16,10 @@ const mutations = {
   setPosition(state, data) {
     state.position = data;
   },
+  clearAll(state) {
+    state.profile = '';
+    state.position = '';
+  },
 };
 
 const profile = {

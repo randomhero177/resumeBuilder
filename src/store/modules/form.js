@@ -30,6 +30,12 @@ const mutations = {
   setBirthday(state, birthday) {
     state.birthday = birthday;
   },
+  clearAll(state) {
+    state.name = '';
+    state.lastName = '';
+    state.avatar = {};
+    state.birthday = '';
+  }
 };
 
 const form = {

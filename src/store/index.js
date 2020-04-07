@@ -49,7 +49,9 @@ const store = new Vuex.Store({
         accomplishments,
         language,
     },
-    plugins: [createPersistedState()],
+    plugins: [createPersistedState({
+        paths: ['accomplishments', 'education', 'email', 'experience', 'form', 'language', 'languages', 'links', 'profile', 'phone', 'skills']
+    })],
 });
 
 export default store;

@@ -1,20 +1,24 @@
 <template>
-  <div>
+  <div class="create">
     <Navigation />
     <div class="row justify-content-between">
       <div class="col">
         <header class="heading">
-          <h1 class="page__title">Tell employer something about yourself! </h1>
+          <h1 class="page__title">{{ $t('create.title') }}</h1>
         </header>
       </div>
       <div class="col-auto">
-        <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="'Go to preview page, where you can download your resume'">Preview</router-link>
+        <div>
+          <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+        </div>
+        <br>
+        <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> clear all</span></div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4">
         <header class="heading">
-          <h2 class="heading__title">Details</h2>
+          <h2 class="heading__title">{{ $t('create.details') }}</h2>
         </header>
         <Main />
         <Details />
@@ -27,11 +31,20 @@
         <Accomplishments />
       </div>
     </div>
+    <div class="row justify-content-end">
+      <div class="col-auto"><router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link></div>
+    </div>
+    <Modal
+      v-if="showModal"
+      title="Please confirm clearing all form data"
+      @onCancel="showModal = false"
+      @onApprove="approveModal"
+    />
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapActions } from 'vuex';
   import Experience from '@/components/Experience.vue';
   import Profile from '@/components/Profile.vue';
   import Main from '@/components/Main.vue';
@@ -40,14 +53,13 @@
   import Links from '@/components/Links.vue';
   import Navigation from '@/components/Navigation.vue';
   import Accomplishments from '@/components/create/Accomplishments.vue';
+  import Modal from '@/components/Modal.vue';
 
   export default {
     name: "home",
     data() {
       return {
-          data: () => ({
-
-          }),
+        showModal: false,
       };
     },
     computed: {
@@ -56,7 +68,33 @@
       }),
     },
     components: {
-      Experience, Profile, Main, Details, Education, Links, Navigation, Accomplishments,
+      Experience, Profile, Main, Details, Education, Links, Navigation, Accomplishments, Modal,
+    },
+    methods: {
+      ...mapActions({
+        setAccomplishments: 'accomplishments/setAccomplishments'
+      }),
+      approveModal() {
+        this.showModal = false;
+        this.clearStorage();
+      },
+      clearStorage(){
+        this.$store.commit('accomplishments/setAccomplishments', '');
+        this.$store.commit('education/removeSection', );
+        this.$store.commit('email/setEmail', '');
+        this.$store.commit('experience/removeSection', );
+        this.$store.commit('form/clearAll', );
+        this.$store.commit('languages/removeSection', );
+        this.$store.commit('links/removeSection', );
+        this.$store.commit('phone/setPhone', '');
+        this.$store.commit('profile/clearAll', );
+        this.$store.commit('skills/setSkills', []);
+      },
     },
   }
 </script>
+
+<style lang="stylus" scoped>
+  .create
+    padding-bottom 45px
+</style>

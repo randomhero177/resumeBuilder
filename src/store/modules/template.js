@@ -1,6 +1,6 @@
 const state = {
   templateName: 'template',
-  templateList: ['template', 'template-functional'],
+  templateList: ['template', 'template-functional', 'template-melinda'],
 };
 
 const actions = {

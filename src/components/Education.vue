@@ -1,28 +1,28 @@
 <template>
   <div class="education form__item">
     <header class="heading">
-      <h2 class="heading__title">Education</h2>
+      <h2 class="heading__title">{{ $t('education.title') }}</h2>
     </header>
     <div class="alert alert_warning" v-if="!educationList.length">
-      No information yet
+      {{ $t('noInfo') }}
     </div>
     <div class="row justify-content-end" v-for="(item, index) in educationList" :key="index">
       <div class="col-md-6 form__elem">
-        <div class="form__label">University</div>
+        <div class="form__label">{{ $t('education.university') }}</div>
         <input type="text" class="input" :value="item.university" @input="updateUniversity($event, index)">
       </div>
       <div class="col-md-6 form__elem">
-        <div class="form__label">Field of study</div>
+        <div class="form__label">{{ $t('education.fieldOfStudy') }}</div>
         <input type="text" class="input" :value="item.fieldOfStudy" @input="updateFieldOfStudy($event, index)">
       </div>
       <div class="col-md-6 form__elem">
-        <div class="form__label">Degree</div>
+        <div class="form__label">{{ $t('education.degree') }}</div>
         <input type="text" class="input" :value="item.degree" @input="updateDegree($event, index)">
       </div>
       <div class="col-md-6 form__elem">
         <div class="row no-gutters justify-content-between">
           <div class="col-md-5">
-            <div class="form__label">Start date</div>
+            <div class="form__label">{{ $t('education.startDate') }}</div>
             <datepicker placeholder="Select Date"
               v-on:selected="updateDayStart($event, index)"
               :value="item.dayStart"
@@ -34,7 +34,7 @@
             />
           </div>
           <div class="col-md-5">
-            <div class="form__label">End date</div>
+            <div class="form__label">{{ $t('education.endDate') }}</div>
             <datepicker placeholder="Select Date"
               v-on:selected="updateDayEnd($event, index)"
               :value="item.dayEnd"
@@ -47,9 +47,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 text-right" v-if="educationList.length > 1">
+      <div class="col-md-6 text-right form__elem" v-if="educationList.length > 1">
         <span class="btn btn-remove education__icon" v-on:click="removeEducation(index)">
-          <font-awesome-icon icon="trash-alt" /> Remove this education
+          <font-awesome-icon icon="trash-alt" /> {{ $t('education.remove') }}
         </span>
       </div>
     </div>
@@ -57,12 +57,12 @@
       <div class="col">
         <span class="btn btn-add" v-on:click="addEducation">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
-          Add education
+          {{ $t('education.add') }}
         </span>
       </div>
       <div class="col text-right" v-if="educationList.length">
         <span class="btn btn-remove" v-on:click="removeSection">
-          <font-awesome-icon icon="trash-alt" /> Remove Education section
+          <font-awesome-icon icon="trash-alt" /> {{ $t('education.removeSection') }}
         </span>
       </div>
     </div>

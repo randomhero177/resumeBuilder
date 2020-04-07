@@ -2,5 +2,49 @@
   "deals": "Deals",
   "ru": "Russian",
   "en": "English",
-  "language": "Language"
+  "language": "Language",
+  "chooseTemplate": "Choose template",
+  "fillIn": "Fill in the resume",
+  "download": "Download",
+  "noInfo": "No information yet",
+  "create": {
+    "title": "Tell employer something about yourself!",
+    "details": "Details",
+    "previewBtn": "Preview and download",
+    "previewBtnTooltip": "Go to preview page, where you can download your resume",
+    "profile": "Profile",
+    "position": "Position you're applying for",
+    "summary": "Summary"
+  },
+  "education": {
+    "title": "Education",
+    "university": "University",
+    "fieldOfStudy": "Field of study",
+    "degree": "Degree",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "remove": "Remove this education",
+    "removeSection": "Remove Education section",
+    "add": "Add education"
+  },
+  "workHistory": {
+    "title": "Work history",
+    "add": "Add new position",
+    "removeSection": "Remove Experience section",
+    "removePosition": "Remove this position",
+    "company": "Company",
+    "position": "Position",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "city": "City",
+    "currentPosition": "Current position",
+    "description": "Job description:",
+    "skills": "Key skills for this position:",
+    "searchSkill": "Search or add a skill",
+    "skillPlaceholder": "Add this as new skill"
+  },
+  "selectLabel": "Press enter to select",
+  "removeLabel": "Press enter to remove",
+  "selectedLabel": "Selected",
+  "accomplishments": "Accomplishments"
 }

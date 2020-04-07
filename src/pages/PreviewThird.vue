@@ -1,45 +1,51 @@
 <template>
-  <div class="preview preview-functional">
+  <div class="preview preview-melinda">
     <div ref="hideWhenPrint" class="form__item">
       <Navigation />
-      <h1 class="page__title">Functional template preview</h1>
+      <h1 class="page__title">Melinda template preview</h1>
       <div class="form__item">
         <ChangePreview />
       </div>
       <div class="preview__descr form__elem">Section bellow this page will be printed. Everything seems right? </div>
       <div><button class="btn button-preview" v-on:click="print">Download PDF</button></div>
     </div>
+
+
     <div class="preview__section">
       <div class="row">
-        <div class="col-md-4">
-          <div class="preview-functional__side">
-            <div class="text-center">
+        <div class="col-12">
+          <div class="row preview-melinda__header">
+            <div class="col-auto">
               <Avatar />
             </div>
-            <div class="text-right">
+            <div class="col-auto">
+              <div>
+                <h4 class="preview-header__name"><span class="color">{{ name }}</span> {{ lastName }}</h4>
+                <div>
+                  {{ position }}
+                </div>
+              </div>
+            </div>
+            <div class="col-auto ml-auto text-right">
               <Details />
-            </div>
-            <div class="preview-functional__separate form__item"></div>
-            <div class="text-right">
-              <Links />
-            </div>
-            <Languages />
-            <div class="text-right">
-              <Accomplishments />
             </div>
           </div>
         </div>
-        <div class="col-md-8 preview-functional__main">
-          <div class="text-center preview-functional__name">
-            <h4 class="preview-header__name">{{ name }} {{ lastName }}</h4>
-          </div>
-          <div class="preview-functional__summary">
+        <div class="col-md-12 preview-melinda__main">
+          <div class="preview-melinda__summary">
             <Profile title="QUALIFICATION SUMMARY"/>
           </div>
-
-          <Skills title="RELEVANT SKILLS"/>
-          <Education />
           <Experience />
+          <Education />
+        </div>
+        <div class="col-6 preview-melinda__main">
+          <Accomplishments />
+          <Skills />
+
+        </div>
+        <div class="col-6 preview-melinda__main">
+          <Links />
+          <Languages />
         </div>
       </div>
     </div>
@@ -60,7 +66,7 @@
   import Accomplishments from '@/components/preview/Accomplishments.vue';
   import { mapState } from "vuex";
   export default {
-    name: "PreviewFunctional",
+    name: "PreviewThird",
     data() {
       return {
           data: () => ({
@@ -72,6 +78,7 @@
       ...mapState({
         name: state => state.form.name,
         lastName: state => state.form.lastName,
+        position: state => state.profile.position,
       }),
     },
     methods: {
@@ -91,29 +98,24 @@
 </script>
 <style lang="stylus" scoped>
   .preview
+    &-melinda
+      &__header
+        margin-bottom 30px
+      &__main
+        & .preview__icon
+          display none
     &__descr
       margin-bottom 15px
-    &-functional
-      &__side
-        background #404040
-        padding 30px 15px
-        color #fff
-        height 100%
-      &__name
-        margin-bottom 30px
-      &__separate
-        border-bottom 1px solid #2e74b5
-      &__summary
-        position relative
-        padding-bottom 1px
-        margin-bottom 30px
-        &:after
-          content ''
-          display block
-          width 50%
-          height 1px
-          left 25%
-          background #2e74b5
-          bottom 0
-          position absolute
+    &__section
+      border 1px solid #dedede
+      border-bottom none
+      padding 15px
+      -webkit-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
+      -moz-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
+      box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
+  .color
+    color #4285f4
+  .preview__profile.form__item
+    margin-bottom 0
+
 </style>
