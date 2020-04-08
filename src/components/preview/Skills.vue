@@ -1,11 +1,14 @@
 <template>
-  <div class="preview__links form__item" v-if="skills.length">
+  <div class="preview__skills form__item" v-if="skills.length">
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  {{ title }}
     </h5>
-    <div v-for="(item, i) in skills" :key="i">
-      {{ item.name }}
-    </div>
+    <template v-for="(item, i) in skills">
+      <div :class="inline ? 'preview__skills_inline' : ''" :key="i">
+        {{ item.name }}{{ skills.length - 1 == i ? '.' : ',' }}
+      </div>
+    </template>
+
   </div>
 </template>
 
@@ -24,9 +27,15 @@ import { mapState } from 'vuex';
         type: String,
         default: 'Skills',
       },
+      inline: {
+        type: Boolean,
+        default: false,
+      },
     },
   }
 </script>
 <style lang="stylus" scoped>
-
+  .preview__skills_inline
+    display inline-block
+    margin-right 5px
 </style>

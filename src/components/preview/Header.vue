@@ -1,9 +1,9 @@
 <template>
   <div class="preview-header form__item">
     <div class="row align-items-center">
-      <div class="col-md-auto">
+      <div class="col-md-auto" v-if="avatar.src">
         <div class="preview-header__ava-wrap">
-          <div class="preview__profile" v-if="avatar.src">
+          <div class="preview__profile">
             <img :src="avatar.src" alt="" class="preview-header__ava">
           </div>
         </div>

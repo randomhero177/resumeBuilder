@@ -3,9 +3,12 @@
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="link" /></span>  Links
     </h5>
-    <div class="links form__elem" v-for="(link, key, i) in linksList" :key="i">
-      <a :href="link" target="_blank" class="preview__link" v-if="link.length">{{ linksListConfig.hasOwnProperty(key) ? key: link }}</a>
-    </div>
+    <template v-for="(link, key, i) in linksList">
+      <div class="links" v-if="link.length" :key="i">
+        <span v-if="linksListConfig.hasOwnProperty(key)" class="preview__key">{{ key }}:</span>
+        <a :href="link" target="_blank" class="preview__link">{{ link }}</a>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -26,5 +29,7 @@ import { mapState } from 'vuex';
   }
 </script>
 <style lang="stylus" scoped>
-
+  .links
+    &__elem
+      margin-bottom 7.5px
 </style>

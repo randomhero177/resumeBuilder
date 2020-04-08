@@ -40,8 +40,7 @@
         </div>
         <div class="col-6 preview-melinda__main">
           <Accomplishments />
-          <Skills />
-
+          <Skills :inline="true"/>
         </div>
         <div class="col-6 preview-melinda__main">
           <Links />
@@ -109,7 +108,7 @@
     &__section
       border 1px solid #dedede
       border-bottom none
-      padding 15px
+      padding 30px
       -webkit-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
       -moz-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
       box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
