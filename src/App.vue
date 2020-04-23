@@ -1,19 +1,17 @@
 <template>
-  <section class="page">
-    <div class="container">
-      <router-view />
-    </div>
-  </section>
+  <div id="app">
+    <layout-dynamic />
+  </div>
 </template>
 
 <script>
-
+import LayoutDynamic from '@/layouts/LayoutDynamic.vue';
 
 export default {
   name: 'App',
 
   components: {
-
+    LayoutDynamic,
   },
 
   data: () => ({
@@ -21,8 +19,3 @@ export default {
   }),
 };
 </script>
-
-<style lang="styl">
-  img
-    max-width 100%
-</style>

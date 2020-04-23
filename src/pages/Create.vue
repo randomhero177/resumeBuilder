@@ -54,7 +54,7 @@
   import Modal from '@/components/Modal.vue';
 
   export default {
-    name: "home",
+    name: "create",
     data() {
       return {
         showModal: false,

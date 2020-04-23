@@ -13,6 +13,17 @@ const router = new Router({
         {
             path: '/',
             name: 'home',
+            component: () => import('@/pages/Home.vue'),
+            meta: {
+                layout: 'LayoutLanding',
+                title: 'p-error.title',
+                requiresAuth: true,
+                scrollToTop: true,
+            },
+        },
+        {
+            path: '/editor',
+            name: 'create',
             component: () => import('@/pages/Create.vue'),
         },
         {
