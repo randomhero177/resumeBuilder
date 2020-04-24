@@ -50,7 +50,6 @@
   .navigation
     background #2e74b5
     padding 15px
-    margin-bottom 30px
     color #fff
     position relative
     &:before

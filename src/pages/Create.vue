@@ -1,6 +1,8 @@
 <template>
   <div class="create">
-    <Navigation />
+    <div class="form__item">
+      <Navigation />
+    </div>
     <div class="row justify-content-between">
       <div class="col">
         <header class="heading">

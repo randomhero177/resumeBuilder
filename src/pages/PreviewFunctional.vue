@@ -1,7 +1,9 @@
 <template>
   <div class="preview preview-functional">
     <div ref="hideWhenPrint" class="form__item">
-      <Navigation />
+      <div class="form__item">
+        <Navigation />
+      </div>
       <h1 class="page__title">Functional template preview</h1>
       <div class="form__item">
         <ChangePreview />

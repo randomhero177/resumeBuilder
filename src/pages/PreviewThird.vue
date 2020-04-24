@@ -1,7 +1,9 @@
 <template>
   <div class="preview preview-melinda">
     <div ref="hideWhenPrint" class="form__item">
-      <Navigation />
+      <div class="form__item">
+        <Navigation />
+      </div>
       <h1 class="page__title">Melinda template preview</h1>
       <div class="form__item">
         <ChangePreview />
