@@ -30,16 +30,34 @@ const router = new Router({
             path: '/preview-template',
             name: 'Preview',
             component: () => import('@/pages/Preview.vue'),
+            meta: {
+                layout: 'LayoutLanding',
+                title: 'p-error.title',
+                requiresAuth: true,
+                scrollToTop: true,
+            },
         },
         {
             path: '/preview-template-functional',
             name: 'PreviewFunctional',
             component: () => import('@/pages/PreviewFunctional.vue'),
+            meta: {
+                layout: 'LayoutLanding',
+                title: 'p-error.title',
+                requiresAuth: true,
+                scrollToTop: true,
+            },
         },
         {
             path: '/preview-template-melinda',
             name: 'PreviewThird',
             component: () => import('@/pages/PreviewThird.vue'),
+            meta: {
+                layout: 'LayoutLanding',
+                title: 'p-error.title',
+                requiresAuth: true,
+                scrollToTop: true,
+            },
         },
         {
             path: '/choose-template',

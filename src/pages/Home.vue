@@ -50,16 +50,16 @@
               <li class="home__works-item">
                 <div class="home__works-icon"><font-awesome-icon icon="file-alt"/></div>
                 Заполняете ты пункты,<br/> которые вам необходимы
-                <div class="home__works-italic"><small><i>* Не заполненные поля не отобразятся в конечном документе</i></small></div>
+                <div class="home__works-italic"><small><i>* Не заполненные поля не отобразятся<br /> в конечном документе</i></small></div>
                 <div class="home__works-button">
-                  <router-link to="/choose-template" class="home__button btn button-home">Заполнить</router-link>
+                  <router-link to="/editor" class="home__button btn button-home">Заполнить</router-link>
                 </div>
               </li>
               <li class="home__works-item">
                 <div class="home__works-icon"><font-awesome-icon icon="download"/></div>
                 Похоже, что все готово.<br/> Проверьте правильность данных&nbsp;и&nbsp;вперед
                 <div class="home__works-button">
-                  <router-link to="/choose-template" class="home__button btn button-home">Скачать</router-link>
+                  <router-link :to="'/preview-' + templateName" class="home__button btn button-home">Скачать</router-link>
                 </div>
               </li>
             </ul>
@@ -83,6 +83,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import Navigation from '@/components/Navigation.vue';
   import Footer from '@/components/Footer.vue';
 
@@ -92,6 +93,11 @@
       return {
         showModal: false,
       };
+    },
+    computed: {
+      ...mapState({
+        templateName: state => state.template.templateName,
+      }),
     },
     components: {
       Navigation, Footer,

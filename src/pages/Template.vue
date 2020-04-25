@@ -1,8 +1,5 @@
 <template>
   <div class="template">
-    <div class="form__item">
-      <Navigation />
-    </div>
     <h1>Choose your template</h1>
     <div class="template__descr">
       We're working in progress. So far there is an only one template available
@@ -10,7 +7,7 @@
     <div class="row">
       <div class="col-3" v-for="templ in templateList" :key="templ">
         <div class="template__item">
-          <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px;">
+          <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px; width: 100%;">
           <div class="template__choose">
             <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)">Use this template</router-link>
           </div>
@@ -22,7 +19,7 @@
 
 <script>
   import { mapState, mapActions } from 'vuex';
-  import Navigation from '@/components/Navigation.vue';
+
   export default {
     name: "Template",
     data() {
@@ -43,9 +40,6 @@
       ...mapActions({
         setTemplateName: 'template/setTemplateName',
       }),
-    },
-    components: {
-      Navigation,
     },
   }
 </script>

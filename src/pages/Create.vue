@@ -1,8 +1,5 @@
 <template>
   <div class="create">
-    <div class="form__item">
-      <Navigation />
-    </div>
     <div class="row justify-content-between">
       <div class="col">
         <header class="heading">
@@ -51,7 +48,6 @@
   import Main from '@/components/Main.vue';
   import Details from '@/components/Details.vue';
   import Education from '@/components/Education.vue';
-  import Navigation from '@/components/Navigation.vue';
   import Accomplishments from '@/components/create/Accomplishments.vue';
   import Modal from '@/components/Modal.vue';
 
@@ -68,7 +64,7 @@
       }),
     },
     components: {
-      Experience, Profile, Main, Details, Education, Navigation, Accomplishments, Modal,
+      Experience, Profile, Main, Details, Education, Accomplishments, Modal,
     },
     methods: {
       ...mapActions({
@@ -93,8 +89,3 @@
     },
   }
 </script>
-
-<style lang="stylus" scoped>
-  .create
-    padding-bottom 45px
-</style>

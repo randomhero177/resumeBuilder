@@ -1,37 +1,57 @@
 <template>
   <div class="preview">
-    <div ref="hideWhenPrint" class="form__item">
-      <div class="form__item">
-        <Navigation />
+    <div ref="hideWhenPrintNav">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col">
+            <Navigation />
+          </div>
+        </div>
       </div>
-      <h1 class="page__title">Template Preview</h1>
-      <div class="form__item">
-        <ChangePreview />
-      </div>
-      <div class="preview__descr form__elem">Section bellow this page will be printed. Everything seems right?</div>
-      <button class="btn button-preview" v-on:click="print">Download PDF</button>
     </div>
-    <div class="preview__section">
-      <Header />
-      <div class="row">
+    <div ref="hideWhenPrint">
+      <div class="row justify-content-center">
         <div class="col-md-8">
-          <Profile />
-          <Experience />
-          <Education />
-        </div>
-        <div class="col-md-4">
-          <Details />
-          <Links />
-          <Skills />
-          <Languages />
+          <div class="form__item content-pad">
+            <h1 class="page__title">Template Preview</h1>
+            <div class="form__item">
+              <ChangePreview />
+            </div>
+            <div class="preview__descr form__elem">Section bellow this page will be printed. Everything seems right?</div>
+            <button class="btn button-preview" v-on:click="print">Download PDF</button>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="container">
+      <div class="preview__section">
+        <Header />
+        <div class="row">
+          <div class="col-md-8">
+            <Profile />
+            <Experience />
+            <Education />
+          </div>
+          <div class="col-md-4">
+            <Details />
+            <Links />
+            <Skills />
+            <Languages />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ref="hideWhenPrintFoot">
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
   import Navigation from '@/components/Navigation.vue';
+  import Footer from '@/components/Footer.vue';
   import ChangePreview from '@/components/ChangePreview.vue';
   import Header from '@/components/preview/Header.vue';
   import Profile from '@/components/preview/Profile.vue';
@@ -53,14 +73,18 @@
     methods: {
       print() {
         this.$refs['hideWhenPrint'].style.display = 'none';
+        this.$refs['hideWhenPrintNav'].style.display = 'none';
+        this.$refs['hideWhenPrintFoot'].style.display = 'none';
         window.onafterprint = () => {
           this.$refs['hideWhenPrint'].style.display = 'block';
-        }
+          this.$refs['hideWhenPrintNav'].style.display = 'block';
+          this.$refs['hideWhenPrintFoot'].style.display = 'block';
+        };
         window.print();
       },
     },
     components: {
-      Navigation, ChangePreview, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
+      Navigation, Footer, ChangePreview, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
     },
   }
 </script>
