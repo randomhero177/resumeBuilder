@@ -1,61 +1,47 @@
 <template>
   <div class="preview preview-functional">
-    <div ref="hideWhenPrintNav">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col">
-            <Navigation />
-          </div>
+    <div class="full-height">
+      <div ref="hideWhenPrintNav">
+        <div class="container">
+          <Navigation />
         </div>
       </div>
-    </div>
-    <div ref="hideWhenPrint">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="form__item content-pad">
-            <h1 class="page__title">Functional template preview</h1>
-            <div class="form__item">
-              <ChangePreview />
-            </div>
-            <div class="preview__descr form__elem">Section bellow this page will be printed. Everything seems right? </div>
-            <div><button class="btn button-preview" v-on:click="print">Download PDF</button></div>
-          </div>
-        </div>
+      <div ref="hideWhenPrint" class="container">
+        <HeaderDownload @trigerPrint="print"/>
       </div>
-    </div>
-    <div class="container">
-      <div class="preview__section">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="preview-functional__side">
-              <div class="text-center">
-                <Avatar />
-              </div>
-              <div class="text-right">
-                <Details />
-              </div>
-              <div class="preview-functional__separate form__item"></div>
-              <div class="text-right">
-                <Links />
-              </div>
-              <Languages />
-              <div class="text-right">
-                <Accomplishments />
+      <div class="container">
+        <div class="preview__section">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="preview-functional__side">
+                <div class="text-center">
+                  <Avatar />
+                </div>
+                <div class="text-right">
+                  <Details />
+                </div>
+                <div class="preview-functional__separate form__item"></div>
+                <div class="text-right">
+                  <Links />
+                </div>
+                <Languages />
+                <div class="text-right">
+                  <Accomplishments />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-8 preview-functional__main">
-            <div class="text-center preview-functional__name">
-              <h4 class="preview-header__name">{{ name }} {{ lastName }}</h4>
-            </div>
-            <div class="preview-functional__summary">
-              <Profile title="QUALIFICATION SUMMARY"/>
-            </div>
+            <div class="col-md-8 preview-functional__main">
+              <div class="text-center preview-functional__name">
+                <h4 class="preview-header__name">{{ name }} {{ lastName }}</h4>
+              </div>
+              <div class="preview-functional__summary">
+                <Profile title="QUALIFICATION SUMMARY"/>
+              </div>
 
-            <Skills title="RELEVANT SKILLS"/>
-            <Education />
-            <Experience />
+              <Skills title="RELEVANT SKILLS"/>
+              <Education />
+              <Experience />
+            </div>
           </div>
         </div>
       </div>
@@ -69,7 +55,7 @@
 <script>
   import Navigation from '@/components/Navigation.vue';
   import Footer from '@/components/Footer.vue';
-  import ChangePreview from '@/components/ChangePreview.vue';
+  import HeaderDownload from '@/components/download/Header.vue';
   import Avatar from '@/components/preview/Avatar.vue';
   import Profile from '@/components/preview/Profile.vue';
   import Details from '@/components/preview/Details.vue';
@@ -109,7 +95,7 @@
       },
     },
     components: {
-      Navigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, ChangePreview,
+      Navigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, HeaderDownload,
       Accomplishments, Footer,
     },
   }

@@ -59,7 +59,7 @@
       width 10000px
       height 100%
       top 0
-      right 0
+      right -1000px
       z-index -1
       background #2e74b5
     &__item

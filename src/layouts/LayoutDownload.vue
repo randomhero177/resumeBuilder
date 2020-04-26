@@ -1,6 +1,6 @@
 <template>
   <div class="layout-download">
-    <main class="content">
+    <main class="content full-height">
       <section class="page">
         <div class="container-fluid">
           <router-view />

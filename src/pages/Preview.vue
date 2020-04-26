@@ -1,43 +1,29 @@
 <template>
   <div class="preview">
-    <div ref="hideWhenPrintNav">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col">
-            <Navigation />
-          </div>
+    <div class="full-height">
+      <div ref="hideWhenPrintNav">
+        <div class="container">
+          <Navigation />
         </div>
       </div>
-    </div>
-    <div ref="hideWhenPrint">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="form__item content-pad">
-            <h1 class="page__title">Template Preview</h1>
-            <div class="form__item">
-              <ChangePreview />
+      <div ref="hideWhenPrint" class="container">
+        <HeaderDownload @trigerPrint="print"/>
+      </div>
+      <div class="container">
+        <div class="preview__section">
+          <Header />
+          <div class="row">
+            <div class="col-md-8">
+              <Profile />
+              <Experience />
+              <Education />
             </div>
-            <div class="preview__descr form__elem">Section bellow this page will be printed. Everything seems right?</div>
-            <button class="btn button-preview" v-on:click="print">Download PDF</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="preview__section">
-        <Header />
-        <div class="row">
-          <div class="col-md-8">
-            <Profile />
-            <Experience />
-            <Education />
-          </div>
-          <div class="col-md-4">
-            <Details />
-            <Links />
-            <Skills />
-            <Languages />
+            <div class="col-md-4">
+              <Details />
+              <Links />
+              <Skills />
+              <Languages />
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +38,7 @@
 <script>
   import Navigation from '@/components/Navigation.vue';
   import Footer from '@/components/Footer.vue';
-  import ChangePreview from '@/components/ChangePreview.vue';
+  import HeaderDownload from '@/components/download/Header.vue';
   import Header from '@/components/preview/Header.vue';
   import Profile from '@/components/preview/Profile.vue';
   import Details from '@/components/preview/Details.vue';
@@ -84,7 +70,7 @@
       },
     },
     components: {
-      Navigation, Footer, ChangePreview, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
+      Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
     },
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div>Navigate through templates. Simply choose other Template from the list. All of the entered data will be saved</div>
-    <select @change="onChange($event)" v-model="templateName" class="select">
+  <div class="text-right">
+    <div class="form__elem" v-tooltip.left="$t('changeTplDescr')">{{ $t('changeTpl') }}</div>
+    <select @change="onChange($event)" v-model="templateName" class="select" v-tooltip.left="$t('changeTplDescr')">
       <option v-for="tpl in templateList" :key="tpl">
         <router-link :to="'preview-' + tpl">
           {{ tpl }}

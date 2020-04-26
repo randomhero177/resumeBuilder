@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-3" v-for="templ in templateList" :key="templ">
+      <div class="col-md-3" v-for="templ in templateList" :key="templ">
         <div class="template__item">
           <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px; width: 100%;">
           <div class="template__choose">

@@ -106,5 +106,11 @@
     "title": "Choose your template",
     "subtitle": "We're working in progress. Someday there would be more templates available",
     "btn": "Use this template"
-  }
+  },
+  "downloadPage": {
+    "description": "Everything seems right?\n Section bellow will be printed.",
+    "btn": "Download PDF"
+  },
+  "changeTpl": "Navigate through templates",
+  "changeTplDescr": "Simply choose other Template from the list. All of the entered data will be saved"
 }
