@@ -1,15 +1,17 @@
 <template>
   <div class="template">
-    <h1>Choose your template</h1>
-    <div class="template__descr">
-      We're working in progress. So far there is an only one template available
+    <div class="form__item">
+      <h1>{{ $t('choose.title') }}</h1>
+      <div class="template__descr">
+        {{ $t('choose.subtitle') }}
+      </div>
     </div>
     <div class="row">
       <div class="col-3" v-for="templ in templateList" :key="templ">
         <div class="template__item">
           <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px; width: 100%;">
           <div class="template__choose">
-            <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)">Use this template</router-link>
+            <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)">{{ $t('choose.btn') }}</router-link>
           </div>
         </div>
       </div>

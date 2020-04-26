@@ -17,8 +17,10 @@ import CustomSlider from 'vue-custom-range-slider';
 import Multiselect from 'vue-multiselect'
 import 'vue-multiselect/dist/vue-multiselect.min.css';
 import Datepicker from 'vuejs-datepicker';
-import VTooltip from 'v-tooltip'
-Vue.use(VTooltip)
+import VTooltip from 'v-tooltip';
+import breakpoint from "@/mixins/breakpoint";
+Vue.use(breakpoint);
+Vue.use(VTooltip);
 Vue.use(wysiwyg, {});
 
 library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck, faSolarPanel, faFileAlt, faEye, faDownload);
@@ -34,6 +36,7 @@ new Vue({
   store,
   router,
   i18n,
+  breakpoint,
   render: h => h(App),
   created() {
     const userLang = (this.$store.state.language.language) ? this.$store.state.language.language : false;
@@ -42,3 +45,5 @@ new Vue({
     document.querySelector('html').setAttribute('lang', lang);
   },
 }).$mount('#app')
+
+Vue.mixin(breakpoint)

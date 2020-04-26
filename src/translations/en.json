@@ -70,5 +70,41 @@
   "languages": "Languages",
   "addLanguage": "Add language",
   "level": "Level",
-  "removeLanguageSection": "Remove Language section"
+  "removeLanguageSection": "Remove Language section",
+  "homePage": {
+    "main": {
+      "title": "Create your resume!",
+      "subtitle": "Easy and free",
+      "text": "<p>This project was created in result of huge disappointment in modern 'free resume' services. </p>\n  <p>Tired of spending my own time and nerves for nothing, I decided to create this web app  for personal purposes.</p>\n  <p>After the first resume created and sent through, I decided to share it with the world.</p>"
+    },
+    "works": {
+      "title": "How it works?",
+      "subtitle": "3 simple steps:",
+      "list": {
+        "step1": {
+          "text": "You choose the template <br />\n It can be changed before downloading or at any other time without loosing entered data.",
+          "btn": "Choose template"
+        },
+        "step2": {
+          "text": "You fill the fields <br />\n you need.",
+          "btn": "Fill resume",
+          "warn": "* Incomplete fields will not appear <br /> \n in the final document"
+        },
+        "step3": {
+          "text": "Seems like you're all set up!<br/> And we don't lie. We won't ask for paid subscription or registration or whatever else before the download",
+          "btn": "Download"
+        }
+      }
+    },
+    "safe": {
+      "title": "Safety",
+      "subtitle": "You can't steel a thing that doesn't exist",
+      "text": "Build-resume.io doesn't hve any data-base, we don't use cookie and do not save any data on our side in any possible way. All of the data filled, stays only in your browser"
+    }
+  },
+  "choose": {
+    "title": "Choose your template",
+    "subtitle": "We're working in progress. Someday there would be more templates available",
+    "btn": "Use this template"
+  }
 }

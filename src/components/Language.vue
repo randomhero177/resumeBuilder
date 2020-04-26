@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ $t('language') }}
+    <span style="margin-right: 15px">{{ $t('language') }}</span>
     <select @change="changeLang($event)" name="lang" class="select" v-model="langModel">
       <option :value="lang" v-for="lang in languages" :key="lang">
         {{ $t(lang) }}

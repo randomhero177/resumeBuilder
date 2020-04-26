@@ -73,7 +73,7 @@
       &_active
         font-weight bold
         border-bottom 1px solid #fff
-        background rgba(149, 191, 230, 0.25)
+        background rgba(149, 191, 230, 0.1)
         padding 5px 15px 2.5px 15px
       &:hover, &:active, &:focus
         text-decoration none

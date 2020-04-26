@@ -1,0 +1,83 @@
+.create
+  padding-bottom 45px
+.home
+  &__screen
+    min-height 100vh
+    padding 30px 0
+    position relative
+    border-bottom 1px solid #ddd
+    border-top 1px solid #d4d3d3
+    &:before, &:after
+      content ''
+      display block
+      position absolute
+      width 100%
+      left 0
+      z-index -1
+      opacity .2
+    &:before
+      height 100%
+      top 0
+    &:after
+      content ''
+      display block
+      position absolute
+      background url("/shadow.png") center center
+      height 100px
+      bottom 0
+  &__main
+    &:before
+      background url("/IMGP6384.JPG") center center
+  &__works
+    &:before
+      background url("/DSC_0674.JPG") center center
+    &-list
+      display flex
+      flex-wrap wrap
+      justify-content space-around
+      list-style none
+      padding 0
+      margin 0
+    &-item
+      border 1px solid #333
+      width 100%
+      background rgba(255, 255, 255, .5)
+      padding 15px 30px 30px
+      border-radius 2.5px
+      font-size 1rem
+      display flex
+      flex-direction column
+      justify-content space-between
+      margin-bottom 30px
+      @media (min-width: $grid-breakpoints.lg)
+        width 30%
+        margin-bottom 0px
+    &-button
+      margin-top 30px
+    &-italic
+      line-height 100%
+      margin-top 15px
+      color #e27e7e
+    &-icon
+      font-size 60px
+      color #2e74b5
+      margin-bottom 15px
+  &__safe
+    &:before
+      background url("/works.JPG") center center
+  &__heading
+    margin-bottom 60px
+    text-transform uppercase
+  &__title
+    font-size 2.75rem
+    margin-bottom 5px
+  &__subtitle
+    font-size 1.75rem
+  &__buttons
+    margin 30px 0
+  &__button
+    font-size 1.25rem
+  &__text
+    font-size 1.25rem
+    & p
+      margin-bottom 10px
