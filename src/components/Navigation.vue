@@ -49,7 +49,8 @@
 <style scoped lang="stylus">
   .navigation
     background #2e74b5
-    padding 15px
+    padding 7.5px 15px
+    font-size .8rem
     color #fff
     position relative
     &:before

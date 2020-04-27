@@ -16,15 +16,24 @@ const router = new Router({
             component: () => import('@/pages/Home.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'p-error.title',
-                requiresAuth: true,
-                scrollToTop: true,
+                title: 'meta.home',
+            },
+        },
+        {
+            path: '/choose-template',
+            name: 'Template',
+            component: () => import('@/pages/Template.vue'),
+            meta: {
+                title: 'meta.chooseTemplate',
             },
         },
         {
             path: '/editor',
-            name: 'create',
-            component: () => import('@/pages/Create.vue'),
+            name: 'editor',
+            component: () => import('@/pages/Editor.vue'),
+            meta: {
+                title: 'meta.editor',
+            },
         },
         {
             path: '/preview-template',
@@ -32,9 +41,7 @@ const router = new Router({
             component: () => import('@/pages/Preview.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'p-error.title',
-                requiresAuth: true,
-                scrollToTop: true,
+                title: 'meta.download',
             },
         },
         {
@@ -43,9 +50,7 @@ const router = new Router({
             component: () => import('@/pages/PreviewFunctional.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'p-error.title',
-                requiresAuth: true,
-                scrollToTop: true,
+                title: 'meta.download',
             },
         },
         {
@@ -54,26 +59,16 @@ const router = new Router({
             component: () => import('@/pages/PreviewThird.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'p-error.title',
-                requiresAuth: true,
-                scrollToTop: true,
+                title: 'meta.download',
             },
-        },
-        {
-            path: '/choose-template',
-            name: 'Template',
-            component: () => import('@/pages/Template.vue'),
         },
         {
             path: '*',
-            name: 'error-404',
+            name: 'Error',
             meta: {
-                layout: 'LayoutClean',
-                title: 'p-error.title',
-                requiresAuth: false,
-                scrollToTop: true,
+                title: 'Error!',
             },
-            component: () => import('@/pages/Error404.vue'),
+            component: () => import('@/pages/Error.vue'),
         },
     ],
 });

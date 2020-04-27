@@ -44,6 +44,17 @@ new Vue({
     this.$i18n.locale = lang;
     document.querySelector('html').setAttribute('lang', lang);
   },
+  watch: {
+    '$i18n.locale': function changeTitle() {
+      document.title = `${this.$i18n.t(this.$route.meta.title).toString()} - build-resume.io`;
+    },
+    $route: {
+      handler(to) {
+        document.title = `${this.$i18n.t(to.meta.title).toString()} - build-resume.io`;
+      },
+      immediate: true,
+    },
+  },
 }).$mount('#app')
 
 Vue.mixin(breakpoint)

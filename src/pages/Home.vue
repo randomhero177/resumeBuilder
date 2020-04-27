@@ -20,7 +20,7 @@
               <div class="home__text">
                 <div v-html="$t('homePage.main.text')"></div>
               </div>
-              <div class="home__buttons"><router-link to="/choose-template" class="home__button btn button-home"> Создать резюме </router-link></div>
+              <div class="home__buttons"><router-link to="/choose-template" class="home__button btn button-home"> {{ $t('homePage.main.btn') }} </router-link></div>
             </div>
             <div class="col-lg-4">
               <img src="/template.png" alt="">

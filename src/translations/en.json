@@ -75,7 +75,8 @@
     "main": {
       "title": "Create your resume!",
       "subtitle": "Easy and free",
-      "text": "<p>This project was created in result of huge disappointment in modern 'free resume' services. </p>\n  <p>Tired of spending my own time and nerves for nothing, I decided to create this web app  for personal purposes.</p>\n  <p>After the first resume created and sent through, I decided to share it with the world.</p>"
+      "text": "<p>This project was created in result of huge disappointment in modern 'free resume' services. </p>\n  <p>Tired of spending my own time and nerves for nothing, I decided to create this web app  for personal purposes.</p>\n  <p>After the first resume created and sent through, I decided to share it with the world.</p>",
+      "btn": "Create resume"
     },
     "works": {
       "title": "How it works?",
@@ -112,5 +113,11 @@
     "btn": "Download PDF"
   },
   "changeTpl": "Navigate through templates",
-  "changeTplDescr": "Simply choose other Template from the list. All of the entered data will be saved"
+  "changeTplDescr": "Simply choose other Template from the list. All of the entered data will be saved",
+  "meta": {
+    "home": "Create your resume fast and easy!",
+    "chooseTemplate": "Choose template",
+    "editor": "Resume editor",
+    "download": "Download your resume"
+  }
 }
