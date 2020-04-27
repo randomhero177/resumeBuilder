@@ -1,7 +1,6 @@
 <template>
   <div class="row navigation align-items-center">
     <div class="col-auto" v-if="!$breakpoint.mdAndDown">
-      {{ $breakpoint.mdAndDown }}
       <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active"> {{ $t('home') }} </router-link> >
     </div>
     <div class="col-auto" v-if="!$breakpoint.mdAndDown">

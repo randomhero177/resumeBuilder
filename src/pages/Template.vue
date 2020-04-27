@@ -6,10 +6,10 @@
         {{ $t('choose.subtitle') }}
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-3" v-for="templ in templateList" :key="templ">
+    <div class="row justify-content-between">
+      <div class="col-lg-3 col-md-4" v-for="templ in templateList" :key="templ">
         <div class="template__item">
-          <img :src="`/${templ}.png`" alt="template" style="border-top: 2px solid #999; height: 330px; width: 100%;">
+          <img :src="`/${templ}.png`" alt="template" style="border-top: 1px solid #999;">
           <div class="template__choose">
             <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)">{{ $t('choose.btn') }}</router-link>
           </div>
