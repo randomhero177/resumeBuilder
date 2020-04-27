@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="container-fluid">
-      <div class="row navigation align-items-center">
+      <div class="row align-items-center">
         <div class="col text-center">
           <div style="margin-bottom: 5px">
             &copy; Copyright {{ new Date().getFullYear() }} -  build-resume.io

@@ -1,19 +1,46 @@
 <template>
   <div class="row navigation align-items-center">
-    <div class="col-auto">
+    <div class="col-auto" v-if="!$breakpoint.mdAndDown">
+      {{ $breakpoint.mdAndDown }}
       <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active"> {{ $t('home') }} </router-link> >
     </div>
-    <div class="col-auto">
+    <div class="col-auto" v-if="!$breakpoint.mdAndDown">
       <router-link to="/choose-template" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('chooseTemplate') }}</router-link> >
     </div>
-    <div class="col-auto">
+    <div class="col-auto" v-if="!$breakpoint.mdAndDown">
       <router-link to="/editor" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('fillIn') }}</router-link> >
     </div>
-    <div class="col-auto">
+    <div class="col-auto" v-if="!$breakpoint.mdAndDown">
       <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('download') }}</router-link>
     </div>
     <div class="col-auto ml-auto">
       <Language />
+    </div>
+    <div v-if="$breakpoint.mdAndDown">
+      <div class="navigation__mobile-wrap">
+        <span class="navigation__mobile-icon"
+          :class="showMobile ? 'navigation__mobile-icon_active': ''"
+          v-on:click="showMobile = !showMobile"
+        >
+          <font-awesome-icon icon="bars" />
+        </span>
+        <transition name="slide-fade">
+          <div class="navigation__mobile-drop" v-if="showMobile" v-on:click="showMobile = !showMobile">
+            <div class="navigation__mobile-elem">
+              <router-link to="/" class="navigation__mobile-item" exact-active-class="navigation__mobile-item_active"> {{ $t('home') }} </router-link> >
+            </div>
+            <div class="navigation__mobile-elem">
+              <router-link to="/choose-template" class="navigation__mobile-item" exact-active-class="navigation__mobile-item_active">{{ $t('chooseTemplate') }}</router-link> >
+            </div>
+            <div class="navigation__mobile-elem">
+              <router-link to="/editor" class="navigation__mobile-item" exact-active-class="navigation__mobile-item_active">{{ $t('fillIn') }}</router-link> >
+            </div>
+            <div class="navigation__mobile-elem">
+              <router-link :to="'/preview-' + templateName" class="navigation__mobile-item" exact-active-class="navigation__mobile-item_active">{{ $t('download') }}</router-link>
+            </div>
+          </div>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -25,7 +52,7 @@
     name: 'Navigation',
 
     data: () => ({
-
+      showMobile: false,
     }),
     computed: {
       ...mapState({
@@ -45,40 +72,3 @@
     },
   }
 </script>
-
-<style scoped lang="stylus">
-  .navigation
-    background #2e74b5
-    padding 7.5px 15px
-    font-size .8rem
-    color #fff
-    position relative
-    &:before
-      content ''
-      display block
-      position absolute
-      width 10000px
-      height 100%
-      top 0
-      right -1000px
-      z-index -1
-      background #2e74b5
-    &__item
-      margin 0 10px
-      color #fff
-      padding-bottom 2.5px
-      position relative
-      z-index 1
-      &:first-child
-        margin-left -15px
-      &_active
-        font-weight bold
-        border-bottom 1px solid #fff
-        background rgba(149, 191, 230, 0.1)
-        padding 5px 15px 2.5px 15px
-      &:hover, &:active, &:focus
-        text-decoration none
-        border none
-        border-bottom 1px solid #fff
-        outline none
-</style>

@@ -1,0 +1,57 @@
+.navigation
+  background #2e74b5
+  padding 7.5px 15px
+  font-size .8rem
+  color #fff
+  position relative
+  &:before
+    content ''
+    display block
+    position absolute
+    width 10000px
+    height 100%
+    top 0
+    right -1000px
+    z-index -1
+    background #2e74b5
+  &__item
+    margin 0 10px
+    color #fff
+    padding-bottom 2.5px
+    position relative
+    z-index 1
+    &:first-child
+      margin-left -15px
+    &_active
+      font-weight bold
+      border-bottom 1px solid #fff
+      background rgba(149, 191, 230, 0.1)
+      padding 5px 15px 2.5px 15px
+    &:hover, &:active, &:focus
+      text-decoration none
+      border none
+      border-bottom 1px solid #fff
+      outline none
+  &__mobile
+    &-wrap
+      position relative
+    &-icon
+      font-size 1rem
+      cursor pointer
+      &_active
+        transform rotate(90deg)
+        display inline-block
+    &-elem
+      margin-bottom 7.5px
+      padding-bottom 7.5px
+      border-bottom 1px solid #eee
+    &-drop
+      position absolute
+      min-width 170px
+      background #fff
+      border 1px solid #e2e3e5
+      border-radius 3px
+      right calc(100% + 15px)
+      top 0
+      padding 15px
+      z-index 5
