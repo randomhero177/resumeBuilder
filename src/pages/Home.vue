@@ -109,7 +109,7 @@
               <h5 class="home__subtitle">{{ $t('homePage.safe.subtitle') }}</h5>
             </div>
             <div class="home__text">
-              <p>{{ $t('homePage.safe.text') }}</p>
+              <div v-html="$t('homePage.safe.text')"></div>
             </div>
           </div>
         </transition>
@@ -140,20 +140,22 @@
     computed: {
       ...mapState({
         templateName: state => state.template.templateName,
+        isShown: state => state.home.isShown,
       }),
-
     },
     methods: {
       isSectionActive() {
         this.screenRefs.forEach((name, index) => {
-          const secondScreenTop = this.$refs[name].getBoundingClientRect().top;
-          const isActive = secondScreenTop*1.5 - window.innerHeight < 0 && window.innerHeight + secondScreenTop*2 > 0;
-          if(isActive) {
-            this[name] = isActive;
-            this.screenRefs.splice(index, 1);
-          }
-          if(!this.screenRefs.length) {
-            window.removeEventListener('scroll', this.isSectionActive);
+          if(this.$refs[name]) {
+            const secondScreenTop = this.$refs[name].getBoundingClientRect().top;
+            const isActive = secondScreenTop*1.5 - window.innerHeight < 0 && window.innerHeight + secondScreenTop*2 > 0;
+            if(isActive) {
+              this[name] = isActive;
+              this.screenRefs.splice(index, 1);
+            }
+            if(!this.screenRefs.length) {
+              window.removeEventListener('scroll', this.isSectionActive);
+            }
           }
         })
       }
@@ -162,18 +164,23 @@
       Navigation, Footer, Loader,
     },
     mounted() {
-      setTimeout(() => {
-        this.isReady = true;
+      if(!this.isShown) {
+        setTimeout(() => {
+          this.isReady = true;
+          this.showAnimation = true;
+        }, 2000);
+        window.addEventListener('scroll', this.isSectionActive);
+        this.$store.commit('home/setShownState', true);
+      } else {
+        this.secondScreen = true;
         this.showAnimation = true;
-      }, 2000);
-
-
-      window.addEventListener('scroll', this.isSectionActive);
-
+        this.isReady = true;
+        this.thirdScreen = true;
+        window.removeEventListener('scroll', this.isSectionActive);
+      }
+    },
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.isSectionActive);
     }
   }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>
