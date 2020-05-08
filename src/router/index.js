@@ -17,6 +17,24 @@ const router = new Router({
             meta: {
                 layout: 'LayoutLanding',
                 title: 'meta.home',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'Build your resume! It\'s easy and free'
+                    },
+                    {
+                        name: 'og:type',
+                        content: 'article'
+                    },
+                    {
+                        name: 'og:title',
+                        content: 'Build-resume.io - Your resume is almost here!'
+                    },
+                    {
+                        name: 'og:description',
+                        content: 'Build your resume! It\'s easy and free'
+                    }
+                ]
             },
         },
         {
@@ -25,6 +43,24 @@ const router = new Router({
             component: () => import('@/pages/Template.vue'),
             meta: {
                 title: 'meta.chooseTemplate',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'Use our templates to create a successful resume and download PDF file'
+                    },
+                    {
+                        name: 'og:type',
+                        content: 'article'
+                    },
+                    {
+                        name: 'og:title',
+                        content: 'Choose template'
+                    },
+                    {
+                        name: 'og:description',
+                        content: 'Use our templates to create a successful resume and download PDF file'
+                    }
+                ]
             },
         },
         {
@@ -33,6 +69,24 @@ const router = new Router({
             component: () => import('@/pages/Editor.vue'),
             meta: {
                 title: 'meta.editor',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'Fill in the resume and download your PDF'
+                    },
+                    {
+                        name: 'og:type',
+                        content: 'article'
+                    },
+                    {
+                        name: 'og:title',
+                        content: 'Resume editor'
+                    },
+                    {
+                        name: 'og:description',
+                        content: 'Fill in the resume and download your PDF'
+                    }
+                ]
             },
         },
         {
@@ -42,6 +96,24 @@ const router = new Router({
             meta: {
                 layout: 'LayoutLanding',
                 title: 'meta.download',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'All set? Download your job-winning resume in PDF'
+                    },
+                    {
+                        name: 'og:type',
+                        content: 'article'
+                    },
+                    {
+                        name: 'og:title',
+                        content: 'Download your resume'
+                    },
+                    {
+                        name: 'og:description',
+                        content: 'All set? Download your job-winning resume in PDF'
+                    }
+                ]
             },
         },
         {
@@ -51,6 +123,24 @@ const router = new Router({
             meta: {
                 layout: 'LayoutLanding',
                 title: 'meta.download',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'All set? Download your job-winning resume in PDF'
+                    },
+                    {
+                        name: 'og:type',
+                        content: 'article'
+                    },
+                    {
+                        name: 'og:title',
+                        content: 'Download your resume'
+                    },
+                    {
+                        name: 'og:description',
+                        content: 'All set? Download your job-winning resume in PDF'
+                    }
+                ]
             },
         },
         {
@@ -60,6 +150,24 @@ const router = new Router({
             meta: {
                 layout: 'LayoutLanding',
                 title: 'meta.download',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'All set? Download your job-winning resume in PDF'
+                    },
+                    {
+                        name: 'og:type',
+                        content: 'article'
+                    },
+                    {
+                        name: 'og:title',
+                        content: 'Download your resume'
+                    },
+                    {
+                        name: 'og:description',
+                        content: 'All set? Download your job-winning resume in PDF'
+                    }
+                ]
             },
         },
         {

@@ -75,7 +75,7 @@
     "main": {
       "title": "Create your resume!",
       "subtitle": "Easy and free",
-      "text": "<p>This project was created in result of huge disappointment in modern 'free resume' services. </p>\n  <p>Tired of spending my own time and nerves for nothing, I decided to create this web app  for personal purposes.</p>\n  <p>After the first resume created and sent through, I decided to share it with the world.</p>",
+      "text": "<p>Searching for a job is not an easy process and <i>Build-resume</i> was created to simplify at least one part of the game. </p>\n  <p>Idea of this project came to my mind in result of huge disappointment in modern 'free resume' services. Tired of spending my own time and nerves for nothing, I decided to create this web app for personal purposes.</p>\n  <p>After the first resume created and sent through, I decided to share this app with the world.</p>",
       "btn": "Create resume"
     },
     "works": {
@@ -89,7 +89,7 @@
         "step2": {
           "text": "You fill the fields <br />\n you need.",
           "btn": "Fill resume",
-          "warn": "* Incomplete fields will not appear <br /> \n in the final document"
+          "warn": "* Incomplete fields will not appear in the final document"
         },
         "step3": {
           "text": "Seems like you're all set up!<br/> And we don't lie. We won't ask for paid subscription or registration or whatever else before the download",
@@ -100,7 +100,7 @@
     "safe": {
       "title": "Safety",
       "subtitle": "You can't steel a thing that doesn't exist",
-      "text": "Build-resume.io doesn't hve any data-base, we don't use cookie and do not save any data on our side in any possible way. All of the data filled, stays only in your browser"
+      "text": "<p>Build-resume.io doesn't have any data-base, we don't use cookie and do not save any data on our side in any possible way. All of the data filled, stays only in your browser.</p> <p><strong>You can't go any safer than that</strong></p>"
     }
   },
   "choose": {

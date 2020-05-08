@@ -53,6 +53,19 @@ new Vue({
     $route: {
       handler(to) {
         document.title = `${this.$i18n.t(to.meta.title).toString()} - build-resume.io`;
+        if(to.meta.metaTags && to.meta.metaTags.length) {
+          to.meta.metaTags.forEach(el => {
+            console.log(el)
+            const meta = document.querySelector(`meta[name="${el.name}"]`)
+            if(meta) {
+              document.querySelector(`meta[name="${el.name}"]`).setAttribute('content', el.content)
+            } else {
+              const tag = document.createElement('meta');
+              tag.setAttribute(el.name, el.content);
+              document.head.appendChild(tag);
+            }
+          })
+        }
       },
       immediate: true,
     },
