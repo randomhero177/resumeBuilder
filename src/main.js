@@ -2,6 +2,7 @@ import Vue from 'vue';
 import store from '@/store/index';
 import router from '@/router/index';
 import App from './App.vue';
+import 'animate.css/animate.min.css'
 import '@/assets/grid.min.css';
 import '@/assets/common.styl';
 import '@/plugins/moment/plugin';
@@ -19,6 +20,7 @@ import 'vue-multiselect/dist/vue-multiselect.min.css';
 import Datepicker from 'vuejs-datepicker';
 import VTooltip from 'v-tooltip';
 import breakpoint from "@/mixins/breakpoint";
+
 Vue.use(breakpoint);
 Vue.use(VTooltip);
 Vue.use(wysiwyg, {});
