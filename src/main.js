@@ -10,7 +10,7 @@ import i18n from '@/plugins/i18n';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserSecret, faAllergies, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck, faSolarPanel, faFileAlt, faEye, faDownload, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faFontAwesome, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome } from '@fortawesome/free-brands-svg-icons'
+import { faFontAwesome, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faSkype } from '@fortawesome/free-brands-svg-icons'
 import wysiwyg from 'vue-wysiwyg';
 import 'vue-wysiwyg/dist/vueWysiwyg.css';
 import 'vue-custom-range-slider/dist/vue-custom-range-slider.css';
@@ -25,7 +25,7 @@ Vue.use(breakpoint);
 Vue.use(VTooltip);
 Vue.use(wysiwyg, {});
 
-library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck, faSolarPanel, faFileAlt, faEye, faDownload, faBars);
+library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck, faSolarPanel, faFileAlt, faEye, faDownload, faBars, faSkype);
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

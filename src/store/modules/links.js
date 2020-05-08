@@ -7,6 +7,7 @@ const state = {
     linkedin: '',
     twitter: '',
     github: '',
+    skype: '',
     website: '',
   },
   iconsConfig: {
@@ -25,6 +26,10 @@ const state = {
     github: {
       icon: 'github-square',
       title: 'Your github page'
+    },
+    skype: {
+      icon: 'skype',
+      title: 'Skype ID'
     },
     website: {
       icon: 'chrome',
