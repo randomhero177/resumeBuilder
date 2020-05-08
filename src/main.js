@@ -55,13 +55,12 @@ new Vue({
         document.title = `${this.$i18n.t(to.meta.title).toString()} - build-resume.io`;
         if(to.meta.metaTags && to.meta.metaTags.length) {
           to.meta.metaTags.forEach(el => {
-            console.log(el)
             const meta = document.querySelector(`meta[name="${el.name}"]`)
             if(meta) {
-              document.querySelector(`meta[name="${el.name}"]`).setAttribute('content', el.content)
+              document.querySelector(`meta[name="${el.name}"]`).setAttribute('content', this.$i18n.t(el.content).toString())
             } else {
               const tag = document.createElement('meta');
-              tag.setAttribute(el.name, el.content);
+              tag.setAttribute(el.name, this.$i18n.t(el.content).toString());
               document.head.appendChild(tag);
             }
           })

@@ -117,9 +117,21 @@
   "changeTpl": "Выбрать другой шаблон",
   "changeTplDescr": "Выберите шаблон из списка. Ранее заполненные данные не пропадут",
   "meta": {
-    "home": "Создай резюме за несколько минут",
-    "chooseTemplate": "Выбери шаблон резюме",
-    "editor": "Редактор",
-    "download": "Скачать резюме"
+    "home": {
+      "title": "Создай резюме бесплатно за несколько минут",
+      "description": "ЭТО ПРОСТО И БЕСПЛАТНО"
+    },
+    "chooseTemplate": {
+      "title": "Выбери шаблон резюме",
+      "description": "Use our templates to create a successful resume and download PDF file"
+    },
+    "editor": {
+      "title": "Редактор",
+      "description": "Fill in the resume and download your PDF"
+    },
+    "download": {
+      "title": "Скачать резюме в PDF",
+      "description": "All set? Download your job-winning resume in PDF"
+    }
   }
 }

@@ -115,9 +115,21 @@
   "changeTpl": "Navigate through templates",
   "changeTplDescr": "Simply choose other Template from the list. All of the entered data will be saved",
   "meta": {
-    "home": "Create your resume fast and easy!",
-    "chooseTemplate": "Choose template",
-    "editor": "Resume editor",
-    "download": "Download your resume"
+    "home": {
+      "title": "Create your resume fast and easy!",
+      "description": "Build your resume! It's easy and free"
+    },
+    "chooseTemplate": {
+      "title": "Choose template",
+      "description": "Use our templates to create a successful resume and download PDF file"
+    },
+    "editor": {
+      "title": "Resume editor",
+      "description": "Fill in the resume and download your PDF"
+    },
+    "download": {
+      "title": "Download your resume",
+      "description": "All set? Download your job-winning resume in PDF"
+    }
   }
 }

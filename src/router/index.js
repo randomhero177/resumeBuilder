@@ -16,11 +16,11 @@ const router = new Router({
             component: () => import('@/pages/Home.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'meta.home',
+                title: 'meta.home.title',
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'Build your resume! It\'s easy and free'
+                        content: 'meta.home.description'
                     },
                     {
                         name: 'og:type',
@@ -28,11 +28,11 @@ const router = new Router({
                     },
                     {
                         name: 'og:title',
-                        content: 'Build-resume.io - Your resume is almost here!'
+                        content: 'meta.home.title'
                     },
                     {
                         name: 'og:description',
-                        content: 'Build your resume! It\'s easy and free'
+                        content: 'meta.home.description'
                     }
                 ]
             },
@@ -42,11 +42,11 @@ const router = new Router({
             name: 'Template',
             component: () => import('@/pages/Template.vue'),
             meta: {
-                title: 'meta.chooseTemplate',
+                title: 'meta.chooseTemplate.title',
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'Use our templates to create a successful resume and download PDF file'
+                        content: 'meta.chooseTemplate.description'
                     },
                     {
                         name: 'og:type',
@@ -54,11 +54,11 @@ const router = new Router({
                     },
                     {
                         name: 'og:title',
-                        content: 'Choose template'
+                        content: 'meta.chooseTemplate.title'
                     },
                     {
                         name: 'og:description',
-                        content: 'Use our templates to create a successful resume and download PDF file'
+                        content: 'meta.chooseTemplate.description'
                     }
                 ]
             },
@@ -68,11 +68,11 @@ const router = new Router({
             name: 'editor',
             component: () => import('@/pages/Editor.vue'),
             meta: {
-                title: 'meta.editor',
+                title: 'meta.editor.title',
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'Fill in the resume and download your PDF'
+                        content: 'meta.editor.description'
                     },
                     {
                         name: 'og:type',
@@ -80,11 +80,11 @@ const router = new Router({
                     },
                     {
                         name: 'og:title',
-                        content: 'Resume editor'
+                        content: 'meta.editor.title'
                     },
                     {
                         name: 'og:description',
-                        content: 'Fill in the resume and download your PDF'
+                        content: 'meta.editor.description'
                     }
                 ]
             },
@@ -95,11 +95,11 @@ const router = new Router({
             component: () => import('@/pages/Preview.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'meta.download',
+                title: 'meta.download.title',
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'All set? Download your job-winning resume in PDF'
+                        content: 'meta.download.description'
                     },
                     {
                         name: 'og:type',
@@ -107,11 +107,11 @@ const router = new Router({
                     },
                     {
                         name: 'og:title',
-                        content: 'Download your resume'
+                        content: 'meta.download.title'
                     },
                     {
                         name: 'og:description',
-                        content: 'All set? Download your job-winning resume in PDF'
+                        content: 'meta.download.description'
                     }
                 ]
             },
@@ -122,11 +122,11 @@ const router = new Router({
             component: () => import('@/pages/PreviewFunctional.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'meta.download',
+                title: 'meta.download.title',
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'All set? Download your job-winning resume in PDF'
+                        content: 'meta.download.description'
                     },
                     {
                         name: 'og:type',
@@ -134,11 +134,11 @@ const router = new Router({
                     },
                     {
                         name: 'og:title',
-                        content: 'Download your resume'
+                        content: 'meta.download.title'
                     },
                     {
                         name: 'og:description',
-                        content: 'All set? Download your job-winning resume in PDF'
+                        content: 'meta.download.description'
                     }
                 ]
             },
@@ -149,11 +149,11 @@ const router = new Router({
             component: () => import('@/pages/PreviewThird.vue'),
             meta: {
                 layout: 'LayoutLanding',
-                title: 'meta.download',
+                title: 'meta.download.title',
                 metaTags: [
                     {
                         name: 'description',
-                        content: 'All set? Download your job-winning resume in PDF'
+                        content: 'meta.download.description'
                     },
                     {
                         name: 'og:type',
@@ -161,11 +161,11 @@ const router = new Router({
                     },
                     {
                         name: 'og:title',
-                        content: 'Download your resume'
+                        content: 'meta.download.title'
                     },
                     {
                         name: 'og:description',
-                        content: 'All set? Download your job-winning resume in PDF'
+                        content: 'meta.download.description'
                     }
                 ]
             },
