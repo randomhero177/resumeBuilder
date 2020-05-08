@@ -30,6 +30,9 @@
     methods: {
       btnClick() {
         this.$emit('trigerPrint')
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': 'previewMain-pdf-download'})
+        }
       },
     },
   }
