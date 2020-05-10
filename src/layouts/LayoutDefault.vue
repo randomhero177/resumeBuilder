@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import Footer from '@/components/Footer.vue';
-  import Navigation from '@/components/Navigation.vue';
+  import Footer from '@/components/common/Footer.vue';
+  import Navigation from '@/components/common/Navigation.vue';
 export default {
   name: 'LayoutDefault',
   data() {

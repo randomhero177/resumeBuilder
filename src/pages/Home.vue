@@ -121,8 +121,8 @@
 
 <script>
   import { mapState } from 'vuex';
-  import Navigation from '@/components/Navigation.vue';
-  import Footer from '@/components/Footer.vue';
+  import Navigation from '@/components/common/Navigation.vue';
+  import Footer from '@/components/common/Footer.vue';
   import Loader from '@/components/common/Loader.vue';
 
   export default {

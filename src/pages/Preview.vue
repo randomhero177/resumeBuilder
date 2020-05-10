@@ -36,10 +36,10 @@
 </template>
 
 <script>
-  import Navigation from '@/components/Navigation.vue';
-  import Footer from '@/components/Footer.vue';
-  import HeaderDownload from '@/components/download/Header.vue';
-  import Header from '@/components/preview/Header.vue';
+  import Navigation from '@/components/common/Navigation.vue';
+  import Footer from '@/components/common/Footer.vue';
+  import HeaderDownload from '@/components/preview/Header.vue';
+  import Header from '@/components/preview/HeaderPreview.vue';
   import Profile from '@/components/preview/Profile.vue';
   import Details from '@/components/preview/Details.vue';
   import Links from '@/components/preview/Links.vue';

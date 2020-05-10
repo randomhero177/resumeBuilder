@@ -46,7 +46,7 @@
 
 <script>
   import { mapState } from 'vuex';
-  import Language from '@/components/Language.vue';
+  import Language from '@/components/common/Language.vue';
   export default {
     name: 'Navigation',
 

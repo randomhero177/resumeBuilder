@@ -18,6 +18,9 @@
     methods: {
       changeLang(e) {
         this.$i18n.locale = e.target.value;
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': 'changeLanguage'});
+        }
       },
     },
     computed: {

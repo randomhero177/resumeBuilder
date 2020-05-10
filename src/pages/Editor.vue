@@ -19,7 +19,6 @@
         <header class="heading">
           <h2 class="heading__title">{{ $t('create.details') }}</h2>
         </header>
-        <Main />
         <Details />
       </div>
       <div class="col-md-8">
@@ -43,13 +42,12 @@
 
 <script>
   import { mapState, mapActions } from 'vuex';
-  import Experience from '@/components/Experience.vue';
-  import Profile from '@/components/Profile.vue';
-  import Main from '@/components/Main.vue';
-  import Details from '@/components/Details.vue';
-  import Education from '@/components/Education.vue';
-  import Accomplishments from '@/components/create/Accomplishments.vue';
-  import Modal from '@/components/Modal.vue';
+  import Experience from '@/components/editor/Experience.vue';
+  import Profile from '@/components/editor/Profile.vue';
+  import Details from '@/components/editor/details/Details.vue';
+  import Education from '@/components/editor/Education.vue';
+  import Accomplishments from '@/components/editor/Accomplishments.vue';
+  import Modal from '@/components/common/Modal.vue';
 
   export default {
     name: "editor",
@@ -64,7 +62,7 @@
       }),
     },
     components: {
-      Experience, Profile, Main, Details, Education, Accomplishments, Modal,
+      Experience, Profile, Details, Education, Accomplishments, Modal,
     },
     methods: {
       ...mapActions({

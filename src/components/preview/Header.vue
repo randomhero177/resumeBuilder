@@ -1,38 +1,39 @@
 <template>
-  <div class="preview-header form__item">
-    <div class="row align-items-center">
-      <div class="col-md-auto" v-if="avatar.src">
-        <div class="preview-header__ava-wrap">
-          <div class="preview__profile">
-            <img :src="avatar.src" alt="" class="preview-header__ava">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="content-pad">
+        <div class="preview preview-melinda">
+          <div class="form__item">
+            <h1 class="page__title">Melinda template preview</h1>
+            <div class="preview__descr form__elem">{{ $t('downloadPage.description') }}</div>
+            <div><button class="btn button-preview" v-on:click="btnClick">{{ $t('downloadPage.btn') }}</button></div>
           </div>
         </div>
       </div>
-      <div class="col-8">
-        <h4 class="preview-header__name">{{ name }} {{ lastName }}</h4>
-        <div class="preview-header__position">
-          {{ position }}
-        </div>
+    </div>
+    <div class="col-auto ml-auto">
+      <div class="form__item content-pad">
+        <ChangePreview />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+  import ChangePreview from '@/components/preview/ChangePreview.vue';
+
   export default {
-    name: 'Header',
-    computed: {
-      ...mapState({
-        profile: state => state.profile.profile,
-        position: state => state.profile.position,
-        avatar: state => state.form.avatar,
-        name: state => state.form.name,
-        lastName: state => state.form.lastName,
-      }),
+    name: 'DonwloadHeader',
+    components: {
+      ChangePreview,
+    },
+    methods: {
+      btnClick() {
+        this.$emit('trigerPrint')
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': 'previewMain-pdf-download'});
+        }
+      },
     },
   }
 </script>
-<style lang="stylus" scoped>
-
-</style>
