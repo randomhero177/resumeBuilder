@@ -8,7 +8,9 @@
       </div>
       <div class="col-auto">
         <div>
-          <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+          <span v-on:click="sendGtm('download-resume-after-editor')">
+            <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+          </span>
         </div>
         <br>
         <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> {{ $t('clearAll') }}</span></div>
@@ -29,7 +31,11 @@
       </div>
     </div>
     <div class="row justify-content-end">
-      <div class="col-auto"><router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link></div>
+      <div class="col-auto">
+        <span v-on:click="sendGtm('download-resume-after-editor')">
+          <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+        </span>
+      </div>
     </div>
     <Modal
       v-if="showModal"
@@ -68,6 +74,12 @@
       ...mapActions({
         setAccomplishments: 'accomplishments/setAccomplishments'
       }),
+      sendGtm(name) {
+        console.log('sdf' + name)
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': name})
+        }
+      },
       approveModal() {
         this.showModal = false;
         this.clearStorage();
