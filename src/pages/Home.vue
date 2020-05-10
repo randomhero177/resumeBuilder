@@ -36,7 +36,7 @@
                   <div class="home__text">
                     <div v-html="$t('homePage.main.text')"></div>
                   </div>
-                  <div class="home__buttons"><router-link to="/choose-template" class="home__button btn button-home"><span v-on:click="sendGtm('create-resume-click')">{{ $t('homePage.main.btn') }}</span></router-link></div>
+                  <div class="home__buttons"><span v-on:click="sendGtm('create-resume-click')"><router-link to="/choose-template" class="home__button btn button-home">{{ $t('homePage.main.btn') }}</router-link></span></div>
                 </div>
               </transition>
             </div>
@@ -74,7 +74,7 @@
                   <div class="home__works-icon"><font-awesome-icon icon="solar-panel"/></div>
                   <div v-html="$t('homePage.works.list.step1.text')"></div>
                   <div class="home__works-button">
-                    <router-link to="/choose-template" class="home__button btn button-home"><span v-on:click="sendGtm('create-resume-click')">{{ $t('homePage.works.list.step1.btn') }}</span></router-link>
+                    <span v-on:click="sendGtm('create-resume-click')"><router-link to="/choose-template" class="home__button btn button-home">{{ $t('homePage.works.list.step1.btn') }}</router-link></span>
                   </div>
                 </li>
                 <li class="home__works-item">
@@ -82,14 +82,14 @@
                   <div v-html="$t('homePage.works.list.step2.text')"></div>
                   <div class="home__works-italic"><small><i v-html="$t('homePage.works.list.step2.warn')"></i></small></div>
                   <div class="home__works-button">
-                    <router-link to="/editor" class="home__button btn button-home"><span v-on:click="sendGtm('fill-resume-click')">{{ $t('homePage.works.list.step2.btn') }}</span></router-link>
+                    <span v-on:click="sendGtm('fill-resume-click')"><router-link to="/editor" class="home__button btn button-home">{{ $t('homePage.works.list.step2.btn') }}</router-link></span>
                   </div>
                 </li>
                 <li class="home__works-item">
                   <div class="home__works-icon"><font-awesome-icon icon="download"/></div>
                   <div v-html="$t('homePage.works.list.step3.text')"></div>
                   <div class="home__works-button">
-                    <router-link :to="'/preview-' + templateName" class="home__button btn button-home"><span v-on:click="sendGtm('download-resume-click')">{{ $t('homePage.works.list.step3.btn') }}</span></router-link>
+                    <span v-on:click="sendGtm('download-resume-click')"><router-link :to="'/preview-' + templateName" class="home__button btn button-home">{{ $t('homePage.works.list.step3.btn') }}</router-link></span>
                   </div>
                 </li>
               </ul>
@@ -145,6 +145,8 @@
     },
     methods: {
       sendGtm(name) {
+        console.log(name)
+        console.log(12 + name)
         if(window.dataLayer) {
           window.dataLayer.push({'event': name})
         }
