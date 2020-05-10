@@ -71,6 +71,9 @@
       approveModal() {
         this.showModal = false;
         this.clearStorage();
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': 'clear-editor-form'})
+        }
       },
       clearStorage(){
         this.$store.commit('accomplishments/setAccomplishments', '');
