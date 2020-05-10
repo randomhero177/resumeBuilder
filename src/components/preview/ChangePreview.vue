@@ -35,6 +35,9 @@ import { mapState, mapActions } from 'vuex'
       }),
       onChange(e) {
         this.$router.push('preview-' + e.target.value);
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': 'change-preview-template'})
+        }
       },
     },
     created() {

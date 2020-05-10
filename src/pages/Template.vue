@@ -11,7 +11,7 @@
         <div class="template__item">
           <img :src="`/${templ}.png`" alt="template" style="border-top: 1px solid #999;">
           <div class="template__choose">
-            <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)">{{ $t('choose.btn') }}</router-link>
+            <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)"><span v-on:click="sendGtm(templ)">{{ $t('choose.btn') }}</span></router-link>
           </div>
         </div>
       </div>
@@ -42,6 +42,11 @@
       ...mapActions({
         setTemplateName: 'template/setTemplateName',
       }),
+      sendGtm(name) {
+        if(window.dataLayer) {
+          window.dataLayer.push({'event': `${name}-chosen`})
+        }
+      },
     },
   }
 </script>
