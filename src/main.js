@@ -7,38 +7,23 @@ import '@/assets/grid.min.css';
 import '@/assets/common.styl';
 import '@/plugins/moment/plugin';
 import i18n from '@/plugins/i18n';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserSecret, faAllergies, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck, faSolarPanel, faFileAlt, faEye, faDownload, faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faFontAwesome, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faSkype } from '@fortawesome/free-brands-svg-icons'
-import wysiwyg from 'vue-wysiwyg';
-import 'vue-wysiwyg/dist/vueWysiwyg.css';
-import 'vue-custom-range-slider/dist/vue-custom-range-slider.css';
-import CustomSlider from 'vue-custom-range-slider';
-import Multiselect from 'vue-multiselect'
-import 'vue-multiselect/dist/vue-multiselect.min.css';
+import '@/plugins/fontAwesome';
+import '@/plugins/multiselect';
+import '@/plugins/wysiwyg';
+import '@/plugins/customSlider';
 import Datepicker from 'vuejs-datepicker';
 import VTooltip from 'v-tooltip';
 import breakpoint from "@/mixins/breakpoint";
 
-Vue.use(breakpoint);
 Vue.use(VTooltip);
-Vue.use(wysiwyg, {});
-
-library.add(faUserSecret, faFontAwesome, faAllergies, faFacebook, faFacebookSquare, faLinkedin, faTwitterSquare, faGithubSquare, faChrome, faTrashAlt, faPlusSquare, faPlusCircle, faIdBadge, faInfoCircle, faLink, faTools, faBriefcase, faGraduationCap, faCheck, faSolarPanel, faFileAlt, faEye, faDownload, faBars, faSkype);
-
-
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.component('multiselect', Multiselect);
 Vue.component('datepicker', Datepicker);
-Vue.component('custom-slider', CustomSlider);
+
 Vue.config.productionTip = false;
 
 new Vue({
   store,
   router,
   i18n,
-  breakpoint,
   render: h => h(App),
   created() {
     const userLang = (this.$store.state.language.language) ? this.$store.state.language.language : false;
