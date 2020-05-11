@@ -11,7 +11,10 @@
       </div>
       <div class="container">
         <div class="preview__section">
-          <div class="row">
+          <template v-if="!isInfoFilled">
+            <NoInfo />
+          </template>
+          <div class="row" v-else>
             <div class="col-12">
               <div class="row preview-melinda__header">
                 <div class="col-auto">
@@ -68,6 +71,8 @@
   import Experience from '@/components/preview/Experience.vue';
   import Education from '@/components/preview/Education.vue';
   import Accomplishments from '@/components/preview/Accomplishments.vue';
+  import NoInfo from '@/components/preview/NoInfo.vue';
+
   import { mapState } from "vuex";
   export default {
     name: "PreviewThird",
@@ -84,6 +89,9 @@
         lastName: state => state.form.lastName,
         position: state => state.profile.position,
       }),
+      isInfoFilled() {
+        return this.name.length || this.lastName.length
+      },
     },
     methods: {
       print() {
@@ -100,7 +108,7 @@
     },
     components: {
       Navigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, HeaderDownload,
-      Accomplishments, Footer,
+      Accomplishments, Footer, NoInfo,
     },
   }
 </script>

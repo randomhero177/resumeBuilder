@@ -75,7 +75,6 @@
         setAccomplishments: 'accomplishments/setAccomplishments'
       }),
       sendGtm(name) {
-        console.log('sdf' + name)
         if(window.dataLayer) {
           window.dataLayer.push({'event': name})
         }

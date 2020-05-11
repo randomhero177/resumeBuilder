@@ -11,20 +11,25 @@
       </div>
       <div class="container">
         <div class="preview__section">
-          <Header />
-          <div class="row">
-            <div class="col-md-8">
-              <Profile />
-              <Experience />
-              <Education />
+          <template v-if="!isInfoFilled">
+            <NoInfo />
+          </template>
+          <template v-else>
+            <Header />
+            <div class="row">
+              <div class="col-md-8">
+                <Profile />
+                <Experience />
+                <Education />
+              </div>
+              <div class="col-md-4">
+                <Details />
+                <Links />
+                <Skills />
+                <Languages />
+              </div>
             </div>
-            <div class="col-md-4">
-              <Details />
-              <Links />
-              <Skills />
-              <Languages />
-            </div>
-          </div>
+          </template>
         </div>
       </div>
     </div>
@@ -36,6 +41,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import Navigation from '@/components/common/Navigation.vue';
   import Footer from '@/components/common/Footer.vue';
   import HeaderDownload from '@/components/preview/Header.vue';
@@ -47,6 +53,8 @@
   import Languages from '@/components/preview/Languages.vue';
   import Experience from '@/components/preview/Experience.vue';
   import Education from '@/components/preview/Education.vue';
+  import NoInfo from '@/components/preview/NoInfo.vue';
+
   export default {
     name: "Preview",
     data() {
@@ -55,6 +63,15 @@
 
           }),
       };
+    },
+    computed: {
+      ...mapState({
+        name: state => state.form.name,
+        lastName: state => state.form.lastName,
+      }),
+      isInfoFilled() {
+        return this.name.length || this.lastName.length
+      },
     },
     methods: {
       print() {
@@ -70,7 +87,7 @@
       },
     },
     components: {
-      Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
+      Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education, NoInfo,
     },
   }
 </script>

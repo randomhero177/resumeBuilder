@@ -133,5 +133,6 @@
       "title": "Скачать резюме в PDF",
       "description": "All set? Download your job-winning resume in PDF"
     }
-  }
+  },
+  "noInfoDownload": "Недостаточно данных. Заполните резюме на предыдущей странице"
 }

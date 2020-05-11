@@ -131,5 +131,6 @@
       "title": "Download your resume",
       "description": "All set? Download your job-winning resume in PDF"
     }
-  }
+  },
+  "noInfoDownload": "No info to display. Go back to 'editor page' to fill in the resume"
 }
