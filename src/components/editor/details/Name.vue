@@ -2,11 +2,11 @@
   <div class="form__item">
     <div class="row">
       <div class="col-md-6">
-        <div class="form__label">{{ $t('firstName') }}</div>
+        <div class="form__label"><span class="form__required">*</span> {{ $t('firstName') }}</div>
         <input type="text" v-model="name" :placeholder="$t('yourFirstName')" class="input" name="firstName">
       </div>
       <div class="col-md-6">
-        <div class="form__label">{{ $t('lastName') }}</div>
+        <div class="form__label"><span class="form__required">*</span> {{ $t('lastName') }}</div>
         <input type="text" v-model="lastName" :placeholder="$t('yourLastName')" class="input" name="lastName">
       </div>
     </div>
