@@ -7,12 +7,11 @@
         </header>
       </div>
       <div class="col-auto">
-        <div>
+        <div class="form__elem">
           <span v-on:click="sendGtm('download-resume-after-editor')">
             <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
           </span>
         </div>
-        <br>
         <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> {{ $t('clearAll') }}</span></div>
       </div>
     </div>
@@ -28,9 +27,14 @@
         <Education />
         <Experience />
         <Accomplishments />
+        <References />
       </div>
     </div>
-    <div class="row justify-content-end">
+    <div class="row justify-content-end align-content-center">
+      <div class="col-auto">
+        <div><small><i>{{ $t('unfilled') }}</i></small></div>
+        <div><small><i v-html="$t('requiredDesc')"></i></small></div>
+      </div>
       <div class="col-auto">
         <span v-on:click="sendGtm('download-resume-after-editor')">
           <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
@@ -53,6 +57,7 @@
   import Details from '@/components/editor/details/Details.vue';
   import Education from '@/components/editor/Education.vue';
   import Accomplishments from '@/components/editor/Accomplishments.vue';
+  import References from '@/components/editor/References.vue';
   import Modal from '@/components/common/Modal.vue';
 
   export default {
@@ -68,7 +73,7 @@
       }),
     },
     components: {
-      Experience, Profile, Details, Education, Accomplishments, Modal,
+      Experience, Profile, Details, Education, Accomplishments, Modal, References,
     },
     methods: {
       ...mapActions({

@@ -3,13 +3,13 @@
     <div class="full-height">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-2"></div>
+          <div class="col-1"></div>
           <div class="col">
             <Navigation />
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-8">
+          <div class="col-xl-10">
             <div class="content-pad">
               <router-view />
             </div>

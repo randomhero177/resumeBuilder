@@ -21,12 +21,17 @@
                 <Profile />
                 <Experience />
                 <Education />
-                <Accomplishments />
+                <template>
+                  <Accomplishments />
+                </template>
+                <template>
+                  <References />
+                </template>
               </div>
               <div class="col-md-4">
                 <Details />
                 <Links />
-                <Skills />
+                <Skills inline="true"/>
                 <Languages />
               </div>
             </div>
@@ -55,6 +60,7 @@
   import Experience from '@/components/preview/Experience.vue';
   import Education from '@/components/preview/Education.vue';
   import Accomplishments from '@/components/preview/Accomplishments.vue';
+  import References from '@/components/preview/References.vue';
   import NoInfo from '@/components/preview/NoInfo.vue';
 
   export default {
@@ -90,7 +96,7 @@
     },
     components: {
       Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
-      Accomplishments, NoInfo,
+      Accomplishments, NoInfo, References,
     },
   }
 </script>

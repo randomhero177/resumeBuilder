@@ -38,7 +38,7 @@
     "startDate": "Start date",
     "endDate": "End date",
     "city": "City",
-    "currentPosition": "Current position",
+    "currentPosition": "To present",
     "description": "Job description:",
     "skills": "Key skills for this position:",
     "keySkills": "Key skills",
@@ -135,10 +135,14 @@
   },
   "noInfoDownload": "No info to display. Go back to 'editor page' to fill in the resume",
   "currentPosition": "Current position",
-  "currentEducationEditor": "to Present",
-  "currentEducation": "to Present",
+  "currentEducationEditor": "To present",
+  "currentEducation": "To present",
   "at": "at",
   "of": "of",
   "previewDetails": "Details",
-  "previewProfile": "Profile"
+  "previewProfile": "Profile",
+  "references": "References",
+  "referencesDesc": "Specify your references",
+  "unfilled": "Unfilled items will not fall into the final preview.",
+  "requiredDesc": "Only items marked with <span class=\"form__required\">*</span></i> are required."
 }

@@ -43,6 +43,7 @@
             <div class="col-6 preview-melinda__main">
               <Accomplishments />
               <Skills :inline="true"/>
+              <References />
             </div>
             <div class="col-6 preview-melinda__main">
               <Links />
@@ -71,6 +72,7 @@
   import Experience from '@/components/preview/Experience.vue';
   import Education from '@/components/preview/Education.vue';
   import Accomplishments from '@/components/preview/Accomplishments.vue';
+  import References from '@/components/preview/References.vue';
   import NoInfo from '@/components/preview/NoInfo.vue';
 
   import { mapState } from "vuex";
@@ -109,7 +111,7 @@
     },
     components: {
       Navigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, HeaderDownload,
-      Accomplishments, Footer, NoInfo,
+      Accomplishments, Footer, NoInfo, References,
     },
   }
 </script>

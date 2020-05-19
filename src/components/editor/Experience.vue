@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-6 form__elem">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-xl-6">
             <div class="form__label">{{ $t('workHistory.startDate') }}</div>
             <div class="form__picker">
               <datepicker placeholder="Select Date"
@@ -30,7 +30,7 @@
               />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-xl-6">
             <div class="form__label">{{ $t('workHistory.endDate') }}</div>
             <div class="form__picker" v-if="!work.isCurrentPosition">
               <datepicker placeholder="Select Date"

@@ -14,6 +14,7 @@ import phone from '@/store/modules/phone';
 import accomplishments from '@/store/modules/accomplishments';
 import language from '@/store/modules/language';
 import home from '@/store/modules/home';
+import references from '@/store/modules/references';
 
 Vue.use(Vuex);
 
@@ -50,6 +51,7 @@ const store = new Vuex.Store({
         accomplishments,
         language,
         home,
+        references,
     },
     plugins: [createPersistedState({
         paths: ['accomplishments', 'education', 'email', 'experience', 'form', 'language', 'languages', 'links', 'profile', 'phone', 'skills']
