@@ -31,7 +31,7 @@
               <div class="col-md-4">
                 <Details />
                 <Links />
-                <Skills inline="true"/>
+                <Skills :inline="true"/>
                 <Languages />
               </div>
             </div>
