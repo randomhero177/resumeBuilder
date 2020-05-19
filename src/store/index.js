@@ -12,7 +12,7 @@ import links from '@/store/modules/links';
 import email from '@/store/modules/email';
 import phone from '@/store/modules/phone';
 import accomplishments from '@/store/modules/accomplishments';
-import language from '@/store/modules/language';
+import localeLanguage from '@/store/modules/localeLanguage';
 import home from '@/store/modules/home';
 import references from '@/store/modules/references';
 
@@ -49,12 +49,12 @@ const store = new Vuex.Store({
         email,
         phone,
         accomplishments,
-        language,
+        localeLanguage,
         home,
         references,
     },
     plugins: [createPersistedState({
-        paths: ['accomplishments', 'education', 'email', 'experience', 'form', 'language', 'languages', 'links', 'profile', 'phone', 'skills']
+        paths: ['accomplishments', 'education', 'email', 'experience', 'form', 'localeLanguage', 'languages', 'links', 'profile', 'phone', 'skills']
     })],
 });
 

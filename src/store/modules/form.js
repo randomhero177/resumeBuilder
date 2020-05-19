@@ -5,17 +5,7 @@ const state = {
   birthday: new Date('1990-12-24T18:04:00.000Z'),
 };
 
-const actions = {
-  setUserName({ commit }, name) {
-    commit('setUserName', name);
-  },
-  setUserLastName({ commit }, lastName) {
-    commit('setUserName', lastName);
-  },
-  setAvatar({ commit }, avatar) {
-    commit('setAvatar', avatar);
-  },
-};
+const actions = {};
 
 const mutations = {
   setUserName(state, name) {

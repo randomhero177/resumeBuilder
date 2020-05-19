@@ -3,9 +3,6 @@ const state = {
 };
 
 const actions = {
-  setSkills({ commit }, skillsList) {
-    commit('setSkills', skillsList)
-  },
 };
 
 const mutations = {

@@ -93,14 +93,14 @@
       },
       clearStorage(){
         this.$store.commit('accomplishments/setAccomplishments', '');
-        this.$store.commit('education/removeSection', );
+        this.$store.commit('education/removeSection');
         this.$store.commit('email/setEmail', '');
-        this.$store.commit('experience/removeSection', );
-        this.$store.commit('form/clearAll', );
-        this.$store.commit('languages/removeSection', );
-        this.$store.commit('links/removeSection', );
+        this.$store.commit('experience/removeSection');
+        this.$store.commit('form/clearAll');
+        this.$store.commit('languages/removeSection');
+        this.$store.commit('links/removeSection');
         this.$store.commit('phone/setPhone', '');
-        this.$store.commit('profile/clearAll', );
+        this.$store.commit('profile/clearAll');
         this.$store.commit('skills/setSkills', []);
       },
     },

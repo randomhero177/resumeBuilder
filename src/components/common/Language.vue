@@ -26,10 +26,10 @@
     computed: {
       language: {
         get() {
-          return this.$store.state.language.language;
+          return this.$store.state.localeLanguage.language;
         },
         set(value) {
-          this.$store.commit('language/setLanguage', value)
+          this.$store.commit('localeLanguage/setLanguage', value)
         },
       },
     },

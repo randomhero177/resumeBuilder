@@ -2,9 +2,7 @@ const state = {
   references: '',
 };
 
-const actions = {
-
-};
+const actions = {};
 
 const mutations = {
   setReferences(state, data) {

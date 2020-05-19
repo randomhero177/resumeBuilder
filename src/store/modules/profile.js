@@ -3,11 +3,7 @@ const state = {
   position: '',
 };
 
-const actions = {
-  updateProfile({ commit }, data) {
-    commit('setProfileDesc', data);
-  },
-};
+const actions = {};
 
 const mutations = {
   setProfileDesc(state, data) {

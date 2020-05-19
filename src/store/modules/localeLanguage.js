@@ -2,11 +2,7 @@ const state = {
   language: 'en',
 };
 
-const actions = {
-  setLanguage(state, language) {
-    state.language = language;
-  },
-};
+const actions = {};
 
 const mutations = {
   setLanguage(state, language) {
@@ -14,11 +10,11 @@ const mutations = {
   },
 };
 
-const language = {
+const localeLanguage = {
   namespaced: true,
   state,
   actions,
   mutations,
 };
 
-export default language;
+export default localeLanguage;
