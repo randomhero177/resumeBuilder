@@ -1,7 +1,7 @@
 <template>
   <div class="preview__profile form__item" v-if="accomplishments.length">
     <h5 class="preview__title">
-      <span class="preview__icon"><font-awesome-icon icon="info-circle" /></span>  Accomplishments
+      <span class="preview__icon"><font-awesome-icon icon="info-circle" /></span> {{ $t('accomplishments') }}
     </h5>
     <div>
       <div class="preview__value" v-html="accomplishments"></div>

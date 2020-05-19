@@ -9,6 +9,9 @@ const actions = {
   removeEducationFromList({ commit }, index) {
     commit('removeEducation', index);
   },
+  fetchIsCurrentEducation({ commit }, education) {
+    commit('updateIsCurrentEducation', education);
+  },
   fetchUniversity({ commit }, education) {
     commit('updateUniversity', education);
   },
@@ -50,6 +53,9 @@ const mutations = {
   },
   updateDayEnd(state, education) {
     state.educationList[education.id].dayEnd= education.dayEnd;
+  },
+  updateIsCurrentEducation(state, education) {
+    state.educationList[education.id].isCurrentEducation= education.isCurrentEducation;
   },
   removeSection(state) {
     state.educationList = [];

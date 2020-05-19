@@ -2,7 +2,7 @@ const state = {
   name: '',
   lastName: '',
   avatar: {},
-  birthday: '',
+  birthday: new Date('1990-12-24T18:04:00.000Z'),
 };
 
 const actions = {

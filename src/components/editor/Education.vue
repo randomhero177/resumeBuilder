@@ -6,7 +6,7 @@
     <div class="alert alert_warning" v-if="!educationList.length">
       {{ $t('noInfo') }}
     </div>
-    <div class="row justify-content-end" v-for="(item, index) in educationList" :key="index">
+    <div class="row justify-content-end form__item" v-for="(item, index) in educationList" :key="index">
       <div class="col-md-6 form__elem">
         <div class="form__label">{{ $t('education.university') }}</div>
         <input type="text" class="input" :value="item.university" @input="updateUniversity($event, index)">
@@ -35,15 +35,26 @@
           </div>
           <div class="col-md-5">
             <div class="form__label">{{ $t('education.endDate') }}</div>
-            <datepicker placeholder="Select Date"
-              v-on:selected="updateDayEnd($event, index)"
-              :value="item.dayEnd"
-              :monday-first="true"
-              :format="format"
-              :minimumView="'month'"
-              :maximumView="'year'"
-              :initialView="'year'"
-            />
+            <div class="form__picker" v-if="!item.isCurrentEducation">
+              <datepicker placeholder="Select Date"
+                v-on:selected="updateDayEnd($event, index)"
+                :value="item.dayEnd"
+                :monday-first="true"
+                :format="format"
+                :minimumView="'month'"
+                :maximumView="'year'"
+                :initialView="'year'"
+              />
+            </div>
+            <div>
+              <div class="input-checkbox">
+                <input type="checkbox" @input="toggleIsCurrentEducation($event, index)">
+                <label>{{ $t('currentEducationEditor') }}</label>
+                <span class="input-checkbox__checked">
+                  <font-awesome-icon icon="check" />
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -97,6 +108,7 @@
         fetchDayStart: 'education/fetchDayStart',
         fetchDayEnd: 'education/fetchDayEnd',
         removeSection: 'education/removeSection',
+        fetchIsCurrentEducation: 'education/fetchIsCurrentEducation',
       }),
       addEducation() {
         const config = {
@@ -105,8 +117,15 @@
           university: '',
           degree: '',
           fieldOfStudy: '',
+          isCurrentEducation: false
         };
         this.addEducationToList(config);
+      },
+      toggleIsCurrentEducation(e, index) {
+        this.fetchIsCurrentEducation({
+          id: index,
+          isCurrentEducation: e.target.checked,
+        })
       },
       removeEducation(index) {
         this.removeEducationFromList(index);

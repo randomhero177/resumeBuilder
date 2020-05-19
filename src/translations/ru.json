@@ -41,7 +41,8 @@
     "city": "Регион",
     "currentPosition": "Еще работаю",
     "description": "Основные обязанности:",
-    "skills": "Главные навыки",
+    "skills": "Ключевые навыки",
+    "keySkills": "Ключевые навыки",
     "searchSkill": "Найдите или добавьте навык",
     "skillPlaceholder": "Добавить как новый навык"
   },
@@ -134,5 +135,12 @@
       "description": "All set? Download your job-winning resume in PDF"
     }
   },
-  "noInfoDownload": "Недостаточно данных. Заполните резюме на предыдущей странице"
+  "noInfoDownload": "Недостаточно данных. Заполните резюме на предыдущей странице",
+  "currentPosition": "По настоящее время",
+  "currentEducationEditor": "Еще учусь",
+  "currentEducation": "По настоящее время",
+  "at": "в",
+  "of": "по",
+  "previewDetails": "Данные",
+  "previewProfile": "Общая информация"
 }

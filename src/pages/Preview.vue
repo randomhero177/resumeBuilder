@@ -21,6 +21,7 @@
                 <Profile />
                 <Experience />
                 <Education />
+                <Accomplishments />
               </div>
               <div class="col-md-4">
                 <Details />
@@ -53,6 +54,7 @@
   import Languages from '@/components/preview/Languages.vue';
   import Experience from '@/components/preview/Experience.vue';
   import Education from '@/components/preview/Education.vue';
+  import Accomplishments from '@/components/preview/Accomplishments.vue';
   import NoInfo from '@/components/preview/NoInfo.vue';
 
   export default {
@@ -87,7 +89,8 @@
       },
     },
     components: {
-      Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education, NoInfo,
+      Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
+      Accomplishments, NoInfo,
     },
   }
 </script>

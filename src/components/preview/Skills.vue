@@ -1,7 +1,7 @@
 <template>
   <div class="preview__skills form__item" v-if="skills.length">
     <h5 class="preview__title">
-      <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  {{ title }}
+      <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  {{ $t(title) }}
     </h5>
     <template v-for="(item, i) in skills">
       <div :class="inline ? 'preview__skills_inline' : ''" :key="i">
@@ -25,7 +25,7 @@ import { mapState } from 'vuex';
     props: {
       title: {
         type: String,
-        default: 'Skills',
+        default: 'skills',
       },
       inline: {
         type: Boolean,

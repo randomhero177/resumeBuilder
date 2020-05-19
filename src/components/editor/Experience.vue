@@ -6,7 +6,7 @@
     <div class="alert alert_warning" v-if="!workList.length">
       {{ $t('noInfo') }}
     </div>
-    <div class="row" v-for="(work, index) in workList" :key="index">
+    <div class="row form__item" v-for="(work, index) in workList" :key="index">
       <div class="col-md-6 form__elem">
         <div class="form__label">{{ $t('workHistory.company') }}</div>
         <input type="text" class="input" :value="work.company" @input="updateCompany($event, index)">

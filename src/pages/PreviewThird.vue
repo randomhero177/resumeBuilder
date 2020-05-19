@@ -17,7 +17,7 @@
           <div class="row" v-else>
             <div class="col-12">
               <div class="row preview-melinda__header">
-                <div class="col-auto">
+                <div class="col-auto" v-if="avatar.length">
                   <Avatar />
                 </div>
                 <div class="col-auto">
@@ -88,6 +88,7 @@
         name: state => state.form.name,
         lastName: state => state.form.lastName,
         position: state => state.profile.position,
+        avatar: state => state.form.avatar,
       }),
       isInfoFilled() {
         return this.name.length || this.lastName.length

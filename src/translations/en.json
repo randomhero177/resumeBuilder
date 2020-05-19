@@ -41,6 +41,7 @@
     "currentPosition": "Current position",
     "description": "Job description:",
     "skills": "Key skills for this position:",
+    "keySkills": "Key skills",
     "searchSkill": "Search or add a skill",
     "skillPlaceholder": "Add this as new skill"
   },
@@ -132,5 +133,12 @@
       "description": "All set? Download your job-winning resume in PDF"
     }
   },
-  "noInfoDownload": "No info to display. Go back to 'editor page' to fill in the resume"
+  "noInfoDownload": "No info to display. Go back to 'editor page' to fill in the resume",
+  "currentPosition": "Current position",
+  "currentEducationEditor": "to Present",
+  "currentEducation": "to Present",
+  "at": "at",
+  "of": "of",
+  "previewDetails": "Details",
+  "previewProfile": "Profile"
 }

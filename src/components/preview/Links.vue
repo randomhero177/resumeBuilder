@@ -1,7 +1,7 @@
 <template>
   <div class="preview__links form__item" v-if="Object.keys(linksList).length">
     <h5 class="preview__title">
-      <span class="preview__icon"><font-awesome-icon icon="link" /></span>  Links
+      <span class="preview__icon"><font-awesome-icon icon="link" /></span>  {{ $t('links') }}
     </h5>
     <template v-for="(link, key, i) in linksList">
       <div class="links" v-if="link.length" :key="i">

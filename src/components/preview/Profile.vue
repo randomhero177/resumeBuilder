@@ -1,7 +1,7 @@
 <template>
   <div class="form__item preview-profile" v-if="profile.length">
     <h5 class="preview__title">
-      <span class="preview__icon"><font-awesome-icon icon="id-badge" /></span>  {{ title }}</h5>
+      <span class="preview__icon"><font-awesome-icon icon="id-badge" /></span>  {{ $t(title) }}</h5>
     <div v-html="profile"></div>
   </div>
 </template>
@@ -19,7 +19,7 @@ import { mapState } from 'vuex';
     props: {
       title: {
         type: String,
-        default: 'Profile',
+        default: 'previewProfile',
       },
     },
     components: {
