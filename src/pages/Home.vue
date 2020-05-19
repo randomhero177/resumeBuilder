@@ -1,19 +1,14 @@
 <template>
   <div class="home">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col">
-          <Navigation />
-        </div>
-      </div>
+      <Navigation />
     </div>
     <div v-if="!isReady">
       <Loader />
     </div>
     <div class="container-fluid">
       <section class="home__screen home__main row justify-content-center align-items-center">
-        <div class="col-8">
+        <div class="col-xl-10 col-lg-8">
           <div class="row">
             <div class="col-lg-8">
               <div class="home__heading">
@@ -52,7 +47,7 @@
         </div>
       </section>
       <section class="home__screen home__works row justify-content-center align-items-center text-center" ref="secondScreen">
-        <div class="col-8">
+        <div class="col-xl-10">
           <transition
               name="fade"
               enter-active-class="animated fadeInDown"

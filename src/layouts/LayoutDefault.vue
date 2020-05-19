@@ -2,12 +2,7 @@
   <section class="page">
     <div class="full-height">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-1"></div>
-          <div class="col">
-            <Navigation />
-          </div>
-        </div>
+        <Navigation />
         <div class="row justify-content-center">
           <div class="col-xl-10">
             <div class="content-pad">
