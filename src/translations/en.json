@@ -75,7 +75,7 @@
     "main": {
       "title": "Create your resume!",
       "subtitle": "Easy and free",
-      "text": "<p>Searching for a job is not an easy process and <i>Build-resume</i> was created to simplify at least one part of the game. </p>\n  <p>Idea of this project came to my mind in result of huge disappointment in modern 'free resume' services. Tired of spending my own time and nerves for nothing, I decided to create this web app for personal purposes.</p>\n  <p>After the first resume created and sent through, I decided to share this app with the world.</p>",
+      "text": "<p>Searching for a job is not an easy process and <i>Build-resume</i> has been created to simplify at least one part of the game. </p>\n  <p>The idea for the project came as a result of a personal frustration with the modern 'free resume' services. To say they were a huge disappointment to me is to say nothing. Tired of spending time and energy to get me nowhere, I decided to create a web app for personal use.</p>\n  <p>After the first resume has been created and sent out, I decided to share this app with the world.</p>",
       "btn": "Create resume"
     },
     "works": {
@@ -83,7 +83,7 @@
       "subtitle": "3 simple steps:",
       "list": {
         "step1": {
-          "text": "You choose the template <br />\n It can be changed before downloading or at any other time without loosing entered data.",
+          "text": "You choose the template <br />\n It can be changed before downloading or at any other time without losing entered data.",
           "btn": "Choose template"
         },
         "step2": {
