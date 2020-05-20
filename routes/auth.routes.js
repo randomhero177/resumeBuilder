@@ -14,6 +14,7 @@ router.post('/register',
   ],
   async (request, response) => {
     try {
+      console.log(request.body);
       const errors = validationResult(request);
       if(!errors.isEmpty()) {
         return response.status(400).json({
@@ -34,7 +35,7 @@ router.post('/register',
 
       await user.save();
 
-      response.status(400).json({ message: 'Пользователь создан' });
+      response.status(201).json({ message: 'Пользователь создан' });
     } catch (e) {
       response.status(500).json({ message: 'Что-то пошло не так' })
     }

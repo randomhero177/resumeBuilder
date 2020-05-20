@@ -17,6 +17,14 @@
         <div class="col-auto ml-auto">
           <Language />
         </div>
+        <div class="col-auto ml-auto">
+          <span class="icon icon_user" @mouseover="showDropdown = true">
+            <font-awesome-icon icon="user-circle" />
+          </span>
+          <div v-if="showDropdown">
+            <User />
+          </div>
+        </div>
         <div v-if="$breakpoint.mdAndDown">
           <div class="navigation__mobile-wrap">
             <span class="navigation__mobile-icon"
@@ -26,7 +34,7 @@
               <font-awesome-icon icon="bars" />
             </span>
             <transition name="slide-fade">
-              <div class="navigation__mobile-drop" v-if="showMobile" v-on:click="showMobile = !showMobile">
+              <div class="dropdown navigation__mobile-drop" v-if="showMobile" v-on:click="showMobile = !showMobile">
                 <div class="navigation__mobile-elem">
                   <router-link to="/" class="navigation__mobile-item" exact-active-class="navigation__mobile-item_active"> {{ $t('home') }} </router-link> >
                 </div>
@@ -51,10 +59,14 @@
 <script>
   import { mapState } from 'vuex';
   import Language from '@/components/common/Language.vue';
+  import User from '@/components/common/User.vue';
+
+
   export default {
     name: 'Navigation',
     data: () => ({
       showMobile: false,
+      showDropdown: false,
     }),
     computed: {
       ...mapState({
@@ -70,7 +82,7 @@
       },
     },
     components: {
-      Language,
+      Language, User,
     },
   }
 </script>

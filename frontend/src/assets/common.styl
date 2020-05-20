@@ -1,5 +1,6 @@
 @import "components/breakpoints.styl"
 @import "components/navigation.styl"
+@import "components/modal.styl"
 @import "preview.styl"
 @import "tooltip.styl"
 @import "pages/home.styl"
@@ -168,3 +169,28 @@ img
 .slide-fade-enter, .slide-fade-leave-to
   transform translateX(10px)
   opacity 0
+
+.icon
+  cursor pointer
+  &_user
+    font-size 30px
+
+.dropdown
+  position absolute
+  min-width 170px
+  background #fff
+  border 1px solid #e2e3e5
+  border-radius 3px
+  padding 15px
+  z-index 5
+  &__item
+    padding-bottom 7.5px
+    border-bottom 1px solid #eee
+    color #333
+  &__item + &__item
+    margin-bottom 7.5px
+  &_user
+    top 100%
+    right 0
+  &__link
+    cursor pointer

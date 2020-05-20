@@ -1,11 +1,19 @@
 <template>
-  <div class="modal">
-    <div class="modal__container">
+  <div class="modal" v-on:click="cancel">
+    <div class="modal__container" v-on:click.stop>
       <div class="modal__inner">
         <div class="heading__title">{{ title }}</div>
+        <template v-if="hasBodySlot">
+          <div class="form__item">
+            <slot name="body"></slot>
+          </div>
+        </template>
         <div class="modal__buttons">
-          <button class="modal__btn modal__btn-remove" v-on:click="cancel">{{ $t('cancel') }}</button>
-          <button class="modal__btn modal__btn-add" v-on:click="approve">{{ $t('clearForm') }}</button>
+          <template v-if="!hasButtonsSlot">
+            <button class="modal__btn modal__btn_add" v-on:click="approve">{{ $t('clearForm') }}</button>
+            <button class="modal__btn modal__btn_remove" v-on:click="cancel">{{ $t('cancel') }}</button>
+          </template>
+          <slot name="buttons"></slot>
         </div>
       </div>
     </div>
@@ -17,8 +25,17 @@
   export default {
     name: 'Modal',
     data: () => ({
+      showModal: true,
 
     }),
+    computed: {
+      hasButtonsSlot() {
+        return !!this.$slots.buttons
+      },
+      hasBodySlot() {
+        return !!this.$slots.body
+      }
+    },
     props: {
       title: {
         type: String,
@@ -39,33 +56,5 @@
   }
 </script>
 <style lang="stylus" scoped>
-  .modal
-    position fixed
-    width 100%
-    height 100%
-    background rgba(0, 0, 0, .5)
-    display flex
-    justify-content center
-    align-items center
-    &__container
-      max-width 50%
-      text-align center
-      background #fff
-      padding 45px
-      border-radius 5px
-    &__btn
-      border 0
-      padding 15px 30px
-      color #fff
-      cursor pointer
-      &-remove
-        border 1px solid #927c7c
-        color #927c7c
-      &-add
-        border 1px solid #366d5b
-        background #366d5b
-    &__btn + &__btn
-      margin-left 30px
-    &__buttons
-      margin-top 45px
+
 </style>

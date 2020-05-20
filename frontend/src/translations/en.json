@@ -144,5 +144,8 @@
   "references": "References",
   "referencesDesc": "Specify your references",
   "unfilled": "Unfilled items will not fall into the final preview.",
-  "requiredDesc": "Only items marked with <span class=\"form__required\">*</span></i> are required."
+  "requiredDesc": "Only items marked with <span class=\"form__required\">*</span></i> are required.",
+  "register": "Register",
+  "login": "Login",
+  "auth": "Authorization"
 }
