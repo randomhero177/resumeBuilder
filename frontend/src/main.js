@@ -26,7 +26,7 @@ new Vue({
   i18n,
   render: h => h(App),
   created() {
-    const userLang = (this.$store.state.localeLanguage.language) ? this.$store.state.localeLanguage.language : false;
+    const userLang = (this.$store.state.user.language) ? this.$store.state.user.language : false;
     const lang = userLang || 'en';
     this.$i18n.locale = lang;
     document.querySelector('html').setAttribute('lang', lang);

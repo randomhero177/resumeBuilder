@@ -147,5 +147,6 @@
   "requiredDesc": "Only items marked with <span class=\"form__required\">*</span></i> are required.",
   "register": "Register",
   "login": "Login",
-  "auth": "Authorization"
+  "auth": "Authorization",
+  "logout": "Logout"
 }

@@ -29,8 +29,8 @@
         </template>
         <template v-slot:buttons>
           <div class="text-right">
-            <button class="modal__btn modal__btn_add" v-on:click="login">{{ $t('login') }}</button>
-            <button class="modal__btn modal__btn_login" v-on:click="register">{{ $t('register') }}</button>
+            <button class="modal__btn modal__btn_sm modal__btn_add" v-on:click="login">{{ $t('login') }}</button>
+            <button class="modal__btn modal__btn_sm modal__btn_login" v-on:click="register">{{ $t('register') }}</button>
           </div>
           <span class="modal__icon modal__icon_close" v-on:click="showRegisterModal = false">
             <font-awesome-icon icon="times-circle" />
@@ -38,12 +38,14 @@
         </template>
       </Modal>
     </div>
+    <div class="dropdown__item">{{ $t('logout') }}</div>
   </div>
 </template>
 
 <script>
   import axios from 'axios';
   import Modal from '@/components/common/Modal.vue';
+  import parseJWT from '@/utils/parseJWT';
   export default {
     name: 'Auth',
     data: () => ({
@@ -60,8 +62,21 @@
           email: this.email,
           password: this.password
         }).then(responce => {
-          console.log('success');
-          console.log(responce);
+          if (responce && responce.statusText === 'OK' && responce.status === 200) {
+            console.log(responce)
+            const formData = JSON.parse(responce.config.data);
+            window.localStorage.setItem('abrakadabra', responce.data.token);
+            const tokenData = parseJWT(responce.data.token);
+            const abrakadabraExp = (tokenData.exp - tokenData.iat) * 1000 - 60000;
+            window.localStorage.setItem('abrakadabra-exp', abrakadabraExp);
+            this.$store.commit('user/setUserToken', {
+              token: responce.data.token,
+              expire: abrakadabraExp,
+              userId: responce.data.userId,
+              email: formData.email
+            });
+          }
+          return responce;
         }).catch(() => {
           console.log('error');
         })
@@ -71,13 +86,14 @@
           email: this.email,
           password: this.password
         }).then(responce => {
-          console.log('success');
           console.log(responce);
-          window.localStorage.setItem('abrakadabra', responce.body.token);
         }).catch(() => {
           console.log('error');
         })
       },
+      logout() {
+        this.$store.commit('user/setUserToken', {});
+      }
     },
     components: {
       Modal,
