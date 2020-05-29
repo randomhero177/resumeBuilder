@@ -82,7 +82,7 @@
         })
       },
       register() {
-        axios.post('http://localhost:4322/api/auth/register', {
+        axios.post('/api/auth/register', {
           email: this.email,
           password: this.password
         }).then(responce => {
