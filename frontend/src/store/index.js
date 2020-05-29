@@ -9,8 +9,6 @@ import education from '@/store/modules/education';
 import experience from '@/store/modules/experience';
 import profile from '@/store/modules/profile';
 import links from '@/store/modules/links';
-import email from '@/store/modules/email';
-import phone from '@/store/modules/phone';
 import accomplishments from '@/store/modules/accomplishments';
 import user from '@/store/modules/user';
 import home from '@/store/modules/home';
@@ -46,15 +44,13 @@ const store = new Vuex.Store({
         experience,
         profile,
         links,
-        email,
-        phone,
         accomplishments,
         user,
         home,
         references,
     },
     plugins: [createPersistedState({
-        paths: ['accomplishments', 'education', 'email', 'experience', 'form', 'user', 'languages', 'links', 'profile', 'phone', 'skills']
+        paths: ['accomplishments', 'education', 'experience', 'form', 'user', 'languages', 'links', 'profile', 'skills']
     })],
 });
 

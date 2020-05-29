@@ -80,14 +80,17 @@
         avatar: state => state.form.avatar,
         birthday: state => state.form.birthday,
         education: state => state.education.educationList,
-        email: state => state.email.email,
+        email: state => state.form.email,
         experience: state => state.experience.experienceList,
         languages: state => state.languages.languages,
-        name: state => state.form.name,
         lastName: state => state.form.lastName,
+        links: state => state.links.linksList,
+        name: state => state.form.name,
         token: state => state.user.token.token,
         position: state => state.profile.position,
+        phone: state => state.form.phone,
         profile: state => state.profile.profile,
+        references: state => state.profile.references
       }),
       isInfoFilled() {
         return this.name.length || this.lastName.length
@@ -122,18 +125,23 @@
       },
       saveInAccount() {
         const obj = {
-          education: this.education,
-          email: this.email,
-          name: this.name,
-          lastName: this.lastName,
-          birthday: this.birthday,
+          accomplishments: this.accomplishments,
           avatar: {
             mime: this.avatar.mime,
             src: this.avatar.src,
           },
-          accomplishments: this.accomplishments,
+          birthday: this.birthday,
+          education: this.education,
+          email: this.email,
+          experience: this.experience,
+          languages: this.languages,
+          lastName: this.lastName,
+          links: this.links,
+          name: this.name,
           profile: this.profile,
-          position: this.position
+          phone: this.phone,
+          position: this.position,
+          references: this.references,
         };
 
         const { token } = this;

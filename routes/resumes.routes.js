@@ -12,15 +12,18 @@ router.post(
   auth,
   async (request, response) => {
     try {
-      const { education } = request.body;
-      const { email } = request.body;
-      const { name } = request.body;
-      const { lastName } = request.body;
-
       const { avatar } = request.body;
       const { accomplishments } = request.body;
       const { birthday } = request.body;
+      const { education } = request.body;
+      const { email } = request.body;
+      const { experience } = request.body;
+      const { lastName } = request.body;
+      const { languages } = request.body;
+      const { name } = request.body;
+
       const { position } = request.body;
+      const { phone } = request.body;
       const { profile } = request.body;
       const existing = await Resumes.findOne({ lastName });
 
@@ -29,8 +32,8 @@ router.post(
       }
 
       const resume = new Resumes({
-        education, email, accomplishments, birthday, position, profile,
-        name, lastName, avatar, owner: request.user.userId
+        accomplishments, avatar, birthday, education, email, experience, lastName, languages, name, position, profile,
+        phone, owner: request.user.userId
       })
       await resume.save()
 

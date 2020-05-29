@@ -15,10 +15,10 @@
     computed: {
       email: {
         get() {
-          return this.$store.state.email.email;
+          return this.$store.state.form.email;
         },
         set(value) {
-          this.$store.commit('email/setEmail', value)
+          this.$store.commit('form/setEmail', value)
         },
       },
     },

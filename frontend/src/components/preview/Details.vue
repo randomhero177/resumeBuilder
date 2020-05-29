@@ -25,8 +25,8 @@ import { mapState } from 'vuex';
     name: 'Details',
     computed: {
       ...mapState({
-        email: state => state.email.email,
-        phone: state => state.phone.phone,
+        email: state => state.form.email,
+        phone: state => state.form.phone,
         birthday: state => state.form.birthday,
       }),
     },

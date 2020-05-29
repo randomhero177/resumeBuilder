@@ -15,10 +15,10 @@
     computed: {
       phone: {
         get() {
-          return this.$store.state.phone.phone;
+          return this.$store.state.form.phone;
         },
         set(value) {
-          this.$store.commit('phone/setPhone', value)
+          this.$store.commit('form/setPhone', value)
         },
       },
     },
