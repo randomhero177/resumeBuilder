@@ -9,6 +9,9 @@
           <HeaderDownload @trigerPrint="preparePrint"/>
         </div>
       </div>
+      <div><span class="btn btn-success" v-on:click="saveInAccount">Сохранить в аккаунте</span></div>
+      <div class="btn btn-remove" v-on:click="getAccount">Get запрос</div>
+
       <div :class="!isPrinting ? 'row justify-content-center' : 'container'">
         <div :class="!isPrinting ? 'col-xl-10' : ''" class="preview__section">
           <template v-if="!isInfoFilled">
@@ -48,6 +51,7 @@
 
 <script>
   import { mapState } from 'vuex';
+  import axios from 'axios';
   import Navigation from '@/components/common/Navigation.vue';
   import Footer from '@/components/common/Footer.vue';
   import HeaderDownload from '@/components/preview/Header.vue';
@@ -72,8 +76,18 @@
     },
     computed: {
       ...mapState({
+        accomplishments: state => state.accomplishments.accomplishments,
+        avatar: state => state.form.avatar,
+        birthday: state => state.form.birthday,
+        education: state => state.education.educationList,
+        email: state => state.email.email,
+        experience: state => state.experience.experienceList,
+        languages: state => state.languages.languages,
         name: state => state.form.name,
         lastName: state => state.form.lastName,
+        token: state => state.user.token.token,
+        position: state => state.profile.position,
+        profile: state => state.profile.profile,
       }),
       isInfoFilled() {
         return this.name.length || this.lastName.length
@@ -93,6 +107,50 @@
         };
         window.print();
       },
+      getAccount() {
+        const config = {
+          headers: { Authorization: `Bearer ${this.token}` }
+        };
+        axios.get('/api/resume/', config).then(responce => {
+          if (responce && responce.statusText === 'OK' && responce.status === 200) {
+            console.log(responce)
+          }
+          return responce;
+        }).catch(() => {
+          console.log('error');
+        })
+      },
+      saveInAccount() {
+        const obj = {
+          education: this.education,
+          email: this.email,
+          name: this.name,
+          lastName: this.lastName,
+          birthday: this.birthday,
+          avatar: {
+            mime: this.avatar.mime,
+            src: this.avatar.src,
+          },
+          accomplishments: this.accomplishments,
+          profile: this.profile,
+          position: this.position
+        };
+
+        const { token } = this;
+        const config = {
+          headers: { Authorization: `Bearer ${token}` }
+        };
+
+        axios.post('/api/resume/generate', obj, config).then(responce => {
+          if (responce && responce.statusText === 'OK' && responce.status === 200) {
+            console.log(responce)
+          }
+          return responce;
+        }).catch(() => {
+          console.log('error');
+        })
+
+      }
     },
     components: {
       Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,

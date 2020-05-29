@@ -1,9 +1,8 @@
 const { Router } = require('express');
-const Link = require('../models/Link');
+const Resumes = require('../models/Resumes');
 const config = require('config');
 const shortid = require('shortid');
 const auth = require('../middleware/auth.middleware');
-const {check, validationResult} = require('express-validator');
 const router = Router();
 
 
@@ -13,25 +12,31 @@ router.post(
   auth,
   async (request, response) => {
     try {
-      const baseUrl = config.get('baseUrl');
-      const {from} = request.body;
-      const code = shortid.generate()
+      const { education } = request.body;
+      const { email } = request.body;
+      const { name } = request.body;
+      const { lastName } = request.body;
 
-      const existing = await Link.findOne({ from })
+      const { avatar } = request.body;
+      const { accomplishments } = request.body;
+      const { birthday } = request.body;
+      const { position } = request.body;
+      const { profile } = request.body;
+      const existing = await Resumes.findOne({ lastName });
 
       if(existing) {
-        return response.json({ link: existing })
+        return response.json({ resume: existing })
       }
 
-      const to = baseUrl + '/t/' + code;
-      const link = new Link({
-        code, to, from, owner: request.user.userId
+      const resume = new Resumes({
+        education, email, accomplishments, birthday, position, profile,
+        name, lastName, avatar, owner: request.user.userId
       })
-      await link.save()
+      await resume.save()
 
-      response.status(201).json({ link })
+      response.status(201).json({ resume })
     } catch (e) {
-      response.status(500).json({ message: "Что-то пошло не так" })
+      response.status(500).json({ message: "Что-то пошло не так", hui: e })
     }
   }
 )
@@ -42,8 +47,8 @@ router.get(
   auth,
   async (request, response) => {
     try {
-      const links = await Link.find({ owner: request.user.userId }) ///???
-      response.json(links);
+      const resumes = await Resumes.find({ owner: request.user.userId })
+      response.json(resumes);
     } catch (e) {
       response.status(500).json({ message: "Что-то пошло не так" })
     }
