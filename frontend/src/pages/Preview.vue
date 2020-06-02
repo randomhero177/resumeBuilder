@@ -11,7 +11,6 @@
       </div>
       <div><span class="btn btn-success" v-on:click="saveInAccount">Сохранить в аккаунте</span></div>
       <div class="btn btn-remove" v-on:click="getAccount">Get запрос</div>
-
       <div :class="!isPrinting ? 'row justify-content-center' : 'container'">
         <div :class="!isPrinting ? 'col-xl-10' : ''" class="preview__section">
           <template v-if="!isInfoFilled">
@@ -51,7 +50,6 @@
 
 <script>
   import { mapState } from 'vuex';
-  import axios from 'axios';
   import Navigation from '@/components/common/Navigation.vue';
   import Footer from '@/components/common/Footer.vue';
   import HeaderDownload from '@/components/preview/Header.vue';
@@ -66,6 +64,7 @@
   import Accomplishments from '@/components/preview/Accomplishments.vue';
   import References from '@/components/preview/References.vue';
   import NoInfo from '@/components/preview/NoInfo.vue';
+  import apiRequests from '@/services/api';
 
   export default {
     name: "Preview",
@@ -114,13 +113,14 @@
         const config = {
           headers: { Authorization: `Bearer ${this.token}` }
         };
-        axios.get('/api/resume/', config).then(responce => {
-          if (responce && responce.statusText === 'OK' && responce.status === 200) {
-            console.log(responce)
+        apiRequests.getResume(config).then(responce => {
+          console.log(responce)
+          if (responce && responce.statusText === 'OK') {
+            console.log('ok')
+            this.$store.commit('user/setUserAuth', true)
+          } else {
+            this.$store.commit('user/setUserAuth', false)
           }
-          return responce;
-        }).catch(() => {
-          console.log('error');
         })
       },
       saveInAccount() {
@@ -144,20 +144,14 @@
           references: this.references,
         };
 
-        const { token } = this;
         const config = {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${this.token}` }
         };
-
-        axios.post('/api/resume/generate', obj, config).then(responce => {
-          if (responce && responce.statusText === 'OK' && responce.status === 200) {
+        apiRequests.saveResume(obj, config).then(responce => {
+          if (responce.status === 'Ok') {
             console.log(responce)
           }
-          return responce;
-        }).catch(() => {
-          console.log('error');
         })
-
       }
     },
     components: {

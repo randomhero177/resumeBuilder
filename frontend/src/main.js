@@ -12,11 +12,14 @@ import '@/plugins/multiselect';
 import '@/plugins/wysiwyg';
 import '@/plugins/customSlider';
 import Datepicker from 'vuejs-datepicker';
+import Notification from '@/components/common/Notification';
 import VTooltip from 'v-tooltip';
 import breakpoint from "@/mixins/breakpoint";
+import apiRequests from '@/services/api';
 
 Vue.use(VTooltip);
 Vue.component('datepicker', Datepicker);
+Vue.component('notification', Notification);
 
 Vue.config.productionTip = false;
 
@@ -30,6 +33,22 @@ new Vue({
     const lang = userLang || 'en';
     this.$i18n.locale = lang;
     document.querySelector('html').setAttribute('lang', lang);
+
+    if(this.$store.state.user.token.token) {
+      console.log(this.$store.state.user.token.token);
+      const config = {
+        headers: { Authorization: `Bearer ${this.$store.state.user.token.token}` }
+      };
+      apiRequests.getResume(config).then(responce => {
+        console.log(responce)
+        if (responce && responce.statusText === 'OK') {
+          console.log('ok')
+          this.$store.commit('user/setUserAuth', true)
+        } else {
+          this.$store.commit('user/setUserAuth', false)
+        }
+      })
+    }
   },
   watch: {
     '$i18n.locale': function changeTitle() {
@@ -56,4 +75,8 @@ new Vue({
   },
 }).$mount('#app')
 
-Vue.mixin(breakpoint)
+Vue.mixin(breakpoint);
+
+window.showNotification = function(message, type = 'alert-primary') {
+  window.events.$emit('showNotification', message, type);
+}

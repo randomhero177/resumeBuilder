@@ -1,6 +1,7 @@
 const state = {
   language: 'en',
-  token: {}
+  token: {},
+  isAuth: false
 };
 
 const actions = {};
@@ -15,6 +16,9 @@ const mutations = {
   setUserToken(state, token) {
     state.token = token
   },
+  setUserAuth(state, isAuth) {
+    state.isAuth = isAuth;
+  }
 };
 
 const user = {

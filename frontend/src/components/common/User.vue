@@ -43,9 +43,10 @@
 </template>
 
 <script>
-  import axios from 'axios';
   import Modal from '@/components/common/Modal.vue';
   import parseJWT from '@/utils/parseJWT';
+  import authRequest from '@/services/auth';
+
   export default {
     name: 'Auth',
     data: () => ({
@@ -58,37 +59,31 @@
     },
     methods: {
       login() {
-        axios.post('http://localhost:4322/api/auth/login', {
+        authRequest.login({
           email: this.email,
           password: this.password
         }).then(responce => {
-          if (responce && responce.statusText === 'OK' && responce.status === 200) {
-            console.log(responce)
-            const formData = JSON.parse(responce.config.data);
-            window.localStorage.setItem('abrakadabra', responce.data.token);
-            const tokenData = parseJWT(responce.data.token);
-            const abrakadabraExp = (tokenData.exp - tokenData.iat) * 1000 - 60000;
-            window.localStorage.setItem('abrakadabra-exp', abrakadabraExp);
-            this.$store.commit('user/setUserToken', {
-              token: responce.data.token,
-              expire: abrakadabraExp,
-              userId: responce.data.userId,
-              email: formData.email
-            });
-          }
-          return responce;
-        }).catch(() => {
-          console.log('error');
-        })
+        if (responce && responce.statusText === 'OK') {
+          console.log(responce)
+          const formData = JSON.parse(responce.config.data);
+          window.localStorage.setItem('abrakadabra', responce.data.token);
+          const tokenData = parseJWT(responce.data.token);
+          const abrakadabraExp = (tokenData.exp - tokenData.iat) * 1000 - 60000;
+          window.localStorage.setItem('abrakadabra-exp', abrakadabraExp);
+          this.$store.commit('user/setUserToken', {
+            token: responce.data.token,
+            expire: abrakadabraExp,
+            userId: responce.data.userId,
+            email: formData.email
+          });
+        }})
       },
       register() {
-        axios.post('/api/auth/register', {
+        authRequest.register({
           email: this.email,
           password: this.password
         }).then(responce => {
           console.log(responce);
-        }).catch(() => {
-          console.log('error');
         })
       },
       logout() {
