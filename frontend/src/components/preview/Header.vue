@@ -6,7 +6,10 @@
           <div class="form__item">
             <h1 class="page__title">Melinda template preview</h1>
             <div class="preview__descr form__elem">{{ $t('downloadPage.description') }}</div>
-            <div><button class="btn button-preview" v-on:click="btnClick">{{ $t('downloadPage.btn') }}</button></div>
+            <div>
+              <button class="btn btn-preview" v-on:click="btnClick">{{ $t('downloadPage.btn') }}</button>
+              <save-in-account />
+            </div>
           </div>
         </div>
       </div>
@@ -21,11 +24,12 @@
 
 <script>
   import ChangePreview from '@/components/preview/ChangePreview.vue';
+  import SaveInAccount from '@/components/common/SaveInAccount.vue';
 
   export default {
     name: 'DonwloadHeader',
     components: {
-      ChangePreview,
+      ChangePreview, SaveInAccount,
     },
     methods: {
       btnClick() {

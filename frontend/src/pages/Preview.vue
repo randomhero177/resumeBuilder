@@ -9,8 +9,6 @@
           <HeaderDownload @trigerPrint="preparePrint"/>
         </div>
       </div>
-      <div><span class="btn btn-success" v-on:click="saveInAccount">Сохранить в аккаунте</span></div>
-      <div class="btn btn-remove" v-on:click="getAccount">Get запрос</div>
       <div :class="!isPrinting ? 'row justify-content-center' : 'container'">
         <div :class="!isPrinting ? 'col-xl-10' : ''" class="preview__section">
           <template v-if="!isInfoFilled">
@@ -64,7 +62,7 @@
   import Accomplishments from '@/components/preview/Accomplishments.vue';
   import References from '@/components/preview/References.vue';
   import NoInfo from '@/components/preview/NoInfo.vue';
-  import apiRequests from '@/services/api';
+
 
   export default {
     name: "Preview",
@@ -109,50 +107,8 @@
         };
         window.print();
       },
-      getAccount() {
-        const config = {
-          headers: { Authorization: `Bearer ${this.token}` }
-        };
-        apiRequests.getResume(config).then(responce => {
-          console.log(responce)
-          if (responce && responce.statusText === 'OK') {
-            console.log('ok')
-            this.$store.commit('user/setUserAuth', true)
-          } else {
-            this.$store.commit('user/setUserAuth', false)
-          }
-        })
-      },
-      saveInAccount() {
-        const obj = {
-          accomplishments: this.accomplishments,
-          avatar: {
-            mime: this.avatar.mime,
-            src: this.avatar.src,
-          },
-          birthday: this.birthday,
-          education: this.education,
-          email: this.email,
-          experience: this.experience,
-          languages: this.languages,
-          lastName: this.lastName,
-          links: this.links,
-          name: this.name,
-          profile: this.profile,
-          phone: this.phone,
-          position: this.position,
-          references: this.references,
-        };
 
-        const config = {
-          headers: { Authorization: `Bearer ${this.token}` }
-        };
-        apiRequests.saveResume(obj, config).then(responce => {
-          if (responce.status === 'Ok') {
-            console.log(responce)
-          }
-        })
-      }
+
     },
     components: {
       Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,

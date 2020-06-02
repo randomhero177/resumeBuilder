@@ -8,7 +8,7 @@
       <div class="notification">
         <div class="notification__item">
           <h4 class="notification__title">{{ title }}</h4>
-          <span class="notification__icon notification__icon_close icon" v-on:click="destroy" style="font-size: 15px">
+          <span class="notification__icon notification__icon_close icon" v-on:click="destroy" style="font-size: 15px; background: #fff">
             <font-awesome-icon icon="times-circle" />
           </span>
         </div>
@@ -22,7 +22,6 @@
   export default {
     name: 'Notification',
     data: () => ({
-      show: false,
     }),
     props: {
       title: {
@@ -32,7 +31,6 @@
     },
     methods: {
       destroy() {
-        this.show = false;
         this.$emit('onCancel');
         this.$nextTick(() => {
           this.$destroy();
@@ -42,7 +40,7 @@
     created() {
       setTimeout(() => {
         this.destroy();
-      }, 115000);
+      }, 5000);
     }
   }
 </script>
@@ -50,20 +48,22 @@
 <style scoped lang="stylus">
   .notification
     width 200px
-    padding 30px 10px 10px 10px
+    padding 10px
     background #f1f1f1
     border 1px solid #b3b0b0
-    position absolute
+    position fixed
+    color #333
     top 100px
     right 50px
     z-index 10
     font-size 1rem
+    text-align left
     &__item
       position relative
     &__icon
       position absolute
-      top -25px
-      right -2px
+      top -22px
+      right -16px
     &__title
       font-size 1rem
 </style>
