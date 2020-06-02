@@ -37,9 +37,9 @@ router.post(
       })
       await resume.save()
 
-      response.status(201).json({ resume })
+      response.status(201).json({ resume, status: 'Ok' })
     } catch (e) {
-      response.status(500).json({ message: "Что-то пошло не так", hui: e })
+      response.status(500).json({ message: "Что-то пошло не так", errorMes: e})
     }
   }
 )
@@ -51,7 +51,7 @@ router.get(
   async (request, response) => {
     try {
       const resumes = await Resumes.find({ owner: request.user.userId })
-      response.json(resumes);
+      response.status(201).json(resumes);
     } catch (e) {
       response.status(500).json({ message: "Что-то пошло не так" })
     }
