@@ -8,17 +8,25 @@
     }
     .preview-functional__side {
         position: relative;
+        height: 100vh;
+    }
+    .preview__section_print {
+        height: 100vh;
+    }
+    .preview-functional__side > * {
+        position: relative;
+        z-index: 2;
     }
     .preview-functional__side:after {
         content: '';
         display: block;
         left: 0;
         top: 0;
-        height: 16.75in;
+        height: 290vh;
         width: 100%;
         background: #404040;
         position: absolute;
-        z-index: -1;
+        z-index: 1;
     }
 }
 

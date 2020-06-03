@@ -37,34 +37,45 @@
           </span>
         </template>
       </Modal>
+      <notification :title="notificationTitle" v-if="showNotification" @onCancel="showNotification = false" />
     </div>
-    <div class="dropdown__item">{{ $t('logout') }}</div>
+    <div class="dropdown__item"><Language /></div>
   </div>
 </template>
 
 <script>
   import Modal from '@/components/common/Modal.vue';
+  import Language from '@/components/common/Language.vue';
   import parseJWT from '@/utils/parseJWT';
   import authRequest from '@/services/auth';
+  import Notification from '@/components/common/Notification.vue';
 
   export default {
     name: 'Auth',
     data: () => ({
       showRegisterModal: false,
+      showNotification: false,
       email: '',
-      password: ''
+      password: '',
+      notificationTitle: ''
     }),
     computed: {
 
     },
     methods: {
+      showError(responce) {
+        console.log(responce);
+        this.notificationTitle = responce.data.message ? responce.data.message : 'Error during request'
+        this.showNotification = true;
+      },
       login() {
         authRequest.login({
           email: this.email,
           password: this.password
         }).then(responce => {
         if (responce && responce.statusText === 'OK') {
-          console.log(responce)
+          console.log(responce);
+          this.showRegisterModal = false;
           const formData = JSON.parse(responce.config.data);
           window.localStorage.setItem('abrakadabra', responce.data.token);
           const tokenData = parseJWT(responce.data.token);
@@ -76,7 +87,10 @@
             userId: responce.data.userId,
             email: formData.email
           });
-        }})
+        } else {
+          this.showError(responce)
+        }
+        })
       },
       register() {
         authRequest.register({
@@ -91,7 +105,7 @@
       }
     },
     components: {
-      Modal,
+      Modal, Language, Notification,
     }
   }
 </script>

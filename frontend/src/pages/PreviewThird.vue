@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="full-height">
-      <div ref="hideWhenPrintNav">
-        <div class="container">
-          <Navigation />
+      <div v-if="!isPrinting">
+        <Navigation />
+      </div>
+      <div v-if="!isPrinting" class="row justify-content-center">
+        <div class="col-xl-10">
+          <HeaderDownload @trigerPrint="preparePrint"/>
         </div>
       </div>
-      <div ref="hideWhenPrint" class="container">
-        <HeaderDownload @trigerPrint="print"/>
-      </div>
-      <div class="container">
-        <div class="preview__section">
+      <div :class="!isPrinting ? 'row justify-content-center' : 'container'">
+        <div :class="!isPrinting ? 'col-xl-10' : ''" class="preview__section">
           <template v-if="!isInfoFilled">
             <NoInfo />
           </template>
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div ref="hideWhenPrintFoot">
+    <div v-if="!isPrinting">
       <Footer />
     </div>
   </div>
@@ -80,9 +80,7 @@
     name: "PreviewThird",
     data() {
       return {
-          data: () => ({
-
-          }),
+        isPrinting: false,
       };
     },
     computed: {
@@ -97,14 +95,16 @@
       },
     },
     methods: {
+      preparePrint() {
+        this.isPrinting = true;
+        setTimeout(() => {
+            this.print()
+          }, 100
+        );
+      },
       print() {
-        this.$refs['hideWhenPrint'].style.display = 'none';
-        this.$refs['hideWhenPrintNav'].style.display = 'none';
-        this.$refs['hideWhenPrintFoot'].style.display = 'none';
         window.onafterprint = () => {
-          this.$refs['hideWhenPrint'].style.display = 'block';
-          this.$refs['hideWhenPrintNav'].style.display = 'block';
-          this.$refs['hideWhenPrintFoot'].style.display = 'block';
+          this.isPrinting = false;
         };
         window.print();
       },

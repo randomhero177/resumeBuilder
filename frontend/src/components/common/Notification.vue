@@ -8,7 +8,7 @@
       <div class="notification">
         <div class="notification__item">
           <h4 class="notification__title">{{ title }}</h4>
-          <span class="notification__icon notification__icon_close icon" v-on:click="destroy" style="font-size: 15px; background: #fff">
+          <span class="notification__icon notification__icon_close icon" v-on:click="destroy">
             <font-awesome-icon icon="times-circle" />
           </span>
         </div>
@@ -21,8 +21,7 @@
 
   export default {
     name: 'Notification',
-    data: () => ({
-    }),
+    data: () => ({}),
     props: {
       title: {
         type: String,
@@ -40,7 +39,7 @@
     created() {
       setTimeout(() => {
         this.destroy();
-      }, 5000);
+      }, 1115000);
     }
   }
 </script>
@@ -64,6 +63,10 @@
       position absolute
       top -22px
       right -16px
+      &_close
+        font-size 15px
+        background #fff
+        border-radius 100%
     &__title
       font-size 1rem
 </style>

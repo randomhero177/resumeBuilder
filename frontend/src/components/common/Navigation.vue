@@ -15,9 +15,6 @@
           <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('download') }}</router-link>
         </div>
         <div class="col-auto ml-auto">
-          <Language />
-        </div>
-        <div class="col-auto ml-auto">
           <span class="icon icon_user" @mouseover="showDropdown = true">
             <font-awesome-icon icon="user-circle" />
           </span>
@@ -58,7 +55,6 @@
 
 <script>
   import { mapState } from 'vuex';
-  import Language from '@/components/common/Language.vue';
   import User from '@/components/common/User.vue';
 
 
@@ -82,7 +78,7 @@
       },
     },
     components: {
-      Language, User,
+      User,
     },
   }
 </script>

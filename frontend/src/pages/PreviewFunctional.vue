@@ -1,21 +1,21 @@
 <template>
   <div class="preview preview-functional">
     <div class="full-height">
-      <div ref="hideWhenPrintNav">
-        <div class="container">
-          <Navigation />
+      <div v-if="!isPrinting">
+        <Navigation />
+      </div>
+      <div v-if="!isPrinting" class="row justify-content-center">
+        <div class="col-xl-10">
+          <HeaderDownload @trigerPrint="preparePrint"/>
         </div>
       </div>
-      <div ref="hideWhenPrint" class="container">
-        <HeaderDownload @trigerPrint="print"/>
-      </div>
-      <div class="container">
-        <div class="preview__section">
+      <div :class="!isPrinting ? 'row justify-content-center' : 'container'">
+        <div :class="!isPrinting ? 'col-xl-10' : 'preview__section_print'" class="preview__section">
           <template v-if="!isInfoFilled">
             <NoInfo />
           </template>
           <div class="row" v-else>
-            <div class="col-md-4">
+            <div class="col-4">
               <div class="preview-functional__side">
                 <div class="text-center">
                   <Avatar />
@@ -33,14 +33,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-8 preview-functional__main">
+            <div class="col-8 preview-functional__main">
               <div class="text-center preview-functional__name">
                 <h4 class="preview-header__name">{{ name }} {{ lastName }}</h4>
               </div>
               <div class="preview-functional__summary">
                 <Profile title="QUALIFICATION SUMMARY"/>
               </div>
-
               <Skills title="RELEVANT SKILLS"/>
               <Education />
               <Experience />
@@ -49,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div ref="hideWhenPrintFoot">
+    <div v-if="!isPrinting">
       <Footer />
     </div>
   </div>
@@ -75,9 +74,7 @@
     name: "PreviewFunctional",
     data() {
       return {
-          data: () => ({
-
-          }),
+        isPrinting: false,
       };
     },
     computed: {
@@ -90,14 +87,16 @@
       },
     },
     methods: {
+      preparePrint() {
+        this.isPrinting = true;
+        setTimeout(() => {
+            this.print()
+          }, 100
+        );
+      },
       print() {
-        this.$refs['hideWhenPrint'].style.display = 'none';
-        this.$refs['hideWhenPrintNav'].style.display = 'none';
-        this.$refs['hideWhenPrintFoot'].style.display = 'none';
         window.onafterprint = () => {
-          this.$refs['hideWhenPrint'].style.display = 'block';
-          this.$refs['hideWhenPrintNav'].style.display = 'block';
-          this.$refs['hideWhenPrintFoot'].style.display = 'block';
+          this.isPrinting = false;
         };
         window.print();
       },
@@ -117,7 +116,6 @@
         background #404040
         padding 30px 15px
         color #fff
-        height 100%
       &__name
         margin-bottom 30px
       &__separate
@@ -126,13 +124,4 @@
         position relative
         padding-bottom 1px
         margin-bottom 30px
-        &:after
-          content ''
-          display block
-          width 50%
-          height 1px
-          left 25%
-          background #2e74b5
-          bottom 0
-          position absolute
 </style>
