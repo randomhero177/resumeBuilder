@@ -40,12 +40,12 @@ new Vue({
         headers: { Authorization: `Bearer ${this.$store.state.user.token.token}` }
       };
       apiRequests.getResume(config).then(responce => {
-        console.log(responce)
         if (responce && responce.statusText === 'OK') {
           console.log('ok')
           this.$store.commit('user/setUserAuth', true)
         } else {
           this.$store.commit('user/setUserAuth', false)
+          this.$store.commit('user/setUserToken', {})
         }
       })
     }

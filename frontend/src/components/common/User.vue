@@ -63,6 +63,9 @@
 
     },
     methods: {
+      closeDropDown() {
+        // this.$emit('onMouseOut')
+      },
       showError(responce) {
         console.log(responce);
         this.notificationTitle = responce.data.message ? responce.data.message : 'Error during request'
@@ -87,6 +90,7 @@
             userId: responce.data.userId,
             email: formData.email
           });
+          this.$emit('onMouseOut')
         } else {
           this.showError(responce)
         }
@@ -98,6 +102,11 @@
           password: this.password
         }).then(responce => {
           console.log(responce);
+          if(responce && responce.status === 201) {
+            this.$emit('onMouseOut')
+          } else {
+            this.showError(responce);
+          }
         })
       },
       logout() {

@@ -19,7 +19,7 @@
             <font-awesome-icon icon="user-circle" />
           </span>
           <div v-if="showDropdown">
-            <User />
+            <User @onMouseOut="showDropdown = false"/>
           </div>
         </div>
         <div v-if="$breakpoint.mdAndDown">
