@@ -15,7 +15,7 @@
           <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('download') }}</router-link>
         </div>
         <div class="col-auto ml-auto">
-          <span class="icon icon_user" @mouseover="showDropdown = true">
+          <span class="icon icon_user" v-on:click="showDropdown = !showDropdown">
             <font-awesome-icon icon="user-circle" />
           </span>
           <div v-if="showDropdown">
