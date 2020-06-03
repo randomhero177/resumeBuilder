@@ -1,0 +1,36 @@
+@media print {
+    .container {
+        width: 100%!important;
+        max-width: 100%!important;
+        padding: 0!important;
+        margin-right: 0!important;
+        margin-left: 0!important;
+    }
+    .preview-functional__side {
+        position: relative;
+        height: 100vh;
+    }
+    .preview__section_print {
+        height: 100vh;
+    }
+    .preview-functional__side > * {
+        position: relative;
+        z-index: 2;
+    }
+    .preview-functional__side:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        height: 290vh;
+        width: 100%;
+        background: #404040;
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+@page {
+    margin: 0;
+    size: auto!important;
+}

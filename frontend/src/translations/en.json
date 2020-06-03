@@ -1,0 +1,152 @@
+{
+  "deals": "Deals",
+  "ru": "Russian",
+  "en": "English",
+  "language": "Language",
+  "chooseTemplate": "Choose template",
+  "fillIn": "Fill in the resume",
+  "download": "Download",
+  "noInfo": "No information yet",
+  "home": "Home page",
+  "create": {
+    "title": "Tell employer something about yourself!",
+    "details": "Details",
+    "previewBtn": "Preview and download",
+    "previewBtnTooltip": "Go to preview page, where you can download your resume",
+    "profile": "Profile",
+    "position": "Position you're applying for",
+    "summary": "Summary"
+  },
+  "education": {
+    "title": "Education",
+    "university": "University",
+    "fieldOfStudy": "Field of study",
+    "degree": "Degree",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "remove": "Remove this education",
+    "removeSection": "Remove Education section",
+    "add": "Add education"
+  },
+  "workHistory": {
+    "title": "Work history",
+    "add": "Add new position",
+    "removeSection": "Remove Experience section",
+    "removePosition": "Remove this position",
+    "company": "Company",
+    "position": "Position",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "city": "City",
+    "currentPosition": "To present",
+    "description": "Job description:",
+    "skills": "Key skills for this position:",
+    "keySkills": "Key skills",
+    "searchSkill": "Search or add a skill",
+    "skillPlaceholder": "Add this as new skill"
+  },
+  "selectLabel": "Press enter to select",
+  "removeLabel": "Press enter to remove",
+  "selectedLabel": "Selected",
+  "accomplishments": "Accomplishments",
+  "cancel": "Cancel",
+  "clearAll": "Clear all",
+  "clearForm": "Clear form",
+  "clearModalConfirm": "Please confirm clearing all form data",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "yourFirstName": "Your first name",
+  "yourLastName": "Your last name",
+  "position": "Position",
+  "phone": "Phone",
+  "yourPicture": "Your picture",
+  "uploadPicture": "Upload picture",
+  "birthday": "Date of birth",
+  "selectDate": "Select Date",
+  "skills": "Skills",
+  "links": "Links",
+  "addLinkSection": "Add links section",
+  "addRandomLink": "Add random link",
+  "removeLinkSection": "Remove Links section",
+  "languages": "Languages",
+  "addLanguage": "Add language",
+  "level": "Level",
+  "removeLanguageSection": "Remove Language section",
+  "homePage": {
+    "main": {
+      "title": "Create your resume!",
+      "subtitle": "Easy and free",
+      "text": "<p>Searching for a job is not an easy process and <i>Build-resume</i> has been created to simplify at least one part of the game. </p>\n  <p>The idea for the project came as a result of a personal frustration with the modern 'free resume' services. To say they were a huge disappointment to me is to say nothing. Tired of spending time and energy to get me nowhere, I decided to create a web app for personal use.</p>\n  <p>After the first resume has been created and sent out, I decided to share this app with the world.</p>",
+      "btn": "Create resume"
+    },
+    "works": {
+      "title": "How it works?",
+      "subtitle": "3 simple steps:",
+      "list": {
+        "step1": {
+          "text": "You choose the template <br />\n It can be changed before downloading or at any other time without losing entered data.",
+          "btn": "Choose template"
+        },
+        "step2": {
+          "text": "You fill the fields <br />\n you need.",
+          "btn": "Fill resume",
+          "warn": "* Incomplete fields will not appear in the final document"
+        },
+        "step3": {
+          "text": "Seems like you're all set up!<br/> And we don't lie. We won't ask for paid subscription or registration or whatever else before the download",
+          "btn": "Download"
+        }
+      }
+    },
+    "safe": {
+      "title": "Safety",
+      "subtitle": "You can't steel a thing that doesn't exist",
+      "text": "<p>Build-resume.io doesn't have any data-base, we don't use cookie and do not save any data on our side in any possible way. All of the data filled, stays only in your browser.</p> <p><strong>You can't go any safer than that</strong></p>"
+    }
+  },
+  "choose": {
+    "title": "Choose your template",
+    "subtitle": "We're working in progress. Someday there would be more templates available",
+    "btn": "Use this template"
+  },
+  "downloadPage": {
+    "description": "Everything seems right?\n Section bellow will be printed.",
+    "btn": "Download PDF"
+  },
+  "changeTpl": "Navigate through templates",
+  "changeTplDescr": "Simply choose other Template from the list. All of the entered data will be saved",
+  "meta": {
+    "home": {
+      "title": "Create your resume fast and easy!",
+      "description": "Build your resume! It's easy and free"
+    },
+    "chooseTemplate": {
+      "title": "Choose template",
+      "description": "Use our templates to create a successful resume and download PDF file"
+    },
+    "editor": {
+      "title": "Resume editor",
+      "description": "Fill in the resume and download your PDF"
+    },
+    "download": {
+      "title": "Download your resume",
+      "description": "All set? Download your job-winning resume in PDF"
+    }
+  },
+  "noInfoDownload": "No info to display. Go back to 'editor page' to fill in the resume",
+  "currentPosition": "Current position",
+  "currentEducationEditor": "To present",
+  "currentEducation": "To present",
+  "at": "at",
+  "of": "of",
+  "previewDetails": "Details",
+  "previewProfile": "Profile",
+  "references": "References",
+  "referencesDesc": "Specify your references",
+  "unfilled": "Unfilled items will not fall into the final preview.",
+  "requiredDesc": "Only items marked with <span class=\"form__required\">*</span></i> are required.",
+  "register": "Register",
+  "login": "Login",
+  "auth": "Authorization",
+  "logout": "Logout"
+}
