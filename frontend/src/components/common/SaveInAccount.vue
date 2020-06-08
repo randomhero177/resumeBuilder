@@ -1,7 +1,10 @@
 <template>
   <div style="display: inline-block; margin-left: 10px;">
     <div class="btn btn-home" v-on:click="saveInAccount">
-      Save reseume in account
+      Save resume in account
+    </div>
+    <div class="btn btn-home" v-on:click="updateInAccount">
+      Update resume
     </div>
     <notification :title="title" v-if="showNotification" @onCancel="showNotification = false" />
   </div>
@@ -39,8 +42,8 @@
       }),
     },
     methods: {
-      saveInAccount() {
-        const obj = {
+      prepareData() {
+        return {
           accomplishments: this.accomplishments,
           avatar: {
             mime: this.avatar.mime,
@@ -59,11 +62,13 @@
           position: this.position,
           references: this.references,
         };
-
+      },
+      saveInAccount() {
+        const data = this.prepareData()
         const config = {
           headers: { Authorization: `Bearer ${this.token}` }
         };
-        apiRequests.saveResume(obj, config).then(responce => {
+        apiRequests.saveResume(data, config).then(responce => {
           this.showNotification = true;
           if (responce.status === 'Ok') {
             console.log(responce)
@@ -73,7 +78,23 @@
             this.title = responce.data.message;
           }
         })
-      }
+      },
+      updateInAccount() {
+        const data = this.prepareData()
+        const config = {
+          headers: { Authorization: `Bearer ${this.token}` }
+        };
+        apiRequests.updateResume(data, config).then(responce => {
+          this.showNotification = true;
+          if (responce.status === 'Ok') {
+            console.log(responce)
+            this.title = 'Resume successfully saved'
+          } else {
+            console.log(responce)
+            this.title = responce.data.message;
+          }
+        })
+      },
     },
     components: {
       Notification,

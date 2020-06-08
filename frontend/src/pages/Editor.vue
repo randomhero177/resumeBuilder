@@ -8,9 +8,10 @@
       </div>
       <div class="col-auto">
         <div class="form__elem">
-          <span v-on:click="sendGtm('download-resume-after-editor')">
-            <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+          <span v-on:click="sendGtm('download-resume-after-editor')" style="display: inline-block">
+            <router-link :to="'/preview-' + templateName" class="btn btn-preview button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
           </span>
+          <save-in-account />
         </div>
         <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> {{ $t('clearAll') }}</span></div>
       </div>
@@ -59,6 +60,7 @@
   import Accomplishments from '@/components/editor/Accomplishments.vue';
   import References from '@/components/editor/References.vue';
   import Modal from '@/components/common/Modal.vue';
+  import SaveInAccount from '@/components/common/SaveInAccount.vue';
 
   export default {
     name: "editor",
@@ -73,7 +75,7 @@
       }),
     },
     components: {
-      Experience, Profile, Details, Education, Accomplishments, Modal, References,
+      Experience, Profile, Details, Education, Accomplishments, Modal, References, SaveInAccount,
     },
     methods: {
       ...mapActions({
