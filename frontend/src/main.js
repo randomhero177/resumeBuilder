@@ -43,13 +43,21 @@ new Vue({
         console.log(responce);
         if (responce && responce.status === 200) {
           console.log('ok')
-          this.$store.commit('user/setUserAuth', true)
+          this.$store.commit('user/setUserAuth', true);
+          this.updateStoreOnLogin(responce)
         } else {
           console.log('not ok')
           this.$store.commit('user/setUserAuth', false)
           this.$store.commit('user/setUserToken', {})
         }
       })
+    }
+  },
+  methods: {
+    updateStoreOnLogin(response) {
+      if(response.data.length) {
+        console.log(1)
+      }
     }
   },
   watch: {

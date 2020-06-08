@@ -1,7 +1,8 @@
 const state = {
   language: 'en',
   token: {},
-  isAuth: false
+  isAuth: false,
+  doesResumeExist: false
 };
 
 const actions = {};
@@ -18,7 +19,10 @@ const mutations = {
   },
   setUserAuth(state, isAuth) {
     state.isAuth = isAuth;
-  }
+  },
+  setExistance(state, doesExist) {
+    state.doesResumeExist = doesExist;
+  },
 };
 
 const user = {

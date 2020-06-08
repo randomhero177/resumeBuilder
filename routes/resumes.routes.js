@@ -48,37 +48,27 @@ router.put(
   auth,
   async (request, response) => {
     try {
-      const { avatar } = request.body;
-      const { accomplishments } = request.body;
-      const { birthday } = request.body;
-      const { education } = request.body;
-      const { email } = request.body;
-      const { experience } = request.body;
-      const { lastName } = request.body;
-      const { languages } = request.body;
-      const { name } = request.body;
+      const resume = await Resumes.findOne({ owner: request.user.userId });
 
-      const { position } = request.body;
-      const { phone } = request.body;
-      const { profile } = request.body;
+      if (resume) {
+        resume.avatar = request.body.avatar;
+        resume.accomplishments = request.body.accomplishments;
+        resume.birthday = request.body.birthday;
+        resume.education= request.body.education;
+        resume.email = request.body.email;
+        resume.experience = request.body.experience;
+        resume.lastName = request.body.lastName;
+        resume.languages = request.body.languages;
+        resume.name = request.body.name;
 
-      const resume = new Resumes({
-        accomplishments, avatar, birthday, education, email, experience, lastName, languages, name, position, profile,
-        phone, owner: request.user.userId
-      });
-
-      console.log(request.user.userId);
-      const existing = await Resumes.findOne({ owner: request.user.userId });
-
-      if(existing) {
-        console.log('есть');
-        return response.json({ resume: existing })
+        resume.position = request.body.position;
+        resume.phone = request.phone;
+        resume.profile = request.profile;
+        await resume.save()
+        response.status(200).json('Ok')
       }
 
-
-      await resume.save()
-
-      response.status(201).json({ resume, status: 'Ok' })
+      responce.status(404).json('Ссылка не найдена')
     } catch (e) {
       response.status(500).json({ message: "Что-то пошло не так", errorMes: e})
     }
