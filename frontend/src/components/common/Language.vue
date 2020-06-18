@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select @change="changeLang($event)" name="lang" class="select" v-model="language">
+    <select @change="changeLang($event)" name="lang" class="select select_w" v-model="language">
       <option :value="lang" v-for="lang in languages" :key="lang">
         {{ $t(lang) }}
       </option>
@@ -34,3 +34,7 @@
     },
   }
 </script>
+<style lang="stylus" scoped>
+  .select_w
+    width 100%
+</style>

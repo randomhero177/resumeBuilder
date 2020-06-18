@@ -18,14 +18,14 @@
     </div>
     <div class="row justify-content-between">
       <div class="col" v-if="!linksListLength">
-        <span class="btn btn-add" v-on:click="addSection">
+        <span class="form-btn btn-add" v-on:click="addSection">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
           {{ $t('addLinkSection') }}
         </span>
       </div>
       <div class="col" v-if="linksListLength">
         <div
-          class="btn btn-add"
+          class="form-btn btn-add"
           v-on:click="addRandomLink"
         >
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="col text-right" v-if="linksListLength">
-        <span class="btn btn-remove" v-on:click="removeSection">
+        <span class="form-btn btn-remove" v-on:click="removeSection">
           <font-awesome-icon icon="trash-alt" /> {{ $t('removeLinkSection') }}
         </span>
       </div>

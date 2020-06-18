@@ -6,6 +6,7 @@ const actions = {};
 
 const mutations = {
   setAccomplishments(state, data) {
+    console.log(data);
     state.accomplishments = data;
   },
 };

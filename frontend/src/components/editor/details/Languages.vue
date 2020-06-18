@@ -16,20 +16,20 @@
         </div>
       </div>
       <div class="col-md-1 text-right" v-if="languages.length > 1">
-        <span class="btn btn-remove" v-on:click="removeLanguage(index)">
+        <span class="form-btn btn-remove" v-on:click="removeLanguage(index)">
           <font-awesome-icon icon="trash-alt" />
         </span>
       </div>
     </div>
     <div class="row justify-content-between">
       <div class="col">
-        <div v-on:click="addNewLanguage" class="btn btn-add">
+        <div v-on:click="addNewLanguage" class="form-btn btn-add">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
           {{ $t('addLanguage') }}
         </div>
       </div>
       <div class="col" v-if="languages.length">
-        <span class="btn btn-remove" v-on:click="removeSection">
+        <span class="form-btn btn-remove" v-on:click="removeSection">
           <font-awesome-icon icon="trash-alt" />
           {{ $t('removeLanguageSection') }}
         </span>

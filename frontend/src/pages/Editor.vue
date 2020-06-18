@@ -9,11 +9,11 @@
       <div class="col-auto">
         <div class="form__elem">
           <span v-on:click="sendGtm('download-resume-after-editor')" style="display: inline-block">
-            <router-link :to="'/preview-' + templateName" class="btn btn-preview button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+            <router-link :to="'/preview-' + templateName" class="btn btn-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
           </span>
           <save-in-account />
         </div>
-        <div class="text-right"><span class="btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> {{ $t('clearAll') }}</span></div>
+        <div class="text-right"><span class="form-btn btn-remove" v-on:click="showModal = true"><font-awesome-icon icon="trash-alt" /> {{ $t('clearAll') }}</span></div>
       </div>
     </div>
     <div class="row">
@@ -38,7 +38,7 @@
       </div>
       <div class="col-auto">
         <span v-on:click="sendGtm('download-resume-after-editor')">
-          <router-link :to="'/preview-' + templateName" class="button-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
+          <router-link :to="'/preview-' + templateName" class="btn btn-preview" v-tooltip.left="$t('create.previewBtnTooltip')">{{ $t('create.previewBtn') }}</router-link>
         </span>
       </div>
     </div>

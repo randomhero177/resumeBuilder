@@ -81,20 +81,20 @@
         />
       </div>
       <div class="col expirience__remove-col" v-if="workList.length > 1">
-        <span v-on:click="removeWork(index)" class="btn btn-remove">
+        <span v-on:click="removeWork(index)" class="form-btn btn-remove">
           <font-awesome-icon icon="trash-alt" /> {{ $t('workHistory.removePosition') }}
         </span>
       </div>
     </div>
     <div class="row justify-content-between">
       <div class="col">
-        <span v-on:click="addNewWork" class="btn btn-add">
+        <span v-on:click="addNewWork" class="form-btn btn-add">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
           {{ $t('workHistory.add') }}
         </span>
       </div>
       <div class="col text-right" v-if="workList.length">
-        <span class="btn btn-remove" v-on:click="removeSection">
+        <span class="form-btn btn-remove" v-on:click="removeSection">
           <font-awesome-icon icon="trash-alt" /> {{ $t('workHistory.removeSection') }}
         </span>
       </div>

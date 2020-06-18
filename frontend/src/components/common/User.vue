@@ -48,6 +48,7 @@
   import Language from '@/components/common/Language.vue';
   import parseJWT from '@/utils/parseJWT';
   import authRequest from '@/services/auth';
+  import apiRequests from '@/services/api';
   import Notification from '@/components/common/Notification.vue';
 
   export default {
@@ -90,10 +91,29 @@
             userId: responce.data.userId,
             email: formData.email
           });
-          this.$emit('onMouseOut')
+          this.$emit('onMouseOut');
+          this.getResume();
         } else {
           this.showError(responce)
         }
+        })
+      },
+      getResume() {
+        const config = {
+          headers: { Authorization: `Bearer ${this.$store.state.user.token.token}` }
+        };
+        apiRequests.getResume(config).then(responce => {
+          if (responce && responce.status === 200) {
+            console.log('ok')
+            this.$store.commit('user/setUserAuth', true);
+            if(responce.data.length) {
+              this.updateStoreModel(responce.data[0]);
+            }
+          } else {
+            console.log('not ok')
+            this.$store.commit('user/setUserAuth', false)
+            this.$store.commit('user/setUserToken', {})
+          }
         })
       },
       register() {

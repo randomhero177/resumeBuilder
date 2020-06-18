@@ -59,20 +59,20 @@
         </div>
       </div>
       <div class="col-md-6 text-right form__elem" v-if="educationList.length > 1">
-        <span class="btn btn-remove education__icon" v-on:click="removeEducation(index)">
+        <span class="form-btn btn-remove education__icon" v-on:click="removeEducation(index)">
           <font-awesome-icon icon="trash-alt" /> {{ $t('education.remove') }}
         </span>
       </div>
     </div>
     <div class="row justify-content-between">
       <div class="col">
-        <span class="btn btn-add" v-on:click="addEducation">
+        <span class="form-btn btn-add" v-on:click="addEducation">
           <span class="btn-add__icon"><font-awesome-icon icon="plus-circle" /></span>
           {{ $t('education.add') }}
         </span>
       </div>
       <div class="col text-right" v-if="educationList.length">
-        <span class="btn btn-remove" v-on:click="removeSection">
+        <span class="form-btn btn-remove" v-on:click="removeSection">
           <font-awesome-icon icon="trash-alt" /> {{ $t('education.removeSection') }}
         </span>
       </div>

@@ -11,6 +11,7 @@ import '@/plugins/fontAwesome';
 import '@/plugins/multiselect';
 import '@/plugins/wysiwyg';
 import '@/plugins/customSlider';
+import '@/mixins/updateStoreModel';
 import Datepicker from 'vuejs-datepicker';
 import Notification from '@/components/common/Notification';
 import VTooltip from 'v-tooltip';

@@ -59,6 +59,9 @@ const mutations = {
   },
   removeSection(state) {
     state.educationList = [];
+  },
+  setEducationList(state, list) {
+    state.educationList = list;
   }
 };
 

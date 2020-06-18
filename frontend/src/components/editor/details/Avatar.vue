@@ -2,7 +2,7 @@
   <div class="avatar form__item">
     <div class="form__label">{{ $t('yourPicture') }}</div>
     <div v-if="isEmpty">
-      <span class="btn btn-add" @click="openFileDialog">
+      <span class="form-btn btn-add" @click="openFileDialog">
         <span class="btn-add__icon">
           <font-awesome-icon icon="plus-circle" />
         </span>
@@ -20,7 +20,7 @@
     <div v-else style="text-align: center">
       <img :src="imgUrl.src" alt="" class="avatar__img form__elem">
       <div class="text-right">
-        <span class="btn btn-remove" v-on:click="removeImage">
+        <span class="form-btn btn-remove" v-on:click="removeImage">
           <font-awesome-icon icon="trash-alt" />
           Remove this image
         </span>
