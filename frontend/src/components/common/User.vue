@@ -162,6 +162,7 @@
         this.$store.commit('user/setUserToken', {});
         this.$store.commit('user/setUserAuth', false);
         this.$store.commit('user/setExistance', false);
+        this.$emit('onMouseOut');
       }
     },
     components: {
