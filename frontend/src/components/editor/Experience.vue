@@ -44,7 +44,7 @@
             </div>
             <div>
               <div class="input-checkbox">
-                <input type="checkbox" @input="toggleIsCurrentPosition($event, index)">
+                <input type="checkbox" v-model="work.isCurrentPosition" @input="toggleIsCurrentPosition($event, index)">
                 <label>{{ $t('workHistory.currentPosition') }}</label>
                 <span class="input-checkbox__checked">
                   <font-awesome-icon icon="check" />
