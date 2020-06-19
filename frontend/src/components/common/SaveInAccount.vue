@@ -1,10 +1,10 @@
 <template>
-  <div style="display: inline-block; margin-left: 10px;">
-    <div class="btn btn-home" v-on:click="saveInAccount">
+  <div style="display: inline-block; margin-left: 10px;" v-if="isAuth">
+    <div class="btn btn-home" v-on:click="saveInAccount" v-if="isAuth && !doesResumeExist">
       Save resume in account
     </div>
-    <div class="btn btn-home" v-on:click="updateInAccount">
-      Update resume
+    <div class="btn btn-home" v-on:click="updateInAccount" v-if="isAuth && doesResumeExist">
+      Update saved resume
     </div>
     <notification :title="title" v-if="showNotification" @onCancel="showNotification = false" />
   </div>
@@ -38,7 +38,9 @@
         position: state => state.profile.position,
         phone: state => state.form.phone,
         profile: state => state.profile.profile,
-        references: state => state.profile.references
+        references: state => state.profile.references,
+        doesResumeExist: state => state.user.doesResumeExist,
+        isAuth: state => state.user.isAuth,
       }),
     },
     methods: {

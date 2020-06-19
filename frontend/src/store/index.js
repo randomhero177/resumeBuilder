@@ -11,6 +11,7 @@ import profile from '@/store/modules/profile';
 import links from '@/store/modules/links';
 import accomplishments from '@/store/modules/accomplishments';
 import user from '@/store/modules/user';
+import userLang from '@/store/modules/userLang';
 import home from '@/store/modules/home';
 import references from '@/store/modules/references';
 
@@ -46,11 +47,12 @@ const store = new Vuex.Store({
         links,
         accomplishments,
         user,
+        userLang,
         home,
         references,
     },
     plugins: [createPersistedState({
-        paths: ['accomplishments', 'education', 'experience', 'form', 'user', 'languages', 'links', 'profile', 'skills']
+        paths: ['accomplishments', 'education', 'experience', 'form', 'userLang', 'languages', 'links', 'profile', 'skills']
     })],
 });
 

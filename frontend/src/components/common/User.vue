@@ -1,6 +1,6 @@
 <template>
   <div class="dropdown dropdown_user">
-    <div class="dropdown__item">
+    <div class="dropdown__item" v-if="!isAuth">
       <span class="dropdown__link" v-on:click="showRegisterModal = true">{{ $t('login') }}/{{ $t('register') }}</span>
       <Modal
         v-if="showRegisterModal"
@@ -39,6 +39,26 @@
       </Modal>
       <notification :title="notificationTitle" v-if="showNotification" @onCancel="showNotification = false" />
     </div>
+    <div class="dropdown__item" v-if="isAuth">
+      <span class="dropdown__link" v-on:click="showLogoutModal = true">{{ $t('logout') }}</span>
+      <Modal
+        v-if="showLogoutModal"
+        title="Please confirm you would like to logout"
+        @onCancel="showLogoutModal = false"
+        @onApprove="showLogoutModal = false"
+      >
+        <template v-slot:buttons>
+          <div class="text-right">
+            <button class="modal__btn modal__btn_sm" v-on:click="showLogoutModal = false">{{ $t('cancel') }}</button>
+            <button class="modal__btn modal__btn_sm modal__btn_login" v-on:click="logout">{{ $t('logout') }}</button>
+          </div>
+          <span class="modal__icon modal__icon_close" v-on:click="showRegisterModal = false">
+            <font-awesome-icon icon="times-circle" />
+          </span>
+        </template>
+      </Modal>
+      <notification :title="notificationTitle" v-if="showNotification" @onCancel="showNotification = false" />
+    </div>
     <div class="dropdown__item"><Language /></div>
   </div>
 </template>
@@ -50,18 +70,22 @@
   import authRequest from '@/services/auth';
   import apiRequests from '@/services/api';
   import Notification from '@/components/common/Notification.vue';
+  import {mapState} from "vuex";
 
   export default {
     name: 'Auth',
     data: () => ({
       showRegisterModal: false,
+      showLogoutModal: false,
       showNotification: false,
       email: '',
       password: '',
       notificationTitle: ''
     }),
     computed: {
-
+      ...mapState({
+        isAuth: state => state.user.isAuth,
+      }),
     },
     methods: {
       closeDropDown() {
@@ -104,10 +128,13 @@
         };
         apiRequests.getResume(config).then(responce => {
           if (responce && responce.status === 200) {
-            console.log('ok')
+
             this.$store.commit('user/setUserAuth', true);
+            console.log(responce.data.length);
             if(responce.data.length) {
               this.updateStoreModel(responce.data[0]);
+              console.log('ect')
+              this.$store.commit('user/setExistance', true)
             }
           } else {
             console.log('not ok')
@@ -130,7 +157,11 @@
         })
       },
       logout() {
+        window.localStorage.removeItem('abrakadabra');
+        window.localStorage.removeItem('abrakadabra-exp');
         this.$store.commit('user/setUserToken', {});
+        this.$store.commit('user/setUserAuth', false);
+        this.$store.commit('user/setExistance', false);
       }
     },
     components: {

@@ -81,6 +81,9 @@ const mutations = {
   removeSection(state) {
     state.experienceList = [];
   },
+  setExperienceList(state, payload) {
+    state.experienceList = payload;
+  }
 };
 
 const experience = {

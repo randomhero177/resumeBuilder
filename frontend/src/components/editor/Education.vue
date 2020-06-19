@@ -48,7 +48,7 @@
             </div>
             <div>
               <div class="input-checkbox">
-                <input type="checkbox" @input="toggleIsCurrentEducation($event, index)">
+                <input type="checkbox" v-model="item.isCurrentEducation" @input="toggleIsCurrentEducation($event, index)">
                 <label>{{ $t('currentEducationEditor') }}</label>
                 <span class="input-checkbox__checked">
                   <font-awesome-icon icon="check" />

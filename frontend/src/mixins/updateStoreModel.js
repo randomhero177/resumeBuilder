@@ -5,9 +5,11 @@ const updateStoreModel = {
     updateStoreModel(data) {
       console.log(data);
       this.$store.commit('accomplishments/setAccomplishments', data.accomplishments);
+      this.$store.commit('education/setEducationList', data.education);
+      this.$store.commit('experience/setExperienceList', data.experience);
       this.$store.commit('profile/setPosition', data.position);
       this.$store.commit('profile/setProfileDesc', data.profile);
-      this.$store.commit('education/setEducationList', data.education);
+
     }
   },
 };

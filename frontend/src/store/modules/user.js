@@ -1,5 +1,4 @@
 const state = {
-  language: 'en',
   token: {},
   isAuth: false,
   doesResumeExist: false
@@ -8,12 +7,6 @@ const state = {
 const actions = {};
 
 const mutations = {
-  setLanguage(state, language) {
-    state.language = language;
-  },
-  /*
-* Запрос на получение UserToken
-*/
   setUserToken(state, token) {
     state.token = token
   },
