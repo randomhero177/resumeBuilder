@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown dropdown_user">
     <div class="dropdown__item" v-if="!isAuth">
-      <span class="dropdown__link" v-on:click="showRegisterModal = true">{{ $t('login') }}/{{ $t('register') }}</span>
+      <b class="dropdown__link" v-on:click="showRegisterModal = true">{{ $t('login') }}/{{ $t('register') }}</b>
       <Modal
         v-if="showRegisterModal"
         :title="$t('auth')"
@@ -40,7 +40,7 @@
       <notification :title="notificationTitle" v-if="showNotification" @onCancel="showNotification = false" />
     </div>
     <div class="dropdown__item" v-if="isAuth">
-      <span class="dropdown__link" v-on:click="showLogoutModal = true">{{ $t('logout') }}</span>
+      <b class="dropdown__link" v-on:click="showLogoutModal = true">{{ $t('logout') }}</b>
       <Modal
         v-if="showLogoutModal"
         title="Please confirm you would like to logout"

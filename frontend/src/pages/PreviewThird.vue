@@ -17,7 +17,7 @@
           <div class="row" v-else>
             <div class="col-12">
               <div class="row preview-melinda__header">
-                <div class="col-auto" v-if="avatar.length">
+                <div class="col-auto" v-if="isAva">
                   <Avatar />
                 </div>
                 <div class="col-auto">
@@ -93,6 +93,10 @@
       isInfoFilled() {
         return this.name.length || this.lastName.length
       },
+      isAva() {
+        const keys = Object.keys(this.avatar);
+        return keys.length
+      }
     },
     methods: {
       preparePrint() {

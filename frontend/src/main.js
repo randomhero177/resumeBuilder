@@ -34,7 +34,6 @@ new Vue({
     const lang = userLang || 'en';
     this.$i18n.locale = lang;
     document.querySelector('html').setAttribute('lang', lang);
-
     const abrakadabra = localStorage.getItem('abrakadabra');
 
     if(abrakadabra) {
@@ -43,13 +42,10 @@ new Vue({
         headers: { Authorization: `Bearer ${abrakadabra}` }
       };
       apiRequests.getResume(config).then(responce => {
-        console.log(responce);
         if (responce && responce.status === 200) {
-          console.log('ok')
           this.$store.commit('user/setUserAuth', true);
           if(responce.data.length) {
             this.updateStoreModel(responce.data[0]);
-            console.log('ect')
             this.$store.commit('user/setExistance', true)
           }
         } else {
