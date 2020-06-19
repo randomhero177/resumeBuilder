@@ -52,7 +52,7 @@
             <button class="modal__btn modal__btn_sm" v-on:click="showLogoutModal = false">{{ $t('cancel') }}</button>
             <button class="modal__btn modal__btn_sm modal__btn_login" v-on:click="logout">{{ $t('logout') }}</button>
           </div>
-          <span class="modal__icon modal__icon_close" v-on:click="showRegisterModal = false">
+          <span class="modal__icon modal__icon_close" v-on:click="showLogoutModal = false">
             <font-awesome-icon icon="times-circle" />
           </span>
         </template>
