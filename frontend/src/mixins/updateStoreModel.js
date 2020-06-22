@@ -4,12 +4,30 @@ const updateStoreModel = {
   methods: {
     updateStoreModel(data) {
       console.log(data);
-      this.$store.commit('accomplishments/setAccomplishments', data.accomplishments);
-      this.$store.commit('education/setEducationList', data.education);
-      this.$store.commit('experience/setExperienceList', data.experience);
-      this.$store.commit('profile/setPosition', data.position);
-      this.$store.commit('profile/setProfileDesc', data.profile);
+      console.log(12);
+      const config = {
+        accomplishments: 'accomplishments/setAccomplishments',
+        education: 'education/setEducationList',
+        experience: 'experience/setExperienceList',
+        avatar: 'form/setAvatar',
+        birthday: 'form/setBirthday',
+        name: 'form/setUserLastName',
+        lastName: 'form/setUserLastName',
+        phone: 'form/setPhone',
+        email: 'form/setEmail',
+        position: 'profile/setPosition',
+        profile: 'profile/setProfileDesc',
+        languages: 'languages/setLanguages',
+        links: 'links/setLinksListConfig'
+      };
 
+      for (let [key, value] of Object.entries(config)) {
+        if(data[key] && typeof data[key] !== 'undefined') {
+          console.log(1);
+          console.log(`${key}: ${value}`);
+          this.$store.commit(value, data[key]);
+        }
+      }
     }
   },
 };

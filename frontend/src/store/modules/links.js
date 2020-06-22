@@ -66,6 +66,9 @@ const mutations = {
   },
   removeSection(state) {
     state.linksList = {};
+  },
+  setLinksListConfig(state, payload) {
+    state.linksList = payload;
   }
 };
 

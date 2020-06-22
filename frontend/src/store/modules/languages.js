@@ -35,6 +35,9 @@ const mutations = {
   },
   removeSection(state) {
     state.languages = [];
+  },
+  setLanguages(state, payload) {
+    state.languages = payload;
   }
 };
 

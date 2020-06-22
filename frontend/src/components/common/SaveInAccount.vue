@@ -20,7 +20,8 @@
     name: 'SaveInAccount',
     data: () => ({
       title: '',
-      showNotification: false
+      showNotification: false,
+      token: localStorage.getItem('abrakadabra'),
     }),
     computed: {
       ...mapState({
@@ -34,7 +35,6 @@
         lastName: state => state.form.lastName,
         links: state => state.links.linksList,
         name: state => state.form.name,
-        token: state => state.user.token.token,
         position: state => state.profile.position,
         phone: state => state.form.phone,
         profile: state => state.profile.profile,

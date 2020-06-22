@@ -20,7 +20,7 @@ router.post(
       const { lastName } = request.body;
       const { languages } = request.body;
       const { name } = request.body;
-
+      const { links } = request.body;
       const { position } = request.body;
       const { phone } = request.body;
       const { profile } = request.body;
@@ -31,7 +31,7 @@ router.post(
       }
 
       const resume = new Resumes({
-        accomplishments, avatar, birthday, education, email, experience, lastName, languages, name, position, profile,
+        accomplishments, avatar, birthday, education, email, experience, lastName, languages, name, position, profile, links,
         phone, owner: request.user.userId
       })
       await resume.save()
@@ -60,7 +60,7 @@ router.put(
         resume.lastName = request.body.lastName;
         resume.languages = request.body.languages;
         resume.name = request.body.name;
-
+        resume.links = request.body.links;
         resume.position = request.body.position;
         resume.phone = request.phone;
         resume.profile = request.profile;
