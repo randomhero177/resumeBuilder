@@ -50,6 +50,7 @@ new Vue({
           }
         } else {
           console.log('not ok')
+          localStorage.removeItem('abrakadabra');
           this.$store.commit('user/setUserAuth', false)
           this.$store.commit('user/setUserToken', {})
         }

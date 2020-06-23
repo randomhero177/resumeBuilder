@@ -9,7 +9,7 @@
     <div class="row justify-content-between">
       <div class="col-lg-3 col-md-4" v-for="templ in templateList" :key="templ">
         <div class="template__item">
-          <img :src="`/${templ}.png`" alt="template" style="border-top: 1px solid #999;">
+          <img :src="`/${templ}.png`" alt="template">
           <div class="template__choose">
             <router-link to="/editor" class="template__link" v-on:click.native="setTemplateName(templ)"><span v-on:click="sendGtm(templ)">{{ $t('choose.btn') }}</span></router-link>
           </div>
@@ -56,6 +56,7 @@
       margin-bottom 15px
     &__item
       position relative
+      margin-bottom 15px
     &__link
       color #fff
       display block

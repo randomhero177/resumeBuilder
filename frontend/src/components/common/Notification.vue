@@ -25,7 +25,7 @@
     props: {
       title: {
         type: String,
-        default: 'Ничего особенного'
+        default: 'Ok'
       }
     },
     methods: {
@@ -39,7 +39,7 @@
     created() {
       setTimeout(() => {
         this.destroy();
-      }, 1115000);
+      }, 5000);
     }
   }
 </script>

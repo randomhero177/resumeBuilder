@@ -105,8 +105,8 @@
     }
   },
   "choose": {
-    "title": "Choose your template",
-    "subtitle": "We're working in progress. Someday there would be more templates available",
+    "title": "Free resume templates",
+    "subtitle": "Choose your template. We're working in progress to create more perfect templates available in near future.",
     "btn": "Use this template"
   },
   "downloadPage": {
@@ -121,7 +121,7 @@
       "description": "Build your resume! It's easy and free"
     },
     "chooseTemplate": {
-      "title": "Choose template",
+      "title": "Free resume templates",
       "description": "Use our templates to create a successful resume and download PDF file"
     },
     "editor": {

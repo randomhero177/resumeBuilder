@@ -1,18 +1,23 @@
 <template>
-  <div style="display: inline-block; margin-left: 10px;" v-if="isAuth">
+  <div style="display: inline-block; margin-left: 10px;">
     <div class="btn btn-home" v-on:click="saveInAccount" v-if="isAuth && !doesResumeExist">
       Save resume in account
     </div>
     <div class="btn btn-home" v-on:click="updateInAccount" v-if="isAuth && doesResumeExist">
       Update saved resume
     </div>
-    <notification :title="title" v-if="showNotification" @onCancel="showNotification = false" />
+    <div class="btn btn-home" v-on:click="showRegisterModal = true" v-if="!isAuth">
+      Login/Register
+    </div>
+    <RegisterModal v-if="showRegisterModal" @closeRegisterModal="showRegisterModal = false"/>
+    <Notification :title="title" v-if="showNotification" @onCancel="showNotification = false" />
   </div>
 
 </template>
 
 <script>
   import { mapState } from 'vuex';
+  import RegisterModal from '@/components/common/RegisterModal.vue';
   import Notification from '@/components/common/Notification.vue';
   import apiRequests from '@/services/api';
 
@@ -22,6 +27,7 @@
       title: '',
       showNotification: false,
       token: localStorage.getItem('abrakadabra'),
+      showRegisterModal: false,
     }),
     computed: {
       ...mapState({
@@ -99,7 +105,7 @@
       },
     },
     components: {
-      Notification,
+      Notification, RegisterModal,
     }
   }
 </script>
