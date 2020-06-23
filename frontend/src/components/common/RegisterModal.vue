@@ -113,9 +113,9 @@
           email: this.email,
           password: this.password
         }).then(responce => {
-          console.log(responce);
           if(responce && responce.status === 201) {
             this.$emit('closeRegisterModal');
+            this.login();
           } else {
             this.showError(responce);
           }
