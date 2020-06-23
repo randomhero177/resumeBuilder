@@ -24,7 +24,7 @@
       </Modal>
       <Notification :title="notificationTitle" v-if="showNotification" @onCancel="showNotification = false" />
     </div>
-    <div class="dropdown__item"><Language /></div>
+    <div class="dropdown__item"><Language @onSelect="$emit('onMouseOut')"/></div>
   </div>
 </template>
 

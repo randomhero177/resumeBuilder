@@ -28,7 +28,8 @@
           return this.$store.state.userLang.language;
         },
         set(value) {
-          this.$store.commit('userLang/setLanguage', value)
+          this.$store.commit('userLang/setLanguage', value);
+          this.$emit('onSelect');
         },
       },
     },
