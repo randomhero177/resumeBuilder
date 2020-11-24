@@ -15,6 +15,7 @@
           <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('download') }}</router-link>
         </div>
         <div class="col-auto ml-auto">
+          <span class="navigation__user-name" v-if="isAuth && name">{{ name }} {{ lastName }}</span>
           <span class="icon icon_user" v-on:click="showDropdown = !showDropdown">
             <font-awesome-icon icon="user-circle" />
           </span>
@@ -67,6 +68,9 @@
     computed: {
       ...mapState({
         templateName: state => state.template.templateName,
+        name: state => state.form.name,
+        lastName: state => state.form.lastName,
+        isAuth: state => state.user.isAuth
       }),
       lastName: {
         get() {
