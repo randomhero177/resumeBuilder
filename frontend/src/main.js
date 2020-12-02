@@ -12,6 +12,7 @@ import '@/plugins/multiselect';
 import '@/plugins/wysiwyg';
 import '@/plugins/customSlider';
 import '@/mixins/updateStoreModel';
+import '@/mixins/getLocale';
 import Datepicker from 'vuejs-datepicker';
 import Notification from '@/components/common/Notification';
 import VTooltip from 'v-tooltip';
@@ -30,9 +31,11 @@ new Vue({
   i18n,
   render: h => h(App),
   created() {
-    const userLang = (this.$store.state.user.language) ? this.$store.state.user.language : false;
-    const lang = userLang || 'en';
+    const userLang = (this.$store.state.userLang.language) ? this.$store.state.userLang.language : false;
+    const localeLang = this.getBrowserLocales()[0];
+    const lang = userLang || localeLang;
     this.$i18n.locale = lang;
+    this.$store.commit('userLang/setLanguage', lang);
     document.querySelector('html').setAttribute('lang', lang);
     const abrakadabra = localStorage.getItem('abrakadabra');
 
@@ -56,6 +59,7 @@ new Vue({
         }
       })
     }
+
   },
   methods: {
 

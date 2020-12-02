@@ -3,8 +3,6 @@ import Vue from 'vue';
 const updateStoreModel = {
   methods: {
     updateStoreModel(data) {
-      console.log(data);
-      console.log(12);
       const config = {
         accomplishments: 'accomplishments/setAccomplishments',
         education: 'education/setEducationList',
@@ -23,8 +21,6 @@ const updateStoreModel = {
 
       for (let [key, value] of Object.entries(config)) {
         if(data[key] && typeof data[key] !== 'undefined') {
-          console.log(1);
-          console.log(`${key}: ${value}`);
           this.$store.commit(value, data[key]);
         }
       }

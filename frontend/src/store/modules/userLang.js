@@ -1,5 +1,5 @@
 const state = {
-  language: 'en',
+  language: null,
 };
 
 const actions = {};
