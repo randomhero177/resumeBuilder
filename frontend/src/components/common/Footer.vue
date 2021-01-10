@@ -10,8 +10,6 @@
             <div>
               Contacts: randomhero177@gmail.com
             </div>
-          </div>
-          <div class="col">
             <a href="https://www.facebook.com/Build-resumeio-114449923644206" target="_blank" class="footer__link">
               <font-awesome-icon :icon="['fab', 'facebook-square']" />
             </a>
