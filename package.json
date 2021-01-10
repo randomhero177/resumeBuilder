@@ -18,7 +18,7 @@
   "author": "Konstantin Vasin <randomhero177@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/randomhero177/resumeBuilder/issues"
+    "url": "https://xgithub.com/randomhero177/resumeBuilder/issues"
   },
   "homepage": "https://github.com/randomhero177/resumeBuilder#readme",
   "dependencies": {
@@ -33,6 +33,8 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^4.3.2"
   }
 }
