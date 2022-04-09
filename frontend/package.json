@@ -17,7 +17,7 @@
     "animate.css": "^3.7.2",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
     "vue-custom-range-slider": "^0.2.1",
