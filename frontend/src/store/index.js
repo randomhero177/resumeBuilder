@@ -1,6 +1,4 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import createPersistedState from 'vuex-persistedstate';
+import { createStore as _createStore } from 'vuex'
 import template from '@/store/modules/template';
 import form from '@/store/modules/form';
 import languages from '@/store/modules/languages';
@@ -15,7 +13,6 @@ import userLang from '@/store/modules/userLang';
 import home from '@/store/modules/home';
 import references from '@/store/modules/references';
 
-Vue.use(Vuex);
 
 const { hostname, port } = window.location;
 
@@ -30,7 +27,7 @@ const mutations = {};
 
 const actions = {};
 
-const store = new Vuex.Store({
+const store = _createStore({
     strict: process.env.NODE_ENV !== 'production',
     state,
     actions,
@@ -50,10 +47,7 @@ const store = new Vuex.Store({
         userLang,
         home,
         references,
-    },
-    plugins: [createPersistedState({
-        paths: ['accomplishments', 'education', 'experience', 'form', 'userLang', 'languages', 'links', 'profile', 'skills']
-    })],
+    }
 });
 
 export default store;
