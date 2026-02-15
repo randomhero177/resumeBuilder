@@ -1,16 +1,15 @@
 import { createApp } from 'vue'
 
 import { createStore } from '@/store'
-import { createRouter } from '@/router'
+import router from '@/router'
 import store from '@/store/index';
-import router from '@/router/index';
 import App from './App.vue';
 import 'animate.css/animate.min.css'
 import '@/assets/grid.min.css';
 import '@/assets/common.styl';
 import '@/plugins/moment/plugin';
 import i18n from '@/plugins/i18n';
-import '@/plugins/fontAwesome';
+/*import '@/plugins/fontAwesome';*/
 import '@/plugins/multiselect';
 import '@/plugins/wysiwyg';
 import '@/plugins/customSlider';
@@ -22,12 +21,11 @@ import VTooltip from 'v-tooltip';
 import breakpoint from "@/mixins/breakpoint";
 import apiRequests from '@/services/api';
 
-const router = createRouter()
-const store = createStore(router)
+
 
 const app = createApp(App)
 
-app.use(store)
+/*app.use(store)*/
 app.use(router)
 
 /*Vue.use(VTooltip);
