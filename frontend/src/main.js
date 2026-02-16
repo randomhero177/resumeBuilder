@@ -1,12 +1,11 @@
 import { createApp } from 'vue'
 
-import { createStore } from '@/store'
 import router from '@/router'
 import store from '@/store/index';
 import App from './App.vue';
 import 'animate.css/animate.min.css'
 import '@/assets/grid.min.css';
-import '@/assets/common.styl';
+/*import '@/assets/common.styl';*/
 import '@/plugins/moment/plugin';
 import i18n from '@/plugins/i18n';
 /*import '@/plugins/fontAwesome';*/
