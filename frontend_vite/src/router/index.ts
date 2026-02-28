@@ -55,7 +55,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(),
 
     scrollBehavior(to) {
         // En Vue 3, las coordenadas usan 'top' y 'left' en lugar de 'x' e 'y'
