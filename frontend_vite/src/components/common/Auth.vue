@@ -36,10 +36,11 @@
   }
 </script>
 
-<style scoped lang="stylus">
-  .footer
-    background #1f1717
-    color #a7a7a7
-    padding 45px 0
-    font-size .75rem
+<style scoped lang="scss">
+.footer {
+  background: #1f1717;
+  color: #a7a7a7;
+  padding: 45px 0;
+  font-size: .75rem;
+}
 </style>

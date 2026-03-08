@@ -77,12 +77,14 @@
   }
 </script>
 
-<style scoped lang="stylus">
-  .links
-    &__icon
-      font-size 30px
-    &__item
-      margin-bottom 15px
+<style scoped lang="scss">
+.links {
+  &__icon {
+    font-size: 30px;
+  }
+  &__item {
+    margin-bottom: 15px;
+  }
+}
 </style>
-
 

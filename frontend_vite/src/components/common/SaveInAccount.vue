@@ -110,13 +110,17 @@
   }
 </script>
 
-<style scoped lang="stylus">
-  .modal
-    &__icon
-      &_close
-        cursor pointer
-        position absolute
-        font-size 20px
-        top 5px
-        right 10px
+<style scoped lang="scss">
+.modal {
+  &__icon {
+    &_close {
+      cursor: pointer;
+      position: absolute;
+      font-size: 20px;
+      top: 5px;
+      right: 10px;
+    }
+  }
+}
 </style>
+
