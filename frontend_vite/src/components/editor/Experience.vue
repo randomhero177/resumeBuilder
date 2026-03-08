@@ -215,9 +215,10 @@
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .expirience__remove-col
-    display flex
-    align-items center
-    justify-content flex-end
+<style lang="scss" scoped>
+  .expirience__remove-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 </style>

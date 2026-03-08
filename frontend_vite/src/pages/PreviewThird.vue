@@ -119,26 +119,38 @@
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .preview
-    &-melinda
-      &__header
-        margin-bottom 30px
-      &__main
-        & .preview__icon
-          display none
-    &__descr
-      margin-bottom 15px
-    &__section
-      border 1px solid #dedede
-      border-bottom none
-      padding 30px
-      -webkit-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
-      -moz-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
-      box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
-  .color
-    color #4285f4
-  .preview__profile.form__item
-    margin-bottom 0
+<style lang="scss" scoped>
+.preview {
+  &-melinda {
+    &__header {
+      margin-bottom: 30px;
+    }
+    &__main {
+      .preview__icon {
+        display: none;
+      }
+    }
+  }
 
+  &__descr {
+    margin-bottom: 15px;
+  }
+
+  &__section {
+    border: 1px solid #dedede;
+    border-bottom: none;
+    padding: 30px;
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(168, 168, 168, 0.4);
+    -moz-box-shadow: 1px 1px 5px 2px rgba(168, 168, 168, 0.4);
+    box-shadow: 1px 1px 5px 2px rgba(168, 168, 168, 0.4);
+  }
+
+  &__profile.form__item {
+    margin-bottom: 0;
+  }
+}
+
+.color {
+  color: #4285f4;
+}
 </style>

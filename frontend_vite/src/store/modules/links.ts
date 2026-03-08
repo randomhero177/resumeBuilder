@@ -1,4 +1,4 @@
-import Vue from 'vue';
+
 
 const state = {
   linksList: {},
@@ -55,11 +55,7 @@ const actions = {
 
 const mutations = {
   setLink(state, obj) {
-    state.linksList[obj.key] = obj.link;
-  },
-  setNewLink(state) {
-    const key = Object.keys(state.linksList).length;
-    Vue.set(state.linksList, `mySite${key}`, 'my link');
+    state.linksList = { ...state.linksList, [obj.key]: obj.link };
   },
   setLinksList(state) {
     state.linksList = {...state.linksList, ...state.linksListConfig};

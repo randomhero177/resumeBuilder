@@ -42,8 +42,8 @@
   import Modal from '@/components/common/Modal.vue';
   import {mapState} from "vuex";
   import parseJWT from '@/utils/parseJWT';
-  import authRequest from '@/services/auth';
-  import apiRequests from '@/services/api';
+  import authRequest from '@/services/auth.ts';
+  import apiRequests from '@/services/api.ts';
   import Notification from '@/components/common/Notification.vue';
 
   export default {

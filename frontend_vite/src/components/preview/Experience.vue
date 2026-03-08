@@ -36,7 +36,8 @@
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .preview-expirience__item
-    margin-bottom 30px
+<style lang="scss" scoped>
+  .preview-expirience__item {
+    margin-bottom: 30px;
+  }
 </style>

@@ -62,16 +62,20 @@
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .avatar
-    &__btn
-      padding 1.5rem 3rem
-      border 1px solid #000
-      border-radius 3px
-      display block
-      text-align center
-      font-size .75rem
-      cursor pointer
-    &__img
-      width 200px
+<style lang="scss" scoped>
+  .avatar {
+    &__btn {
+      padding: 1.5rem 3rem;
+      border: 1px solid #000;
+      border-radius: 3px;
+      display: block;
+      text-align: center;
+      font-size: .75rem;
+      cursor: pointer;
+    }
+
+    &__img {
+      width: 200px;
+    }
+  }
 </style>

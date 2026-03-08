@@ -116,19 +116,27 @@
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .preview
-    &__descr
-      margin-bottom 15px
-    &__section
-      border 1px solid #dedede
-      border-bottom 0
-      padding 15px
-      -webkit-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
-      -moz-box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
-      box-shadow 1px 1px 5px 2px rgba(168,168,168,0.4)
-    &-functional
-      & .preview__section
-        box-shadow none
-        border 0
+<style lang="scss" scoped>
+.preview {
+  &__descr {
+    margin-bottom: 15px;
+  }
+
+  &__section {
+    border: 1px solid #dedede;
+    border-bottom: 0;
+    padding: 15px;
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(168, 168, 168, 0.4);
+    -moz-box-shadow: 1px 1px 5px 2px rgba(168, 168, 168, 0.4);
+    box-shadow: 1px 1px 5px 2px rgba(168, 168, 168, 0.4);
+  }
+
+  &-functional {
+    // Aquí eliminamos el sombreado y borde cuando el componente es 'functional'
+    .preview__section {
+      box-shadow: none;
+      border: 0;
+    }
+  }
+}
 </style>

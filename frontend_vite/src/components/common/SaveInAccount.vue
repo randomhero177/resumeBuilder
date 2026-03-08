@@ -19,7 +19,7 @@
   import { mapState } from 'vuex';
   import RegisterModal from '@/components/common/RegisterModal.vue';
   import Notification from '@/components/common/Notification.vue';
-  import apiRequests from '@/services/api';
+  import apiRequests from '@/services/api.ts';
 
   export default {
     name: 'SaveInAccount',

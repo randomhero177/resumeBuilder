@@ -34,8 +34,9 @@ import { mapState } from 'vuex';
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .preview__skills_inline
-    display inline-block
-    margin-right 5px
+<style lang="scss" scoped>
+.preview__skills_inline {
+  display: inline-block;
+  margin-right: 5px;
+}
 </style>

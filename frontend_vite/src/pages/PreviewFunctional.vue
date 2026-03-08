@@ -107,21 +107,32 @@
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .preview
-    &__descr
-      margin-bottom 15px
-    &-functional
-      &__side
-        background #404040
-        padding 30px 15px
-        color #fff
-      &__name
-        margin-bottom 30px
-      &__separate
-        border-bottom 1px solid #2e74b5
-      &__summary
-        position relative
-        padding-bottom 1px
-        margin-bottom 30px
+<style lang="scss" scoped>
+.preview {
+  &__descr {
+    margin-bottom: 15px;
+  }
+
+  &-functional {
+    &__side {
+      background: #404040;
+      padding: 30px 15px;
+      color: #fff;
+    }
+
+    &__name {
+      margin-bottom: 30px;
+    }
+
+    &__separate {
+      border-bottom: 1px solid #2e74b5;
+    }
+
+    &__summary {
+      position: relative;
+      padding-bottom: 1px;
+      margin-bottom: 30px;
+    }
+  }
+}
 </style>

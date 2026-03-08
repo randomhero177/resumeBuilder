@@ -1,4 +1,4 @@
-import { createStore as _createStore } from 'vuex'
+import { createStore } from 'vuex'
 import template from '@/store/modules/template';
 import form from '@/store/modules/form';
 import languages from '@/store/modules/languages';
@@ -27,7 +27,7 @@ const mutations = {};
 
 const actions = {};
 
-const store = _createStore({
+const store = createStore({
     strict: process.env.NODE_ENV !== 'production',
     state,
     actions,

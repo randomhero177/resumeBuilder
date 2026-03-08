@@ -28,8 +28,10 @@ import { mapState } from 'vuex';
     },
   }
 </script>
-<style lang="stylus" scoped>
-  .links
-    &__elem
-      margin-bottom 7.5px
+<style lang="scss" scoped>
+  .links {
+    &__elem {
+      margin-bottom: 7.5px;
+    }
+  }
 </style>

@@ -27,6 +27,6 @@ import { mapState } from 'vuex';
     },
   }
 </script>
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 
 </style>

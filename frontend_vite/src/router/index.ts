@@ -56,36 +56,14 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        }
 
-    scrollBehavior(to) {
-        // En Vue 3, las coordenadas usan 'top' y 'left' en lugar de 'x' e 'y'
-        return to.meta.scrollToTop ? { top: 0, left: 0 } : true;
+        return { top: 0 };
     },
     routes,
 });
-
-function getRoutesList(routesList, pre) {
-    return routesList.reduce((array, route) => {
-        if (route.path.includes(':pathMatch')) return array;
-
-        const path = `${pre}${route.path}`.replace(/\/$/, ""); // Limpia slashes extras
-        array.push(path || pre);
-
-        if (route.children) {
-            array.push(...getRoutesList(route.children, `${path}/`));
-        }
-        return array;
-    }, []);
-}
-
-
-export function getRoutesXML() {
-    const list = getRoutesList(routes, 'http://build-resume.io')
-        .map(route => `<url><loc>${route}</loc></url>`)
-        .join('\r\n');
-    return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${list}
-  </urlset>`;
-}
 
 export default router;

@@ -2,16 +2,16 @@
   <div class="navigation row justify-content-center">
     <div class="col-xl-10">
       <div class="row align-items-center">
-        <div class="col-auto" v-if="!$breakpoint.mdAndDown">
+        <div class="col-auto" >
           <router-link to="/" class="navigation__item" exact-active-class="navigation__item_active"> {{ $t('home') }} </router-link> >
         </div>
-        <div class="col-auto" v-if="!$breakpoint.mdAndDown">
+        <div class="col-auto" >
           <router-link to="/choose-template" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('chooseTemplate') }}</router-link> >
         </div>
-        <div class="col-auto" v-if="!$breakpoint.mdAndDown">
+        <div class="col-auto" >
           <router-link to="/editor" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('fillIn') }}</router-link> >
         </div>
-        <div class="col-auto" v-if="!$breakpoint.mdAndDown">
+        <div class="col-auto" >
           <router-link :to="'/preview-' + templateName" class="navigation__item" exact-active-class="navigation__item_active">{{ $t('download') }}</router-link>
         </div>
         <div class="col-auto ml-auto">
@@ -23,7 +23,7 @@
             <User @onMouseOut="showDropdown = false"/>
           </div>
         </div>
-        <div v-if="$breakpoint.mdAndDown">
+        <div >
           <div class="navigation__mobile-wrap">
             <span class="navigation__mobile-icon"
               :class="showMobile ? 'navigation__mobile-icon_active': ''"
