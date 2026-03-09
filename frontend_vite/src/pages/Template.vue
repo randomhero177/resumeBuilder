@@ -6,6 +6,7 @@
         {{ $t('choose.subtitle') }}
       </div>
     </div>
+    CHECK TEMPLATE
     <div class="row justify-content-between">
       <div class="col-lg-3 col-md-4" v-for="templ in templateList" :key="templ">
         <div class="template__item">

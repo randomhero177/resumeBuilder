@@ -116,9 +116,9 @@
 
 <script>
   import { mapState } from 'vuex';
-  import Navigation from '@/components/common/Navigation.vue';
-  import Footer from '@/components/common/Footer.vue';
-  import Loader from '@/components/common/Loader.vue';
+  import MainNavigation from '@/components/common/MainNavigation.vue';
+  import FooterNav from '@/components/common/FooterNav.vue';
+  import LoaderCircle from '@/components/common/LoaderCircle.vue';
 
   export default {
     name: "home",
@@ -163,7 +163,7 @@
       }
     },
     components: {
-      Navigation, Footer, Loader,
+      Navigation: MainNavigation, Footer: FooterNav, Loader: LoaderCircle,
     },
     mounted() {
       if(!this.isShown) {

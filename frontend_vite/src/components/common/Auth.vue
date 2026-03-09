@@ -15,25 +15,7 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'Auth',
-
-    data: () => ({
-
-    }),
-    computed: {
-
-      lastName: {
-        get() {
-          return this.$store.state.form.lastName;
-        },
-        set(value) {
-          this.$store.commit('form/setUserLastName', value)
-        },
-      },
-    },
-  }
+<script setup lang="ts">
 </script>
 
 <style scoped lang="scss">

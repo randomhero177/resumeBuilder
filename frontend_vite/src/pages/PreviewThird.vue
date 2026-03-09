@@ -60,8 +60,8 @@
 </template>
 
 <script>
-  import Navigation from '@/components/common/Navigation.vue';
-  import Footer from '@/components/common/Footer.vue';
+  import MainNavigation from '@/components/common/MainNavigation.vue';
+  import FooterNav from '@/components/common/FooterNav.vue';
   import HeaderDownload from '@/components/preview/Header.vue';
   import Avatar from '@/components/preview/Avatar.vue';
   import Profile from '@/components/preview/Profile.vue';
@@ -114,8 +114,8 @@
       },
     },
     components: {
-      Navigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, HeaderDownload,
-      Accomplishments, Footer, NoInfo, References,
+      Navigation: MainNavigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, HeaderDownload,
+      Accomplishments, Footer: FooterNav, NoInfo, References,
     },
   }
 </script>

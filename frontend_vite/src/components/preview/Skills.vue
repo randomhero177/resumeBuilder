@@ -3,8 +3,8 @@
     <h5 class="preview__title">
       <span class="preview__icon"><font-awesome-icon icon="tools" /></span>  {{ $t(title) }}
     </h5>
-    <template v-for="(item, i) in skills">
-      <div :class="inline ? 'preview__skills_inline' : ''" :key="i">
+    <template v-for="(item, i) in skills" :key="`skills-${item.name}_${i}`">
+      <div :class="inline ? 'preview__skills_inline' : ''" >
         {{ item.name }}{{ skills.length - 1 == i ? '.' : ',' }}
       </div>
     </template>

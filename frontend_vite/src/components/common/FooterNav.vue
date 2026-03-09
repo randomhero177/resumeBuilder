@@ -28,30 +28,8 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
   import Language from '@/components/common/Language.vue';
-
-  export default {
-    name: 'Footer',
-
-    data: () => ({
-
-    }),
-    computed: {
-
-      lastName: {
-        get() {
-          return this.$store.state.form.lastName;
-        },
-        set(value) {
-          this.$store.commit('form/setUserLastName', value)
-        },
-      },
-    },
-    components: {
-      Language
-    }
-  }
 </script>
 
 <style scoped lang="scss">

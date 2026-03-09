@@ -48,8 +48,8 @@
 
 <script>
   import { mapState } from 'vuex';
-  import Navigation from '@/components/common/Navigation.vue';
-  import Footer from '@/components/common/Footer.vue';
+  import MainNavigation from '@/components/common/MainNavigation.vue';
+  import FooterNav from '@/components/common/FooterNav.vue';
   import HeaderDownload from '@/components/preview/Header.vue';
   import Header from '@/components/preview/HeaderPreview.vue';
   import Profile from '@/components/preview/Profile.vue';
@@ -111,7 +111,7 @@
 
     },
     components: {
-      Navigation, Footer, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
+      Navigation: MainNavigation, Footer: FooterNav, HeaderDownload, Header, Profile, Details, Links, Skills, Languages, Experience, Education,
       Accomplishments, NoInfo, References,
     },
   }

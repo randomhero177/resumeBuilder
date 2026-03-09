@@ -1,19 +1,22 @@
-
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HomePage msg="Vite + Vue" />
+  <component :is="layouts[route.meta.layout || 'default']">
+    <router-view />
+  </component>
 </template>
 
 <script setup lang="ts">
-import HomePage from '@/pages/Home.vue'
+import { useRoute } from 'vue-router'
+import LayoutDefault  from "@/layouts/LayoutDefault.vue";
+import LayoutDownload from "@/layouts/LayoutDownload.vue";
+import LayoutLanding from "@/layouts/LayoutLanding.vue";
+
+const route = useRoute()
+
+const layouts = {
+  default: LayoutDefault,
+  download: LayoutDownload,
+  LayoutLanding: LayoutLanding
+}
 </script>
 
 <style scoped>
