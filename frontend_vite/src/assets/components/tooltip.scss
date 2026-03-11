@@ -1,0 +1,141 @@
+$tooltip-bg: #000000;
+$tooltip-text: #ffffff;
+$popover-bg: #ffffff;
+$popover-text: #000000;
+$popover-shadow: rgba(0, 0, 0, 0.1);
+
+// Sizes
+$tooltip-radius: 4px;
+$popover-radius: 5px;
+$tooltip-padding: 5px 10px 4px;
+$popover-padding: 24px;
+$tooltip-max-width: 48rem;
+$arrow-size: 5px;
+
+// Animation
+$tooltip-transition: 0.15s;
+$tooltip-z-index: 10000;
+
+
+.tooltip {
+  display: block !important;
+  z-index: $tooltip-z-index;
+  outline: none;
+
+  /* ===== Inner ===== */
+
+  &-inner {
+    background: $tooltip-bg;
+    color: $tooltip-text;
+    border-radius: $tooltip-radius;
+    padding: $tooltip-padding;
+    max-width: $tooltip-max-width;
+
+    p {
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  /* ===== Arrow ===== */
+
+  &-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: $arrow-size;
+    border-style: solid;
+    border-color: $tooltip-bg;
+    z-index: 1;
+  }
+
+  /* ===== Placements ===== */
+
+  &[x-placement^="top"] {
+    margin-bottom: $arrow-size;
+
+    .tooltip-arrow {
+      border-width: $arrow-size $arrow-size 0 $arrow-size;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -$arrow-size;
+      left: calc(50% - #{$arrow-size});
+      margin: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: $arrow-size;
+
+    .tooltip-arrow {
+      border-width: 0 $arrow-size $arrow-size $arrow-size;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -$arrow-size;
+      left: calc(50% - #{$arrow-size});
+      margin: 0;
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: $arrow-size;
+
+    .tooltip-arrow {
+      border-width: $arrow-size $arrow-size $arrow-size 0;
+      border-left-color: transparent !important;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: -$arrow-size;
+      top: calc(50% - #{$arrow-size});
+      margin: 0;
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: $arrow-size;
+
+    .tooltip-arrow {
+      border-width: $arrow-size 0 $arrow-size $arrow-size;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -$arrow-size;
+      top: calc(50% - #{$arrow-size});
+      margin: 0;
+    }
+  }
+
+  /* ===== Popover modifier ===== */
+
+  &.popover {
+    color: #f9f9f9;
+
+    &-inner {
+      background: $popover-bg;
+      color: $popover-text;
+      padding: $popover-padding;
+      border-radius: $popover-radius;
+      box-shadow: 0 5px 30px $popover-shadow;
+    }
+
+    &-arrow {
+      border-color: $popover-bg;
+    }
+  }
+
+  /* ===== Visibility states ===== */
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity $tooltip-transition,
+    visibility $tooltip-transition;
+  }
+
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity $tooltip-transition;
+  }
+}

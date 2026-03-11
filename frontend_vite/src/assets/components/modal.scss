@@ -1,0 +1,98 @@
+// Overlay
+$modal-overlay-bg: rgba(0, 0, 0, 0.5);
+$modal-z-index: 9;
+
+// Container
+$modal-bg: #ffffff;
+$modal-radius: 5px;
+$modal-padding: 45px;
+$modal-max-width: 50%;
+
+// Buttons
+$btn-padding: 15px 30px;
+$btn-gap: 30px;
+$btn-gap-sm: 10px;
+
+// Colors
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-remove: #927c7c;
+$color-add: #366d5b;
+$color-login: #ee7856;
+
+
+.modal {
+  position: fixed;
+  inset: 0; // вместо width/height 100%
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $modal-overlay-bg;
+  z-index: $modal-z-index;
+
+  /* ===== Container ===== */
+
+  &__container {
+    position: relative;
+    max-width: $modal-max-width;
+    text-align: center;
+    background: $modal-bg;
+    padding: $modal-padding;
+    border-radius: $modal-radius;
+  }
+
+  /* ===== Buttons wrapper ===== */
+
+  &__buttons {
+    margin-top: $modal-padding;
+  }
+
+  /* ===== Button ===== */
+
+  &__btn {
+    border: 0;
+    padding: $btn-padding;
+    color: $color-black;
+    cursor: pointer;
+
+    /* modifiers */
+    &_remove {
+      border: 1px solid $color-remove;
+      color: $color-remove;
+    }
+
+    &_add {
+      border: 1px solid $color-add;
+      background: $color-add;
+      color: $color-white;
+    }
+
+    &_login {
+      border: 1px solid $color-login;
+      background: $color-login;
+      color: $color-white;
+    }
+
+    /* sibling spacing */
+    & + & {
+      margin-left: $btn-gap;
+    }
+
+    &_sm + &_sm {
+      margin-left: $btn-gap-sm;
+    }
+  }
+
+  /* ===== Icon ===== */
+
+  &__icon {
+    &_close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}

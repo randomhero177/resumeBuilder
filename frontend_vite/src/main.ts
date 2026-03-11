@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
-import './style.css'
+import '@/style.css'
 import App from '@/App.vue'
 import router from '@/router'
 import store from '@/store'
 import i18n from '@/plugins/i18n'
+import '@/assets/common.scss';
 import registerFontAwesome from '@/plugins/fontAwesome.ts';
 
 const app = createApp(App)
