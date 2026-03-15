@@ -1,8 +1,8 @@
 <template>
   <section class="page">
     <div class="full-height">
+      <main-navigation />
       <div class="container-fluid">
-        <main-navigation />
         <div class="row justify-content-center">
           <div class="col-xl-10">
             <div class="content-pad">

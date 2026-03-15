@@ -19,7 +19,7 @@ const routes = [
     {
         path: '/choose-template',
         name: 'Template',
-        component: () => import('@/pages/Template.vue'),
+        component: () => import('@/pages/ChooseTemplate.vue'),
         meta: { title: 'meta.chooseTemplate.title' },
     },
     {

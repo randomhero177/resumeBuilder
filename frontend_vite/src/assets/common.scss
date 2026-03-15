@@ -12,6 +12,14 @@
 @use "base/reset";
 @use "base/globals";
 
+.row {
+  display: flex;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .btn {
   display: inline-block;

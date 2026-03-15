@@ -20,37 +20,25 @@
   </div>
 </template>
 
-<script>
-  import { mapState, mapActions } from 'vuex';
+<script setup lang="ts">
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
-  export default {
-    name: "Template",
-    data() {
-      return {
-        data: () => ({
+const store = useStore();
 
-        }),
-      };
-    },
-    computed: {
-      ...mapState({
-        templateName: state => state.template.templateName,
-        templateList: state => state.template.templateList,
-      }),
+const templateName = computed(() => store.state.template.templateName);
+const templateList = computed(() => store.state.template.templateList);
 
-    },
-    methods: {
-      ...mapActions({
-        setTemplateName: 'template/setTemplateName',
-      }),
-      sendGtm(name) {
-        if(window.dataLayer) {
-          window.dataLayer.push({'event': `${name}-chosen`})
-        }
-      },
-    },
+
+const setTemplateName = (payload: any) => store.dispatch('template/setTemplateName', payload);
+
+const sendGtm = (name: string) => {
+  if ((window as any).dataLayer) {
+    (window as any).dataLayer.push({ 'event': `${name}-chosen` });
   }
+};
 </script>
+
 <style scoped lang="scss">
 .template {
   &__descr {
