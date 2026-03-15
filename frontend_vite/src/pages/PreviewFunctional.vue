@@ -54,59 +54,56 @@
   </div>
 </template>
 
-<script>
-  import MainNavigation from '@/components/common/MainNavigation.vue';
-  import FooterNav from '@/components/common/FooterNav.vue';
-  import HeaderDownload from '@/components/preview/Header.vue';
-  import Avatar from '@/components/preview/Avatar.vue';
-  import Profile from '@/components/preview/Profile.vue';
-  import Details from '@/components/preview/Details.vue';
-  import Links from '@/components/preview/Links.vue';
-  import Skills from '@/components/preview/Skills.vue';
-  import Languages from '@/components/preview/Languages.vue';
-  import Experience from '@/components/preview/Experience.vue';
-  import Education from '@/components/preview/Education.vue';
-  import Accomplishments from '@/components/preview/Accomplishments.vue';
-  import NoInfo from '@/components/preview/NoInfo.vue';
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
+import MainNavigation from '@/components/common/MainNavigation.vue';
+import FooterNav from '@/components/common/FooterNav.vue';
+import HeaderDownload from '@/components/preview/Header.vue';
+import Avatar from '@/components/preview/Avatar.vue';
+import Profile from '@/components/preview/Profile.vue';
+import Details from '@/components/preview/Details.vue';
+import Links from '@/components/preview/Links.vue';
+import Skills from '@/components/preview/Skills.vue';
+import Languages from '@/components/preview/Languages.vue';
+import Experience from '@/components/preview/Experience.vue';
+import Education from '@/components/preview/Education.vue';
+import Accomplishments from '@/components/preview/Accomplishments.vue';
+import NoInfo from '@/components/preview/NoInfo.vue';
 
-  import { mapState } from "vuex";
-  export default {
-    name: "PreviewFunctional",
-    data() {
-      return {
-        isPrinting: false,
-      };
-    },
-    computed: {
-      ...mapState({
-        name: state => state.form.name,
-        lastName: state => state.form.lastName,
-      }),
-      isInfoFilled() {
-        return this.name.length || this.lastName.length
-      },
-    },
-    methods: {
-      preparePrint() {
-        this.isPrinting = true;
-        setTimeout(() => {
-            this.print()
-          }, 100
-        );
-      },
-      print() {
-        window.onafterprint = () => {
-          this.isPrinting = false;
-        };
-        window.print();
-      },
-    },
-    components: {
-      Navigation: MainNavigation, Avatar, Profile, Details, Links, Skills, Languages, Experience, Education, HeaderDownload,
-      Accomplishments, Footer: FooterNav, NoInfo,
-    },
-  }
+const Navigation = MainNavigation;
+const Footer = FooterNav;
+
+const store = useStore();
+
+
+const isPrinting = ref(false);
+
+const name = computed(() => store.state.form.name);
+const lastName = computed(() => store.state.form.lastName);
+
+const isInfoFilled = computed(() => {
+  return name.value.length > 0 || lastName.value.length > 0;
+});
+
+
+const print = () => {
+  window.onafterprint = () => {
+    isPrinting.value = false;
+  };
+  window.print();
+};
+
+const preparePrint = () => {
+  isPrinting.value = true;
+
+  setTimeout(() => {
+    print();
+  }, 100);
+};
+
 </script>
+
 <style lang="scss" scoped>
 .preview {
   &__descr {
