@@ -1,31 +1,41 @@
-import Vue from 'vue';
+import { createApp } from 'vue'
+
+import router from '@/router/index.ts'
 import store from '@/store/index';
-import router from '@/router/index';
 import App from './App.vue';
 import 'animate.css/animate.min.css'
 import '@/assets/grid.min.css';
-import '@/assets/common.styl';
+/*import '@/assets/common.styl';*/
 import '@/plugins/moment/plugin';
 import i18n from '@/plugins/i18n';
-import '@/plugins/fontAwesome';
+/*import '@/plugins/fontAwesome';*/
 import '@/plugins/multiselect';
 import '@/plugins/wysiwyg';
 import '@/plugins/customSlider';
 import '@/mixins/updateStoreModel';
 import '@/mixins/getLocale';
-import Datepicker from 'vuejs-datepicker';
+/*import Datepicker from 'vuejs-datepicker';*/
 import Notification from '@/components/common/Notification';
 import VTooltip from 'v-tooltip';
 import breakpoint from "@/mixins/breakpoint";
 import apiRequests from '@/services/api';
 
-Vue.use(VTooltip);
+
+
+const app = createApp(App)
+
+/*app.use(store)*/
+app.use(router)
+
+/*Vue.use(VTooltip);
 Vue.component('datepicker', Datepicker);
-Vue.component('notification', Notification);
+Vue.component('notification', Notification);*/
 
-Vue.config.productionTip = false;
+/*Vue.config.productionTip = false;*/
 
-new Vue({
+
+
+/*new Vue({
   store,
   router,
   i18n,
@@ -61,9 +71,6 @@ new Vue({
     }
 
   },
-  methods: {
-
-  },
   watch: {
     '$i18n.locale': function changeTitle() {
       document.title = `${this.$i18n.t(this.$route.meta.title).toString()} - build-resume.io`;
@@ -87,10 +94,13 @@ new Vue({
       immediate: true,
     },
   },
-}).$mount('#app')
+}).$mount('#app')*/
 
-Vue.mixin(breakpoint);
+/*Vue.mixin(breakpoint);*/
 
+/*
 window.showNotification = function(message, type = 'alert-primary') {
   window.events.$emit('showNotification', message, type);
-}
+}*/
+
+app.mount('#app')

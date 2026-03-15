@@ -1,0 +1,75 @@
+@use "../variables" as *;
+
+/* ===== Base ===== */
+
+body {
+  font-family: $font-main;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page {
+  overflow: hidden;
+}
+
+.full-height {
+  min-height: 90vh;
+  padding-bottom: $space-lg;
+}
+
+.content-pad {
+  padding: $space-xl 0;
+}
+
+/* ===== Inputs ===== */
+
+.input,
+.vdp-datepicker input {
+  border: 1px solid $color-grey;
+  padding: 0.5rem;
+  border-radius: $radius-sm;
+  display: block;
+  width: 100%;
+}
+
+/* Checkbox */
+
+.input-checkbox {
+  position: relative;
+
+  &__checked {
+    display: none;
+    position: absolute;
+    left: 2px;
+    bottom: 3px;
+    z-index: 1;
+    font-size: 14px;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    margin-right: $space-xs;
+
+    &:checked ~ .input-checkbox__checked {
+      display: block;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 6px;
+    width: 15px;
+    height: 15px;
+    background: $color-white;
+    border: 1px solid $color-grey;
+    border-radius: $radius-sm;
+  }
+}

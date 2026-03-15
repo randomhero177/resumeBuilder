@@ -1,0 +1,31 @@
+/* Colors */
+$color-white: #fff;
+$color-black: #000;
+$color-grey: #999;
+$color-grey-light: #d0d0d0;
+$color-border-light: #e2e3e5;
+
+$color-primary: #366d5b;
+$color-accent: #ee7856;
+$color-success: #00c853;
+$color-danger: red;
+$color-warning-bg: rgba(247, 222, 197, 0.4);
+
+/* Spacing */
+$space-xs: 5px;
+$space-sm: 10px;
+$space-md: 15px;
+$space-lg: 30px;
+$space-xl: 45px;
+
+/* Radius */
+$radius-sm: 3px;
+$radius-md: 5px;
+
+/* Typography */
+$font-main: 'Roboto', sans-serif;
+$font-condensed: 'Roboto Condensed', sans-serif;
+
+/* Transitions */
+$transition-fast: 0.15s ease-in-out;
+$transition-normal: 0.3s ease;

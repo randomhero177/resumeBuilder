@@ -1,0 +1,77 @@
+@use "variables" as *;
+
+/* Components */
+/*@use "components/breakpoints";*/
+@use "components/navigation";
+@use "components/modal";
+@use "components/tooltip";
+@use "preview";
+@use "pages/home";
+
+/* Base */
+@use "base/reset";
+@use "base/globals";
+
+
+.btn {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: $space-md $space-xl;
+  cursor: pointer;
+
+  & + & {
+    margin-left: $space-sm;
+  }
+
+  &_lg {
+    font-size: 1.25rem;
+  }
+
+  &-preview {
+    background: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &-home {
+    background: $color-accent;
+    color: $color-white;
+  }
+
+  &-add {
+    border-bottom: 1px solid $color-grey-light;
+    font-weight: bold;
+
+    &:hover {
+      border-bottom-color: $color-grey;
+    }
+
+    &__icon {
+      color: blue;
+    }
+  }
+
+  &-remove {
+    color: $color-danger;
+  }
+
+  &-download {
+    padding: $space-md;
+    background: $color-success;
+    color: $color-white;
+  }
+}
+
+.alert {
+  border-radius: $radius-md;
+  border: 1px solid $color-grey-light;
+  padding: $space-md;
+  margin-bottom: 1.5rem;
+
+  &_warning {
+    background-color: $color-warning-bg;
+  }
+}

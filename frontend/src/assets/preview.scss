@@ -1,0 +1,166 @@
+// Colors
+$color-primary: #00b0ff;
+$color-primary-dark: #2e74b5;
+$color-dark-bg: #404040;
+$color-white: #ffffff;
+$color-grey: grey;
+$color-accent: #4285f4;
+
+// Sizes
+$avatar-width: 200px;
+$radius-sm: 5px;
+
+// Spacing
+$space-xs: 7.5px;
+$space-sm: 15px;
+$space-md: 30px;
+
+.preview {
+  /* ===== Common elements ===== */
+
+  &__item {
+    margin-bottom: $space-md;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: $space-sm;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    position: relative;
+    top: -2px;
+  }
+
+  &__key {
+    color: $color-grey;
+    margin-right: 5px;
+  }
+
+  &__link {
+    color: $color-primary;
+    word-break: break-all;
+  }
+
+  &__subitem {
+    margin-bottom: $space-xs;
+  }
+
+  /* ===== Header ===== */
+
+  &-header {
+    margin-bottom: 2rem;
+
+    &__name {
+      font-size: 2.75rem;
+    }
+
+    &__position {
+      font-size: 1.2rem;
+    }
+
+    &__ava {
+      width: $avatar-width;
+      border-radius: $radius-sm;
+    }
+  }
+
+  /* ===== Experience ===== */
+
+  &-expirience {
+    &__item {
+      margin-bottom: $space-md;
+    }
+  }
+
+  /* ===== Functional Theme ===== */
+
+  &-functional {
+    &__name {
+      padding: $space-md 0;
+      color: $color-white;
+      background: $color-dark-bg;
+    }
+
+    .preview__icon,
+    .slider__label {
+      display: none;
+    }
+
+    .preview__title {
+      text-align: center;
+    }
+
+    .preview__subtitle {
+      font-size: 1rem;
+    }
+
+    .preview__link {
+      color: $color-primary-dark;
+    }
+
+    .preview-functional__side .preview__key {
+      color: $color-white;
+      font-weight: bold;
+    }
+
+    .preview-expirience__item {
+      ul,
+      ol {
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        padding-right: 15px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          right: 0;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: $color-white;
+        }
+      }
+
+      .preview__key {
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+  }
+
+  /* ===== Melinda Theme ===== */
+
+  &-melinda {
+    &__header {
+      .preview__title {
+        display: none;
+      }
+    }
+
+    &__main {
+      .preview__title {
+        border-bottom: 2px solid $color-accent;
+        padding-bottom: $space-sm;
+      }
+
+      .preview__icon {
+        display: none;
+      }
+
+      .preview__languages-title {
+        margin-bottom: $space-md;
+      }
+    }
+  }
+}
